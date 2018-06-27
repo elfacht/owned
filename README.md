@@ -10,7 +10,7 @@ Install packages:
 
 #### 1.1 Browser Sync
 
-Set browser-sync proxy:
+Set [browser-sync](source/gulp-tasks/browser-sync.js) proxy:
 
 ```js
 gulp.defs = {
@@ -20,7 +20,7 @@ gulp.defs = {
 ```
 #### 1.2 Critical CSS
 
-Set proxy path for **criticalcss** task in `source/package.json`:
+Set proxy path for **criticalcss** task in [source/package.json](source/package.json):
 
 ```json
 "urls": {
@@ -28,7 +28,7 @@ Set proxy path for **criticalcss** task in `source/package.json`:
 },
 ```
 
-Define templates to create CSS in `source/package.json`:
+Define templates to create CSS in [source/package.json](source/package.json):
 
 ```json
 "globs": {
@@ -47,7 +47,7 @@ Define templates to create CSS in `source/package.json`:
 
 #### 1.3 JavaScript
 
-Change absolute path for `js` task in `source/gulp-tasks/js.js`:
+Change absolute path for `js` task in [source/gulp-tasks/js.js](source/gulp-tasks/js.js):
 
 ```js
 .pipe(babel({
@@ -67,7 +67,7 @@ composer install
 
 #### 2.2 Setup database
 
-Create the database table befor the next step.
+Create the database table before the next step.
 
 #### 2.3 .env file
 
@@ -87,14 +87,8 @@ Go to [http://craft-boiler.local/admin/install](http://craft-boiler.local/admin/
 
 #### 2.6 Install default architecture
 
-Go to `Settings -> Plugins` and install the **Architecure** plugin. Go to the the Architecture settings and copy the contents from `source/craft-architecture.json`.
+Go to `Settings -> Plugins` and install the **Architecure** plugin. Go to the the Architecture settings and copy the contents from [source/craft-architecture.json](source/craft-architecture.json).
 
 #### 2.7 Setup .htaccess
 
-Rename `app/.htaccess.example` to `app/.htaccess`.
-
-
-
-
-
-
+Rename [app/web/.htaccess.example](app/web/.htaccess.example) to `app/.htaccess`.
