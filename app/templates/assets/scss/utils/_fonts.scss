@@ -1,0 +1,85 @@
+/// Web fonts
+
+// @font-face {
+//   font-family: 'SpilloutSans';
+//   src: url('/assets/fonts/sans-regular.woff2') format('woff2'), url('../fonts/sans-light.woff') format('woff');
+//   font-weight: normal;
+// }
+
+
+
+
+/// Font settings
+$font-stack: ('Arial', 'Helvetica', sans-serif);
+
+$fonts: (
+  base: (
+    'preload':        (sans-serif),
+    'base':           (sans-serif),
+    'stack':          $font-stack,
+    'body':           ('Webfont', #{$font-stack}),
+    'copy':           ('Webfont', #{$font-stack}),
+    'display':        ('Webfont', #{$font-stack}),
+    'size':           100%,
+    'line-height':    1.5
+  ),
+  size: (
+    'xxxs':           10,
+    'xxs':            12,
+    'xs':             14,
+    's':              15,
+    'm':              16,
+    'l':              18,
+    'll':             21,
+    'xl':             22,
+    'xll':            24,
+    'xxl':            32,
+    'xxll':           40,
+    'xxxl':           56,
+    'xxxxl':          64,
+    'xxxxxxl':        96,
+    'xxxxxxxl':       196
+  )
+);
+
+
+
+
+/// Function to parse font map
+@function font($font, $type: 'base') {
+  @return map-get(map-get($fonts, $font), $type);
+}
+
+
+$font-base-s: (
+  size:          's',
+  line-height:   24,
+  family:        'base'
+);
+
+
+
+
+// Mixin to generate font sizes and baseline metrics
+//
+// @example:
+//   .module {
+//     @include font($font-options-s);
+//   }
+$options: (
+  size:          m,
+  line-height:   24,
+  family:        'copy'
+);
+
+@mixin font($options) {
+  $size: font(size, map-get($options, size));
+
+  @include u-font-baseline($size, map-get($options, line-height));
+  font-family: font(base, map-get($options, family));
+}
+
+// Replace basic font with loaded webfont
+@mixin font-replace($family) {
+  font-family: font(base, $family);
+}

@@ -1,0 +1,122 @@
+{
+    "siteGroups": [
+        "Craft Boiler"
+    ],
+    "sites": [
+        {
+            "group": "Craft Boiler",
+            "name": "Craft Boiler",
+            "handle": "default",
+            "language": "de",
+            "primary": "1",
+            "hasUrls": "1",
+            "baseUrl": "http:\/\/craft-boiler.local\/"
+        }
+    ],
+    "fieldGroups": [
+        "SEO",
+        "Specials"
+    ],
+    "sections": [
+        {
+            "name": "RSS",
+            "handle": "rss",
+            "type": "single",
+            "enableVersioning": true,
+            "siteSettings": [
+                {
+                    "hasUrls": "1",
+                    "uriFormat": "rss",
+                    "template": "rss",
+                    "enabledByDefault": true
+                }
+            ]
+        },
+        {
+            "name": "Suche",
+            "handle": "searchResults",
+            "type": "single",
+            "enableVersioning": true,
+            "siteSettings": [
+                {
+                    "hasUrls": "1",
+                    "uriFormat": "search",
+                    "template": "sections\/search\/results",
+                    "enabledByDefault": true
+                }
+            ]
+        }
+    ],
+    "fields": [
+        {
+            "group": "SEO",
+            "name": "Beschreibung",
+            "handle": "seoDescription",
+            "instructions": "",
+            "type": "craft\\fields\\PlainText",
+            "placeholder": "",
+            "code": false,
+            "multiline": "1",
+            "initialRows": "4",
+            "charLimit": "",
+            "columnType": "text"
+        },
+        {
+            "group": "Specials",
+            "name": "Newsletter im Footer deaktivieren",
+            "handle": "disableNewsletter",
+            "instructions": "",
+            "type": "craft\\fields\\Lightswitch",
+            "default": ""
+        },
+        {
+            "group": "SEO",
+            "name": "Titel",
+            "handle": "seoTitle",
+            "instructions": "",
+            "type": "craft\\fields\\PlainText",
+            "placeholder": "",
+            "code": false,
+            "multiline": "",
+            "initialRows": "4",
+            "charLimit": "",
+            "columnType": "text"
+        }
+    ],
+    "entryTypes": [
+        {
+            "sectionHandle": "rss",
+            "name": "RSS",
+            "handle": "rss",
+            "hasTitleField": false,
+            "titleLabel": "",
+            "titleFormat": "{section.name|raw}",
+            "fieldLayout": []
+        },
+        {
+            "sectionHandle": "searchResults",
+            "name": "Suche",
+            "handle": "searchResults",
+            "hasTitleField": false,
+            "titleLabel": "",
+            "titleFormat": "{section.name|raw}",
+            "fieldLayout": {
+                "Inhalt": [
+                    "disableNewsletter"
+                ]
+            }
+        }
+    ],
+    "globalSets": [
+        {
+            "name": "SEO",
+            "handle": "seo",
+            "fieldLayout": {
+                "Inhalt": [
+                    "seoTitle",
+                    "seoDescription"
+                ]
+            }
+        }
+    ]
+}

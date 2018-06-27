@@ -1,0 +1,91 @@
+@import 'colors';
+@import 'fonts';
+
+
+// _foundation-settings.scss
+$global-body-background: palette(ui, 'alabaster');
+$global-body-color: palette(ui, 'black');
+
+
+
+
+// Fonts
+$global-font-family: font(base, 'body');
+$global-font-heading: font(base, 'display');
+$global-link-color: palette(ui, 'black');
+$global-accent-color: palette(brand, 'yuma');
+
+
+
+
+// Grid
+$global-grid-gutter: .75rem;
+$global-max-width: 1140px;
+$global-grid-large: 1400px;
+$global-grid-xlarge: 1700px;
+$global-gutter: 24px;
+$global-content-col-medium: 8;
+$global-content-col-large: 6;
+
+$global-outside-gutter-small: .625rem;
+$global-outside-gutter: .9375rem;
+
+
+
+// Baseline
+//
+// DO NOT CHANGE THIS UNLESS YOU
+// KNOW WHAT YOU'RE DOING
+$global-baseline: 8;
+
+
+
+
+// Transitions
+$global-easeInOutExpo: cubic-bezier(1, 0, 0, 1);
+$global-easing: ease-in-out;
+$global-easing-duration: .15s;
+$global-transition: all $global-easing-duration $global-easing;
+$global-transition-smooth: all .25s $global-easing;
+$global-svg-transform-transition: transform $global-easing-duration $global-easing;
+
+
+
+
+// Shadows
+$global-shadow: 0 0 4px rgba(0, 0, 0, .25);
+
+
+
+
+// Letter spacing
+$global-letterspacing-small: .56;
+$global-letterspacing-medium: 1.56;
+
+
+
+
+// Border
+$global-border-width: 3px;
+$global-border: $global-border-width solid palette(ui, 'black');
+
+
+
+// Input and button size
+$global-controls-height: ($global-baseline * 5);
+$global-controls-height-large: ($global-baseline * 6);
+$global-controls-background: palette(ui, 'white');
+
+
+
+
+// Navigation
+$global-navigation-breakpoint: xlarge;
+$global-navigation-breakpoint-down: large down;
+$global-navigation-mobile-width: 265px;
+
+
+
+
+// Footer
+$global-footer-breakpoint: medium;

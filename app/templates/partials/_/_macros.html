@@ -1,0 +1,92 @@
+{#
+ #  Calculate padding-top for preview images
+ #
+ #  @param {Number} height – required
+ #  @param {Number} width – required
+ #
+ #  @example {{helpers.imagePreviewPadding(height, width)}}
+ #}
+{% macro imagePreviewPadding(height, width) %}
+{% set padding = (height / width) * 100 ~ '%' %}
+padding-top: {{padding}};
+{% endmacro %}
+
+{% macro lazyLoad(type) %}
+{%- if type == 'attr' -%}
+{%- if not craft.app.request.isLivePreview() -%}
+data-
+{%- endif -%}
+{%- endif -%}
+{%- if type == 'class' -%}
+{%- if not craft.app.request.isLivePreview() -%}
+lozad
+{%- endif -%}
+{%- endif -%}
+{% endmacro %}
+
+
+
+{#
+ #  Image query for picturefill / srcset
+ #
+ #  @param {String} type – required
+ #
+ #  @example {{helpers.imageMediaQuery('large')}}
+ #}
+{% macro imageMediaQuery(type) %}
+{% switch type %}
+{% case 'medium' %}(min-width: 520px)
+{% case 'large' %}(min-width: 769px)
+{% case 'xlarge' %}(min-width: 1440px)
+{% endswitch %}
+{% endmacro %}
+
+
+
+
+
+{#
+ # Text formatter
+ #}
+{% macro formatString(content, type = 'end') %}
+{# Strip HTML tags from the beginning #}
+{% set stripForDrops = {
+  '<p>': '',
+  '<a': '',
+  '<img': '',
+  '<strong>': '',
+  '<em>': ''
+} %}
+{# Replace umlauts #}
+{% set stripUmlauts = {
+  'ü': 'ue',
+  'ö': 'oe',
+  'ä': 'ae'
+} %}
+{% set postEnd = {
+  '///end///': '<span class="c-end" aria-hidden="true"></span>'
+}%}
+
+{%- switch type -%}
+  {%- case 'link' -%}
+    {{content|replace({'http://':'','https://':''})}}
+  {%- case 'dropcaps' -%}
+    {{content|replace(stripForDrops)|slice(0, 1)|lower|replace(stripUmlauts)}}
+  {%- case 'end' -%}
+    {{content|replace(postEnd)|raw}}
+{%- endswitch -%}
+{% endmacro %}
+
+
+
+
+
+
+{#
+ #  Secure target='_blank'
+ #
+ #  @example {{helpers.targetBlank}}
+ #}
+{% macro targetBlank() %}
+  target="_blank" rel="noreferrer noopener"
+{% endmacro %}

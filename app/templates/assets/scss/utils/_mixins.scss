@@ -1,0 +1,471 @@
+// Utility mixins
+
+
+
+
+// Using margins and paddings based on $global-baseline
+// to ensure vertical and horizontal grid
+@mixin u-baseline($size: 1, $type: margin) {
+  $baseline: #{$global-baseline * ($size / 16)}rem;
+
+  #{$type}: $baseline;
+}
+
+
+
+
+// helper to calculate line-height based
+// on baseline grid
+//
+// IMPORTANT: only used in _fonts.scss
+// DO NOT USE this mixins in your CSS!
+// USE font() instead.
+@mixin u-font-baseline($size, $lineheight) {
+  font-size: rem-calc($size);
+  line-height: $lineheight / $size;
+}
+
+
+
+
+
+
+
+
+
+
+// Helper to pull image outside of GRID
+@mixin u-img-pull($value) {
+  margin-left: -($value);
+  margin-right: -($value);
+  width: calc(100% + #{$value * 2});
+  max-width: calc(100% + #{$value * 2});
+}
+
+
+
+
+
+
+
+
+
+// helper for preview images
+// @source: http://andyshora.com/css-image-container-padding-hack.html
+@mixin u-img-preview($view: square) {
+  background-color: palette(ui, 'alto');
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    @include u-img-responsive;
+
+    &.thumb {
+      // display: none;
+      filter: blur(20px);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      z-index: 0;
+    }
+
+    &.original {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+
+
+
+
+// Text link with borders
+//
+//
+@mixin u-link-border($type: null) {
+  // Show border on hover
+  @if $type == hover {
+    border-bottom: rem-calc(2) solid transparent;
+
+    @include breakpoint(large) {
+      border-width: rem-calc(3);
+    }
+
+    &:hover,
+    &:active {
+      border-color: palette(brand, 'yuma');
+    }
+
+  // Show border permanently
+  } @elseif $type == static {
+    border-bottom: rem-calc(2) solid palette(brand, 'yuma');
+    font-weight: bold;
+
+    @include breakpoint(large) {
+      border-width: rem-calc(3);
+    }
+
+  // Show border initially with hover
+  } @elseif $type == active {
+    border-bottom: rem-calc(3) solid palette(brand, 'yuma');
+
+    @include breakpoint(large) {
+      border-width: rem-calc(3);
+    }
+
+    &:hover,
+    &:active {
+      border-color: transparent;
+    }
+
+  // Default underline
+  } @else {
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover,
+    &:active {
+      text-decoration-color: palette(brand, 'yuma');
+    }
+  }
+}
+
+
+
+// Icon as link
+@mixin u-icon-link() {
+  .c-icon {
+    transition: $global-transition;
+    transform-origin: 50% 100%;
+  }
+
+  a:hover {
+    .c-icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+
+
+
+
+
+// Links for content mixin
+@mixin u-content-links() {
+  a:not(img) {
+    @include u-link-border;
+  }
+}
+
+
+
+
+
+// List formatting
+@mixin u-list($type: ol) {
+  $breakpoint: large;
+  $offset: rem-calc($global-baseline * 3.5);
+  $color: palette(brand, 'yuma');
+
+  @include u-baseline(3, margin-bottom);
+
+  @include breakpoint($breakpoint) {
+    @include u-baseline(4, margin-bottom);
+  }
+
+  > li {
+    @include u-baseline(1, margin-bottom);
+    list-style-type: none;
+    position: relative;
+
+    @include breakpoint($breakpoint) {
+      @include u-baseline(2, margin-bottom);
+    }
+
+    &:after {
+      position: absolute;
+      left: -($offset);
+    }
+
+    @if $type == ol {
+      counter-increment: list; // create counter type
+
+      &:after {
+        @include font($font-options-m-secondary);
+        font-weight: bold;
+        font-style: italic;
+        color: $color;
+        content: counter(list) '.';
+        position: absolute;
+        left: -($offset * 1.5);
+        text-align: right;
+        top: 0;
+        width: rem-calc(30);
+
+        @include breakpoint($breakpoint) {
+          @include font($font-options-xl-secondary);
+        }
+      }
+    }
+
+    @if $type == ul {
+      &:after {
+        @include u-baseline(1.5, top);
+        background: $color;
+        content: '';
+        width: .5rem;
+        height: .5rem;
+        display: inline-block;
+
+        @include breakpoint($breakpoint) {
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// Content formatting
+//
+//
+@mixin u-content-formatting() {
+  @include u-content-links;
+
+  @include font($font-base-s);
+
+  @include breakpoint(medium) {
+    @include font($font-base-l);
+  }
+
+  @include breakpoint(large) {
+    @include font($font-base-ll);
+  }
+
+  a {
+    @include u-content-links;
+  }
+
+  > p {
+    @include u-baseline(3, margin-bottom);
+    margin-top: 0;
+    word-break: break-word;
+
+    @include breakpoint(large) {
+      @include u-baseline(4, margin-bottom);
+      margin-top: 0;
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    @include font($font-base-l-narrow);
+    margin-top: 0;
+
+    @include breakpoint(large) {
+      @include font($font-base-ll);
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    @include u-list(ul);
+    @include u-baseline(8, padding-left);
+  }
+
+  ol {
+    @include u-list(ol);
+    @include u-baseline(8, padding-left);
+  }
+}
+
+@mixin u-content-formatting-fonts() {
+  @include font-replace(copy);
+
+  h2,
+  h3,
+  h4 {
+    @include font-replace(display);
+  }
+}
+
+
+
+
+// Placeholder styles
+@mixin u-input-placeholder() {
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+// helper for smooth transitioned
+// visibility toggles
+@mixin u-toggle-visibility($mode: 'hide', $zindex: 1) {
+  @if $mode == 'hide' {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  @if $mode == 'show' {
+    opacity: 1;
+    visibility: visible;
+    z-index: $zindex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// setting images to responsive width
+// and fluid behaviour
+@mixin u-img-responsive() {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+// removing list styles and box
+@mixin u-list-reset() {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+
+
+
+
+
+
+// adding ellipsis to element
+//
+// @param {Number} $max-width – required|fallback
+@mixin u-ellipsis($max-width: 200) {
+  max-width: rem-calc($max-width);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Product image hover
+@mixin u-img-hover() {
+  img {
+    transition: $global-transition;
+  }
+
+  &:hover,
+  &:active {
+    img {
+      filter: brightness(110%);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// a11y-friendly hidden elements
+@mixin u-a11y-hidden() {
+  position: absolute;
+  width: rem-calc(1);
+  height: rem-calc(1);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+
+@mixin u-a11y-visible() {
+  clip: auto;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+
+// Vendor prefixed keyframes
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}

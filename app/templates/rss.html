@@ -1,0 +1,57 @@
+{% header "Content-Type: application/rss+xml" %}
+{% if not craft.app.config.general.membersOnly %}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+    <channel>
+        <title>{{ siteName }}</title>
+        <link>{{ siteUrl }}</link>
+        <atom:link href="{{ url(craft.app.request.pathInfo) }}" rel="self" type="application/rss+xml" />
+        <description>{{siteName}}</description>
+        <language>de-DE</language>
+        <pubDate>{{ now|rss }}</pubDate>
+        <lastBuildDate>{{ now|rss }}</lastBuildDate>
+
+        {% for entry in craft.entries.section('stories, spilled, chillout, cityguides').all() %}
+
+            {% set entryHandle = entry.section.handle %}
+            {% if entryHandle == 'stories' %}
+              {% set categories = entry.categoriesStories %}
+            {% elseif entryHandle == 'spilled' %}
+              {% set categories = entry.categoriesSpilled %}
+            {% elseif entryHandle == 'cityguides' %}
+              {% set categories = entry.categoriesCityguide %}
+            {% elseif entryHandle == 'chillout' %}
+              {% set categories = null %}
+            {% endif %}
+
+            <item>
+                <title>{{ entry.title }}</title>
+                <link>{{ entry.url }}</link>
+                <pubDate>{{ entry.postDate|rss }}</pubDate>
+                <dc:creator><![CDATA[{{ entry.author }}]]></dc:creator>
+                <category><![CDATA[{{entry.section}} - {% nav category in categories.all() %}{{category}}{% if not loop.last %} / {% endif %}{% endnav %}]]></category>
+                <guid>{{ entry.url }}</guid>
+
+								{% set featuredImage = entry.featuredImage.one() %}
+								{% set imageFormat = (featuredImage.width >= featuredImage.height) ? 'landscape' : 'portrait' %}
+								{% if imageFormat == 'portrait' %}
+							    {% set imageSmall = featuredImage.getUrl('postPortraitMedium') %}
+							    {% set imageLarge = featuredImage.getUrl('postPortraitLarge') %}
+							  {% else %}
+							    {% set imageSmall = featuredImage.getUrl('postLandscapeSmall') %}
+							    {% set imageLarge = featuredImage.getUrl('postLandscapeLarge') %}
+							  {% endif %}
+
+                <description><![CDATA[{% if featuredImage %}<div><img src="{{imageSmall}}" alt="{{featuredImage}}" srcset="{{imageLarge}} 800w" style="margin-bottom: 34px;" /></div>{% endif %}{{ entry.excerpt }}<p><a href="{{ entry.url }}">Artikel auf spillout.de lesen</a></p>]]></description>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>
+{% endif %}

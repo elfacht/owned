@@ -1,0 +1,60 @@
+
+/// @example
+///   .element {
+///     color: palette(ui, 'brand');
+///
+
+$palettes: (
+  brand: (
+    'yuma':            #d0cc96
+  ),
+  ui: (
+    'black':           #0b0b0b,
+    'white':           #fff,
+    'alabaster':       #fbfbfb,
+    'sand':            #f5f5f5,
+    'alto':            #d0d0d0,
+    'chalice':         #adadad,
+    'boulder':         #767676,
+    'tundora':         #3a3b3a
+  )
+);
+
+
+
+
+/// Function to parse color palettes
+@function palette($palette, $tone: 'brand') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+
+
+/// Generating color and background Classes
+/// from color map
+$color-theme-list: (
+  yuma: brand,
+  black: ui,
+  white: ui,
+  alabaster: ui,
+  alto: ui
+) !default;
+
+
+
+
+/// Classes to use in templates
+@mixin color-theme($color, $section) {
+  .color--#{$color} {
+    color: palette($section, #{$color});
+  }
+
+  .background--#{$color} {
+    background-color: palette($section, #{$color});
+  }
+}
+
+@each $key, $value in $color-theme-list {
+  @include color-theme($key, $value);
+}

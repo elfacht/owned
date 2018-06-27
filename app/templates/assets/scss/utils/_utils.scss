@@ -1,0 +1,106 @@
+// Misc. helper classes
+// to use in HTML markup
+
+
+
+// Responsive image
+//
+// (max-width and width: 100%)
+.u-img-responsive {
+  @include u-img-responsive;
+}
+
+
+
+.u-img-preview {
+  @include u-img-preview;
+}
+
+
+
+// Centered images with defined width
+// on HTML image tag
+.u-img-center {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+
+.u-img--fullwidth {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+
+
+// Centered contents
+.u-center,
+.u-text--center {
+  text-align: center !important;
+}
+
+
+
+
+// Removing text-transforms from fonts
+.u-text--normal {
+  text-transform: none;
+}
+
+.u-text--right {
+  text-align: right !important;
+}
+
+
+// Adding uppercase to fonts
+.u-text--uppercase {
+  text-transform: uppercase;
+}
+
+
+
+
+// Line-through
+.u-linethrough {
+  text-decoration: line-through;
+}
+
+
+
+
+// Resetting display font from font
+// for footnotes (*) etc.
+.u-footnote {
+  font-family: font(base, 'body');
+}
+
+
+
+
+// Disabling pointer-events from maps
+.u-maps {
+  width: 100%;
+
+  &.scrolloff {
+    pointer-events: none;
+  }
+}
+
+
+
+
+// Adding global transition to element
+.u-transition {
+  transition: $global-transition;
+}
+
+
+
+// Element is hidden
+.u-hidden {
+  display: none;
+}

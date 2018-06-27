@@ -1,0 +1,29 @@
+{
+    "buttons": [
+        "html",
+        "formatting",
+        "bold",
+        "italic",
+        "deleted",
+        "unorderedlist",
+        "orderedlist",
+        "line",
+        "link",
+        "image",
+        "file",
+        "video"
+    ],
+    "plugins": [
+        "fullscreen",
+        "clips",
+        "video"
+    ],
+    "clips": [
+        ["Beitragsende", " ///end///"],
+        ["Sternchen", "<strong style='color: #d0cc96'>*</strong>"]
+    ],
+    "toolbarFixed": true,
+    "linkNewTab": true,
+    "linkNofollow": true,
+    "linkSize": 200
+}

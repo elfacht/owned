@@ -1,0 +1,105 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+{# -- SET MACRO PARTIAL PATH -- #}
+{% set globalMacroPartial = 'partials/_/_macros.html' %}
+{% set globalStringsPartial = 'partials/_/_strings.html' %}
+
+{# -- SET ASSET VERSION NUMBER -- #}
+{% set staticAssetsVersion = craft.config.aliases.staticAssetsVersion %}
+
+{#
+ # DISPLAY PAGE ONLY WHEN:
+ # – membersOnly is FALSE
+ # – members only is TRUE AND logged in
+ # – devMode is TRUE
+ #}
+{% if not craft.app.config.general.membersOnly
+			or craft.app.config.general.membersOnly and currentUser
+			or craft.app.config.general.devMode %}
+
+	{%- minify -%}
+
+		<!DOCTYPE html>
+
+		{# -- GET FONT COOKIE -- #}
+		{% if getCookie('fontsLoaded') %}
+			<html xmlns="http://www.w3.org/1999/xhtml" lang="de" class="fonts--loaded">
+		{% else %}
+			<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+			{{ setCookie('fontsLoaded', true, now | date_modify("+30 days").timestamp) }}
+		{% endif %}
+
+		<head>
+
+			{#
+			 # HEAD block
+			 #
+			 # inherit the current head with {{ parent() }}
+			 #}
+			{% block head %}
+				<meta charset="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+        <link rel="alternate" type="application/rss+xml" title="{{siteName}} &raquo; Feed" href="{{siteUrl}}rss/" />
+        <link rel="home" href="{{ siteUrl }}" />
+
+				{# -- CRITICAL CSS -- #}
+				{% set cacheVal = getCookie('critical-css') %}
+				{% if not cacheVal or cacheVal != staticAssetsVersion and not craft.app.config.general.devMode %}
+				  {{ setCookie('critical-css', staticAssetsVersion, now | date_modify("+7 days").timestamp ) }}
+				  {% block _inline_css %}
+				  {% endblock %}
+				  <link rel="preload" href="{{ siteUrl }}assets/css/app.{{staticAssetsVersion}}.css" as="style" as="style" onload="this.onload=null;this.rel='stylesheet'">
+				  <noscript>
+				    <link rel="stylesheet" href="{{ siteUrl }}assets/css/app.{{staticAssetsVersion}}.css" as="style">
+				  </noscript>
+				  <script>
+				    {{ source('assets/js/_inline/loadCSS.js') }}
+				    {{ source('assets/js/_inline/csspreload.js') }}
+				  </script>
+				{% else %}
+				  {% if craft.app.config.general.devMode %}
+				  <link rel="stylesheet" href="{{ siteUrl }}assets/css/app.css" as="style">
+				  {% else %}
+				  <link rel="stylesheet" href="{{ siteUrl }}assets/css/app.{{staticAssetsVersion}}.css" as="style">
+				  {% endif %}
+				{% endif %}
+
+				{% include 'partials/_/_head-seo' %}
+			{% endblock %}
+		</head>
+
+		<body class="{% block bodyClasses %}{% endblock %}">
+			<div id="top" class="global-wrapper">
+				<main class="global-main" role="main">
+					{#
+					 # CONTENT block
+					 #}
+          {% block content %}{% endblock %}
+        </main>
+      </div>
+
+			<div class="js-svg c-icon-defs"></div>
+			{% include 'partials/_/_javascript' %}
+
+			{#
+			 # FOOTER block
+			 #}
+			{% block footer %}{% endblock %}
+
+      </body>
+		</html>
+	{%- endminify -%}
+
+{% else %}
+	{% redirect 'maintenance' %}
+{% endif %}
