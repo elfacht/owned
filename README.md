@@ -20,7 +20,7 @@ gulp.defs = {
 ```
 #### 1.2 Critical CSS
 
-Set proxy path for **criticalcss** task in [source/package.json](source/package.json):
+Set proxy path for **criticalcss** task in [source/package.json](source/package.json#L56):
 
 ```json
 "urls": {
@@ -28,7 +28,7 @@ Set proxy path for **criticalcss** task in [source/package.json](source/package.
 },
 ```
 
-Define templates to create CSS in [source/package.json](source/package.json):
+Define templates to create CSS in [source/package.json](source/package.json#L62):
 
 ```json
 "globs": {
@@ -47,7 +47,7 @@ Define templates to create CSS in [source/package.json](source/package.json):
 
 #### 1.3 JavaScript
 
-Change absolute path for `js` task in [source/gulp-tasks/js.js](source/gulp-tasks/js.js):
+Change absolute path for `js` task in [source/gulp-tasks/js.js](source/gulp-tasks/js.js#L27):
 
 ```js
 .pipe(babel({
