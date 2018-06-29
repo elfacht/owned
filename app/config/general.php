@@ -32,7 +32,7 @@ return [
 
 	// Dev site URL
 	'dev' => [
-		'siteUrl' => 'http://craft-boiler.local',
+		// 'siteUrl' => 'http://craft-boiler.local',
 		'devMode' => true,
 		'cache' => false,
 		'membersOnly' => false,
@@ -47,7 +47,6 @@ return [
 
 	// Public site URL
   'staging' => [
-		// 'siteUrl' => 'https://staging.spillout.de',
 		'devMode' => false,
 		'cache' => true,
 		'membersOnly' => false,
@@ -61,7 +60,6 @@ return [
 
 	// Public site URL
   'production' => [
-		// 'siteUrl' => 'https://www.spillout.de',
 		'devMode' => false,
 		'cache' => true,
 		'membersOnly' => true,

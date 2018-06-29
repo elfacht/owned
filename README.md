@@ -92,3 +92,7 @@ Go to `Settings -> Plugins` and install the **Architecure** plugin. Go to the th
 #### 2.7 Setup .htaccess
 
 Rename [app/web/.htaccess.example](app/web/.htaccess.example) to `app/.htaccess`.
+
+#### 2.8 Setup siteUrl
+
+Setup `siteUrl` in [app/config/general.php](app/config/general.php).
