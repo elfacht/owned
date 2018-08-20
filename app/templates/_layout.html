@@ -14,7 +14,7 @@
 {% set globalStringsPartial = 'partials/_/_strings.html' %}
 
 {# -- SET ASSET VERSION NUMBER -- #}
-{% set staticAssetsVersion = craft.config.aliases.staticAssetsVersion %}
+{% set staticAssetsVersion = craft.app.config.general.aliases.staticAssetsVersion %}
 
 {#
  # DISPLAY PAGE ONLY WHEN:
@@ -54,7 +54,8 @@
 
 				{# -- CRITICAL CSS -- #}
 				{% set cacheVal = getCookie('critical-css') %}
-				{% if not cacheVal or cacheVal != staticAssetsVersion and not craft.app.config.general.devMode %}
+				{#% if not cacheVal or cacheVal != staticAssetsVersion and not craft.app.config.general.devMode %#}
+				{% if not craft.app.config.general.devMode %}
 				  {{ setCookie('critical-css', staticAssetsVersion, now | date_modify("+7 days").timestamp ) }}
 				  {% block _inline_css %}
 				  {% endblock %}

@@ -7,6 +7,18 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/general.php
  */
 
+ // Ensure our urls have the right scheme
+ if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+   // Support Cloudflare SSL
+   define('URI_SCHEME', $_SERVER['HTTP_X_FORWARDED_PROTO'].'://');
+ } else {
+   // Standard SSL support
+   define('URI_SCHEME',  (isset($_SERVER['HTTPS'] ) ) ? 'https://' : 'http://');
+ }
+
+ define('SITE_URL', URI_SCHEME . $_SERVER['SERVER_NAME'] . '/');
+
+
 return [
 
 	// All environments
@@ -16,7 +28,11 @@ return [
 
 		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
 		'aliases' => array(
-			'staticAssetsVersion' => '1',
+			'staticAssetsVersion' => '010',
+		),
+
+		'siteUrl' => array(
+			'default' => SITE_URL
 		),
 
 		// Default Week Start Day (0 = Sunday, 1 = Monday...)
