@@ -43,7 +43,15 @@ return [
 		'imageDriver' => 'imagick',
 		'defaultImageQuality' => 100,
 		'securityKey' => getenv('SECURITY_KEY'),
-		'phpSessionName' => 'SessionId'
+		'phpSessionName' => 'SessionId',
+    'sendPoweredByHeader' => false,
+
+    // Chose plugins and functions
+    'setup' => array(
+      'criticalCss' => false,
+      'fontsLoaded' => false, // cookies required
+      'cookies' => false
+    )
 	],
 
 	// Dev site URL
@@ -78,7 +86,7 @@ return [
   'production' => [
 		'devMode' => false,
 		'cache' => true,
-		'membersOnly' => true,
+		'membersOnly' => false,
 		'trackerId' => 1,
 		'enableTracking' => true,
 		'enableTemplateCaching' => true

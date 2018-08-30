@@ -1,0 +1,33 @@
+{
+    "sections": [
+        {
+            "name": "Suche",
+            "handle": "searchResults",
+            "type": "single",
+            "enableVersioning": true,
+            "siteSettings": [
+                {
+                    "hasUrls": "1",
+                    "uriFormat": "search",
+                    "template": "sections\/search\/results",
+                    "enabledByDefault": true
+                }
+            ]
+        }
+    ],
+    "entryTypes": [
+        {
+            "sectionHandle": "searchResults",
+            "name": "Suche",
+            "handle": "searchResults",
+            "hasTitleField": false,
+            "titleLabel": "",
+            "titleFormat": "{section.name|raw}",
+            "fieldLayout": {
+                "Inhalt": [
+                    "disableNewsletter"
+                ]
+            }
+        }
+    ]
+}

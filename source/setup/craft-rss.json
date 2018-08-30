@@ -1,0 +1,29 @@
+{
+    "sections": [
+        {
+            "name": "RSS",
+            "handle": "rss",
+            "type": "single",
+            "enableVersioning": true,
+            "siteSettings": [
+                {
+                    "hasUrls": "1",
+                    "uriFormat": "rss",
+                    "template": "rss",
+                    "enabledByDefault": true
+                }
+            ]
+        }
+    ],
+    "entryTypes": [
+        {
+            "sectionHandle": "rss",
+            "name": "RSS",
+            "handle": "rss",
+            "hasTitleField": false,
+            "titleLabel": "",
+            "titleFormat": "{section.name|raw}",
+            "fieldLayout": []
+        }
+    ]
+}
