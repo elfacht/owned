@@ -109,7 +109,7 @@ Copy following folders and files to the server after cloning:
 
 ```sh
 app/.env
-app/config/licens.key
+app/config/license.key
 app/web/uploads/*
 app/web/.htaccess
 ```
