@@ -2,7 +2,7 @@
 
 People change, projects change, everything changes for a reason.
 
-## Unreleased
+## 1.0.0
 ### Added
 - Changelog
 - Rewrite condition for asset versions in `app/web/.htaccess`.
