@@ -5,6 +5,7 @@ People change, projects change, everything changes for a reason.
 ## Unreleased
 ### Added
 - Added `.htpasswd` and `license.key` to `.gitignore`.
+- Added [CpFieldInspect](https://github.com/mmikkel/CpFieldInspect-Craft) plugin.
 
 ### Changed
 - Updated README instructions.
