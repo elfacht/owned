@@ -6,6 +6,9 @@ People change, projects change, everything changes for a reason.
 ### Added
 - Added `.htpasswd` and `license.key` to `.gitignore`.
 
+### Changed
+- Updated README instructions.
+
 ## 1.0.0
 ### Added
 - Changelog

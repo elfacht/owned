@@ -15,7 +15,7 @@ Set [browser-sync](source/gulp-tasks/browser-sync.js) proxy:
 ```js
 gulp.defs = {
  ...
- bsProxy           : 'craft-boiler.local' // vhost url
+ bsProxy           : 'yoursite.local' // vhost url
 }
 ```
 #### 1.2 Critical CSS
@@ -24,7 +24,7 @@ Set proxy path for **criticalcss** task in [source/package.json](source/package.
 
 ```json
 "urls": {
-	"critical": "http://spillout.local/"
+	"critical": "http://yoursite.local/"
 },
 ```
 
@@ -83,16 +83,41 @@ app/web/
 
 #### 2.5 Install Craft
 
-Go to [http://craft-boiler.local/admin/install](http://craft-boiler.local/admin/install) and follow the instructions.
+Go to [http://yoursite.local/admin/install](http://yoursite.local/admin/install) and follow the instructions.
 
 #### 2.6 Install default architecture
 
-Go to `Settings -> Plugins` and install the **Architecure** plugin. Go to the the Architecture settings and copy the contents from [source/craft-architecture.json](source/craft-architecture.json).
+Go to `Settings -> Plugins` and install the **Architecure** plugin. Go to the the Architecture settings and copy the desired contents from [source/setup/](source/setup).
 
 #### 2.7 Setup .htaccess
 
 Rename [app/web/.htaccess.example](app/web/.htaccess.example) to `app/.htaccess`.
 
-#### 2.8 Setup siteUrl
+#### 2.7 Default setup
 
-Setup `siteUrl` in [app/config/general.php](app/config/general.php).
+Go to [app/config/general.php](app/config/general.php#L50) and set desired options.
+
+#### 2.8 Required plugins
+
+- `nystudio107/craft-minify`
+
+### 3. Server setup
+
+#### Files and folders
+
+Copy following folders and files to the server after cloning:
+
+```sh
+app/.env
+app/config/licens.key
+app/web/uploads/*
+app/web/.htaccess
+```
+
+#### Install craft
+
+Run in `app/`:
+
+```sh
+$ composer install --no-interaction --prefer-dist --optimize-autoloader
+```
