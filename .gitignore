@@ -54,6 +54,8 @@ coverage
 
 .htaccess
 htaccess
+.htpasswd
+htpasswd
 
 # Craft runtime and backups folders
 # ----------------------------------------------------------------------
@@ -67,8 +69,8 @@ app/web/uploads/*
 
 # Misc files
 # ----------------------------------------------------------------------
-craft/config/db.php
-# craft/config/general.php
+app/config/license.key
+
 
 app/web/cpresources/*
 
