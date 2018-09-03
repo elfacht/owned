@@ -6,6 +6,10 @@ People change, projects change, everything changes for a reason.
 ### Added
 - Added `.htpasswd` and `license.key` to `.gitignore`.
 - Added [CpFieldInspect](https://github.com/mmikkel/CpFieldInspect-Craft) plugin.
+- Added [Migration Manager](https://github.com/Firstborn/Craft-Migration-Manager/) plugin.
+
+## Removed
+- Removed Architect plugin for Migration Manager plugin.
 
 ### Changed
 - Updated README instructions.
