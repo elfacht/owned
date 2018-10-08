@@ -29,8 +29,9 @@
     "nystudio107/craft-eagerbeaver": "1.0.3",
     "verbb/field-manager": "2.0.2",
     "craftcms/redactor-clips": "2.0.0",
-    "pennebaker/craft-architect": "2.2.9",
-    "nystudio107/craft-cookies": "^1.1.9"
+    "firstborn/migrationmanager": "^3.0",
+    "nystudio107/craft-cookies": "^1.1.9",
+    "mmikkel/cp-field-inspect": "^1.0"
   },
   "autoload": {
     "psr-4": {

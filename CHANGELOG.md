@@ -2,6 +2,20 @@
 
 People change, projects change, everything changes for a reason.
 
+## 1.0.1 – 2018-10-08
+### Added
+- `.htpasswd` and `license.key` to `.gitignore`.
+- [CpFieldInspect](https://github.com/mmikkel/CpFieldInspect-Craft) plugin
+- [Migration Manager](https://github.com/Firstborn/Craft-Migration-Manager/) plugin
+- [Craft CMS Scripts](https://github.com/nystudio107/craft-scripts)
+- Webpack for JavaScript
+
+## Removed
+- Architect plugin for Migration Manager plugin.
+
+### Changed
+- Updated README instructions.
+
 ## 1.0.0
 ### Added
 - Changelog

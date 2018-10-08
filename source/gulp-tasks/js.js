@@ -6,33 +6,29 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify-es').default,
     rename = require('gulp-rename'),
+    webpack = require('webpack-stream'),
     babel = require('gulp-babel');
+
 
 
 module.exports = function() {
   var babelIgnore = [
-    // gulp.config.dev.scripts + '/vendor/*.js', // exclude all plugins except foundation
+    gulp.config.dev.scripts + '/vendor/*.js', // exclude all plugins except foundation
 
   ];
 
   return gulp.src([
-      gulp.config.dev.scripts + '/vendor/intersection-observer.js',
-      gulp.config.dev.scripts + '/vendor/fontfaceobserver.js',
-      gulp.config.dev.scripts + '/vendor/lozad.js',
-      gulp.config.dev.scripts + '/app/helper.js',
-      gulp.config.dev.scripts + '/app/scroller.js',
-      gulp.config.dev.scripts + '/app/svg.js',
-      gulp.config.dev.scripts + '/app.js'
+      gulp.config.dev.scripts + '/main.js'
     ])
-    .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['/Users/elfacht/htdocs/_sandbox/craft-boiler/source/node_modules/babel-preset-es2016'],
+      presets: ['/Users/elfacht/htdocs/_sandbox/craft-boiler/source/node_modules/babel-preset-es2015'],
       ignore: babelIgnore
     }))
-    .pipe(concat('app.js'))
+    .pipe(sourcemaps.init())
+    .pipe(webpack({
+          config : require('../webpack.config.js')
+        }))
     .pipe(gulp.dest(gulp.config.prod.scripts))
-    .pipe(rename('app.min.js'))
-    .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(gulp.config.prod.scripts));
 };

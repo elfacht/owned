@@ -50,7 +50,7 @@ return [
     'setup' => array(
       'criticalCss' => false,
       'fontsLoaded' => false, // cookies required
-      'cookies' => false
+      'cookies' => false // cookies plugin required
     )
 	],
 
