@@ -4,12 +4,14 @@ People change, projects change, everything changes for a reason.
 
 ## Unreleased
 ### Added
-- Added `.htpasswd` and `license.key` to `.gitignore`.
-- Added [CpFieldInspect](https://github.com/mmikkel/CpFieldInspect-Craft) plugin.
-- Added [Migration Manager](https://github.com/Firstborn/Craft-Migration-Manager/) plugin.
+- `.htpasswd` and `license.key` to `.gitignore`.
+- [CpFieldInspect](https://github.com/mmikkel/CpFieldInspect-Craft) plugin
+- [Migration Manager](https://github.com/Firstborn/Craft-Migration-Manager/) plugin
+- [Craft CMS Scripts](https://github.com/nystudio107/craft-scripts)
+- Webpack for JavaScript
 
 ## Removed
-- Removed Architect plugin for Migration Manager plugin.
+- Architect plugin for Migration Manager plugin.
 
 ### Changed
 - Updated README instructions.

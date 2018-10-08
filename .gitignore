@@ -71,8 +71,8 @@ app/web/uploads/*
 # ----------------------------------------------------------------------
 app/config/license.key
 
-
 app/web/cpresources/*
+scripts/.env.sh
 
 .DS_Store
 Thumbs.db

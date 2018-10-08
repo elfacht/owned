@@ -55,6 +55,11 @@ Change absolute path for `js` task in [source/gulp-tasks/js.js](source/gulp-task
 }))
 ```
 
+#### 1.4 Scripts
+
+Setup [Craft CMS Scripts](https://github.com/nystudio107/craft-scripts) by renaming `scripts/template.env.sh`
+to `scripts/.env.sh`.
+
 ### 2. Craft CMS
 
 #### 2.1 Download
