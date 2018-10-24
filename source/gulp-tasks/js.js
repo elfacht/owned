@@ -21,7 +21,6 @@ module.exports = function() {
       gulp.config.dev.scripts + '/main.js'
     ])
     .pipe(babel({
-      presets: ['/Users/elfacht/htdocs/_sandbox/craft-boiler/source/node_modules/babel-preset-es2015'],
       ignore: babelIgnore
     }))
     .pipe(sourcemaps.init())

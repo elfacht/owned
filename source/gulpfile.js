@@ -139,7 +139,7 @@ gulp.task('watch', function (cb) {
   // styles
   gulp.watch([
     gulp.config.dev.styles + '/**/*.scss',
-    gulp.config.dev.base + '/partials/**/**/*.scss',
+    gulp.config.dev.base + '/styleguide/**/**/*.scss',
   ], ['sass', 'scss-lint']);
 
   // js

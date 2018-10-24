@@ -2,6 +2,10 @@
 
 People change, projects change, everything changes for a reason.
 
+## 1.0.2 – 2018-10-24
+### Changed
+- Changed atomic structure.
+
 ## 1.0.1 – 2018-10-08
 ### Added
 - `.htpasswd` and `license.key` to `.gitignore`.
