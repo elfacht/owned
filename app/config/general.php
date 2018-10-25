@@ -29,6 +29,7 @@ return [
 		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
 		'aliases' => array(
 			'staticAssetsVersion' => '010',
+			'assetsFolder' => SITE_URL . 'assets/'
 		),
 
 		'siteUrl' => array(
