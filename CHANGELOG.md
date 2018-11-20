@@ -2,6 +2,13 @@
 
 People change, projects change, everything changes for a reason.
 
+## Unreleased
+### Added
+- Added [family.scss](https://github.com/LukyVj/family.scss)
+
+### Removed
+- Removed deprecated npm packages.
+
 ## 1.0.2 – 2018-10-24
 ### Changed
 - Changed atomic structure.
