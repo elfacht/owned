@@ -83,6 +83,16 @@
 		{% if entry ?? null %}
 			{% include 'partials/_/_head-seo' with {entry: entry} %}
 		{% endif %}
+
+		{%- minify js -%}
+			{# Get filetime of SVG sprite to set revision #}
+			{% set filetime = craft.app.view.evaluateDynamicContent("return filemtime('assets/svg/svg.html');") %}
+
+		<script>
+			var INLINE_SVG_REVISION = {{filetime}};
+			{{ source ('assets/js/_inline/svg.js', ignore_missing = true) }}
+		</script>
+		{%- endminify -%}
 	{% endblock %}
 </head>
 

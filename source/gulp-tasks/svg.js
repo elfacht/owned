@@ -4,7 +4,6 @@
 var gulp = require('gulp'),
     svgstore = require('gulp-svgstore'),
     svgmin = require('gulp-svgmin'),
-    inject = require('gulp-inject'),
     path = require('path');
 
 module.exports = function() {
