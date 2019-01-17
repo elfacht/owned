@@ -1,0 +1,202 @@
+dateModified: 1547736808
+email:
+  fromEmail: martin@elfacht.com
+  fromName: 'Craft Boiler'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  1bf68793-4605-4eb8-96e6-148f837f03e9:
+    name: Common
+  2a4ad02c-3617-40e0-9afd-d8a889434899:
+    name: Specials
+  31d18b5e-790f-45d1-a0e8-ad958838bd86:
+    name: SEO
+fields:
+  1a66228a-39b8-4997-a728-10e69931ecd4:
+    contentColumnType: text
+    fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
+    handle: seoDescription
+    instructions: ''
+    name: Beschreibung
+    searchable: '1'
+    settings:
+      charLimit: ''
+      code: false
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  79474aea-ca87-4588-8358-e6a73b4ec89e:
+    contentColumnType: boolean
+    fieldGroup: 2a4ad02c-3617-40e0-9afd-d8a889434899
+    handle: disableNewsletter
+    instructions: ''
+    name: 'Newsletter im Footer deaktivieren'
+    searchable: '1'
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  db7bbe78-5705-4eae-8d7b-e3b456175686:
+    contentColumnType: text
+    fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
+    handle: seoTitle
+    instructions: ''
+    name: Titel
+    searchable: '1'
+    settings:
+      charLimit: ''
+      code: false
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f0a2337d-f703-4420-b65b-8faa4f2e979a:
+    contentColumnType: string
+    fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
+    handle: seoImage
+    instructions: 1200x630
+    name: 'SEO Image'
+    searchable: '1'
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: ''
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: ''
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+globalSets:
+  c6c5b2a6-e8e6-4463-b242-d611ba885c82:
+    fieldLayouts:
+      b2280801-6c4f-49ed-a3f9-621b9c2ba788:
+        tabs:
+          -
+            fields:
+              1a66228a-39b8-4997-a728-10e69931ecd4:
+                required: '0'
+                sortOrder: '2'
+              db7bbe78-5705-4eae-8d7b-e3b456175686:
+                required: '0'
+                sortOrder: '1'
+              f0a2337d-f703-4420-b65b-8faa4f2e979a:
+                required: '0'
+                sortOrder: '3'
+            name: Inhalt
+            sortOrder: '1'
+    handle: seo
+    name: SEO
+plugins:
+  architect:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  cookies:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  minify:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  redactor:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.2.1
+    settings: null
+sections:
+  0303d94b-b2fb-40f8-aadb-51308be503c3:
+    enableVersioning: '1'
+    entryTypes:
+      189e8b0d-271a-49b0-8684-488c6466f0cd:
+        handle: rss
+        hasTitleField: '0'
+        name: RSS
+        sortOrder: '1'
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: rss
+    name: RSS
+    propagateEntries: '1'
+    siteSettings:
+      f462de77-5b6f-48ff-a87b-9c52bde3696d:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: rss
+        uriFormat: rss
+    type: single
+  0691c30c-d4cb-4bd4-8e6a-1c6a698273ea:
+    enableVersioning: '1'
+    entryTypes:
+      ddbc8d41-ddd2-46c0-b467-046dbff788d8:
+        fieldLayouts:
+          2b93096a-1cc8-47d8-a201-8f80bf3fca49:
+            tabs:
+              -
+                fields:
+                  79474aea-ca87-4588-8358-e6a73b4ec89e:
+                    required: '0'
+                    sortOrder: '1'
+                name: Inhalt
+                sortOrder: '1'
+        handle: searchResults
+        hasTitleField: '0'
+        name: Suche
+        sortOrder: '1'
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: searchResults
+    name: Suche
+    propagateEntries: '1'
+    siteSettings:
+      f462de77-5b6f-48ff-a87b-9c52bde3696d:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: sections/search/results
+        uriFormat: search
+    type: single
+siteGroups:
+  5057a2b5-4e1c-4a4e-8c98-772176c1049e:
+    name: 'Craft Boiler'
+sites:
+  f462de77-5b6f-48ff-a87b-9c52bde3696d:
+    baseUrl: '@web/'
+    handle: default
+    hasUrls: '1'
+    language: de
+    name: 'Craft Boiler'
+    primary: '1'
+    siteGroup: 5057a2b5-4e1c-4a4e-8c98-772176c1049e
+    sortOrder: '1'
+system:
+  edition: solo
+  live: true
+  name: 'Craft Boiler'
+  schemaVersion: 3.1.20
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -25,6 +25,7 @@ return [
 	'*' => [
 		'omitScriptNameInUrls' => true,
 		'cpTrigger' => 'admin',
+    'useProjectConfigFile' => true,
 
 		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
 		'aliases' => array(
@@ -48,6 +49,7 @@ return [
 		'securityKey' => getenv('SECURITY_KEY'),
 		'phpSessionName' => 'SessionId',
     'sendPoweredByHeader' => false,
+    'errorTemplatePrefix' => "pages/errors/",
 
     // Chose plugins and functions
     'setup' => array(
@@ -80,6 +82,7 @@ return [
 		'trackerId' => 2,
 		'enableTracking' => true,
 		'enableTemplateCaching' => true,
+    'allowAdminChanges' => false,
 		'aliases' => array(
 			'staticAssetsVersion' => time(),
 		),
@@ -92,7 +95,8 @@ return [
 		'membersOnly' => false,
 		'trackerId' => 1,
 		'enableTracking' => true,
-		'enableTemplateCaching' => true
+		'enableTemplateCaching' => true,
+    'allowAdminChanges' => false,
 	],
 
 ];
