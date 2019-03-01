@@ -1,4 +1,4 @@
-dateModified: 1547736808
+dateModified: 1551476071
 email:
   fromEmail: martin@elfacht.com
   fromName: 'Craft Boiler'
@@ -122,7 +122,7 @@ plugins:
   redactor:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 2.2.1
+    schemaVersion: 2.2.2
     settings: null
 sections:
   0303d94b-b2fb-40f8-aadb-51308be503c3:
@@ -191,8 +191,8 @@ sites:
 system:
   edition: solo
   live: true
-  name: 'Craft Boiler'
-  schemaVersion: 3.1.20
+  name: $SYSTEM_NAME
+  schemaVersion: 3.1.25
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
