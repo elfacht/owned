@@ -19,18 +19,13 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
-    "craftcms/cms": "^3.0.0",
+    "craftcms/cms": "^3.1.0",
     "vlucas/phpdotenv": "^2.4.0",
-    "barrelstrength/sprout-active": "2.0.6",
-    "verbb/super-table": "^2.0.7",
     "craftcms/redactor": "^2.1.0",
     "dolphiq/sitemap": "v1.0.9",
     "nystudio107/craft-minify": "^1.2.8",
-    "nystudio107/craft-eagerbeaver": "1.0.3",
-    "verbb/field-manager": "2.0.2",
-    "craftcms/redactor-clips": "2.0.0",
-    "firstborn/migrationmanager": "^3.0",
-    "nystudio107/craft-cookies": "^1.1.9",
+    "verbb/field-manager": "^2.0",
+    "nystudio107/craft-cookies": "^1.1",
     "mmikkel/cp-field-inspect": "^1.0"
   },
   "autoload": {
@@ -51,6 +46,14 @@
     "post-create-project-cmd": [
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
+    ],
+    "post-update-cmd": [
+      "./craft migrate/all",
+      "./craft project-config/sync"
+    ],
+    "post-install-cmd": [
+      "./craft migrate/all",
+      "./craft project-config/sync"
     ]
   }
 }

@@ -1,4 +1,104 @@
 {#
+ # Include helper
+ #
+ # @example {{helper.include('components', 'image', {value: value})}}
+ #}
+{% macro include(type, filepath, options = {}) %}
+  {% switch type %}
+    {% case 'components' or 'modules' or 'organisms' or 'templates' %}
+      {% switch type %}
+        {% case 'components' %}
+          {% set prefix = '01_' %}
+        {% case 'modules' %}
+          {% set prefix = '02_' %}
+        {% case 'organisms' %}
+          {% set prefix = '03_' %}
+        {% case 'templates' %}
+          {% set prefix = '04_' %}
+      {% endswitch %}
+
+
+      {% set path = 'styleguide/' ~ prefix ~ type ~ '/' ~ filepath ~ '/_' ~ filepath %}
+    {% default %}
+      {% set path = 'partials/' ~ type ~ '/' ~ filepath %}
+  {% endswitch %}
+  {% include path ignore missing with options %}
+{% endmacro %}
+
+
+
+{#
+ # Get desired image transform without upscaling
+ #
+ # @example {{helper.transformNoUpscaling(image, 'welcome')}}
+ #}
+{%- macro transformNoUpscaling(image, desiredTransform) -%}
+{%- set originalWidth = image.getWidth() -%}
+{%- set desiredWidth = image.getWidth(desiredTransform) -%}
+{%- set format = (desiredWidth < originalWidth) ? image.getUrl(desiredTransform) : image.getUrl() -%}
+{{format}}
+{%- endmacro -%}
+
+
+
+
+
+{#
+ # Check if current site is GLOBAL or LOCAL
+ #
+ # @return {Boolean}
+ #}
+{% macro isGlobalSite() %}
+  {%- set currentItem = currentSite.handle|split('_') -%}
+  {%- if currentItem[0] == 'com' -%}
+    {{true}}
+  {%- else -%}
+    {{null}}
+  {%- endif -%}
+{% endmacro %}
+
+
+
+
+
+
+{#
+ # Truncate
+ #
+ # @example {{helper.truncate(entry, 130)}}
+ #}
+{% macro truncate(content, max = 100) %}
+{{content|length > content ? content|slice(0, max) ~ '...' : content}}
+{% endmacro %}
+
+
+
+
+
+
+
+
+{#
+ # Eager load shortcut
+ #
+ # @example {{helper.eagerLoad(entry, ['image'])}}
+ #
+ # @param {Object} object [entry model] – required
+ # @param {Array} fields – required
+ #}
+{% macro eagerLoad(object, fields = []) %}
+  {% do craft.app.elements.eagerLoadElements(
+    className(object),
+    [object],
+    [fields]
+  ) %}
+{% endmacro %}
+
+
+
+
+
+{#
  #  Calculate padding-top for preview images
  #
  #  @param {Number} height – required
@@ -11,6 +111,12 @@
 padding-top: {{padding}};
 {% endmacro %}
 
+
+
+
+
+
+
 {% macro lazyLoad(type) %}
 {%- if type == 'attr' -%}
 {%- if not craft.app.request.isLivePreview() -%}
@@ -20,6 +126,11 @@ data-
 {%- if type == 'class' -%}
 {%- if not craft.app.request.isLivePreview() -%}
 lozad
+{%- endif -%}
+{%- endif -%}
+{%- if type == 'classLazy' -%}
+{%- if not craft.app.request.isLivePreview() -%}
+tns-lazy-img
 {%- endif -%}
 {%- endif -%}
 {% endmacro %}
@@ -90,3 +201,39 @@ lozad
 {% macro targetBlank() %}
   target="_blank" rel="noreferrer noopener"
 {% endmacro %}
+
+
+
+
+
+{#
+ # format phone number
+ #}
+{%- macro formatPhone(value) -%}
+{{value|trim|replace({'(': '', ')': '', ' ': '', '.': '', '-': ''})}}
+{%- endmacro -%}
+
+
+
+
+
+
+
+
+
+{#
+ # Get internal link to selected languages
+ #
+ # Super Table field `internalLink` is required!
+ #
+ # @example {{helper.getLanguageLink(cookieConsent.internalLink)}}
+ #}
+{%- macro getLanguageLink(field) -%}
+{%- if field ?? null -%}
+  {%- set lang = field.language ?? null -%}
+  {%- set id = field.entry.one().id ?? null -%}
+  {%- if id ?? null and lang ?? null -%}
+    {{craft.entries.id(id).site(lang).one().url}}
+  {%- endif -%}
+{%- endif -%}
+{%- endmacro -%}

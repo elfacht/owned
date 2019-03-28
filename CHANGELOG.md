@@ -2,6 +2,16 @@
 
 People change, projects change, everything changes for a reason.
 
+## 1.0.3 – 2019-03-28
+### Changed
+- Changed default configs.
+
+### Added
+- Added [family.scss](https://github.com/LukyVj/family.scss)
+
+### Removed
+- Removed deprecated npm packages.
+
 ## 1.0.2 – 2018-10-24
 ### Changed
 - Changed atomic structure.

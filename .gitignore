@@ -66,6 +66,7 @@ craft/storage/userphotos/*
 # Uploaded files
 # ----------------------------------------------------------------------
 app/web/uploads/*
+app/storage/config-backups/*
 
 # Misc files
 # ----------------------------------------------------------------------

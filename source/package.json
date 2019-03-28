@@ -1,33 +1,33 @@
 {
   "name": "craft-boiler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "fancy-log": "^1.3.2",
     "fg-loadcss": "^2.0.1",
     "fontfaceobserver": "^2.0.13",
     "foundation-sites": "^6.4.3",
-    "gulp-connect": "^5.0.0",
-    "gulp-inject": "^4.3.2",
     "gulp-uglify-es": "^1.0.4",
     "imagesloaded": "^4.1.1",
     "jquery": "^3.1.1",
-    "loadcss": "^2.0.1",
     "lozad": "^1.4.0",
-    "webpack": "^4.20.2"
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-stream": "^5.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "2.23.6",
     "chalk": "^2.4.1",
     "critical": "^1.3.3",
@@ -45,7 +45,6 @@
     "gulp-svgmin": "*",
     "gulp-svgstore": "^6.1.0",
     "gulp-task-loader": "^1.3.1",
-    "gulp-util": "^3.0.7",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.1.0",
     "kss": "^3.0.0-beta.17",
@@ -54,7 +53,8 @@
     "vinyl-source-stream": "1.1.0",
     "watchify": "^3.7.0",
     "webpack-dev-server": "^3.1.9",
-    "webpack-stream": "^5.1.1"
+    "webpack-stream": "^5.1.1",
+    "what-input": "^5.1.3"
   },
   "private": true,
   "urls": {

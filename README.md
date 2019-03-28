@@ -45,17 +45,7 @@ Define templates to create CSS in [source/package.json](source/package.json#L62)
   }
 ```
 
-#### 1.3 JavaScript
-
-Change absolute path for `js` task in [source/gulp-tasks/js.js](source/gulp-tasks/js.js#L27):
-
-```js
-.pipe(babel({
-	presets: ['/Users/elfacht/htdocs/_sandbox/craft-boiler/source/node_modules/babel-preset-es2016'],
-}))
-```
-
-#### 1.4 Scripts
+#### 1.3 Scripts
 
 Setup [Craft CMS Scripts](https://github.com/nystudio107/craft-scripts) by renaming `scripts/template.env.sh`
 to `scripts/.env.sh`.
@@ -86,23 +76,29 @@ Setup a vhost like [http://craft-boiler.local](http://craft-boiler.local) and ma
 app/web/
 ```
 
-#### 2.5 Install Craft
+#### 2.5 Generate security key
+
+```
+$ app/ ./craft setup/security-key
+```
+
+#### 2.6 Install Craft
 
 Go to [http://yoursite.local/admin/install](http://yoursite.local/admin/install) and follow the instructions.
 
-#### 2.6 Install default architecture
+#### 2.7 Install default architecture
 
 Go to `Settings -> Plugins` and install the **Architecure** plugin. Go to the the Architecture settings and copy the desired contents from [source/setup/](source/setup).
 
-#### 2.7 Setup .htaccess
+#### 2.8 Setup .htaccess
 
 Rename [app/web/.htaccess.example](app/web/.htaccess.example) to `app/.htaccess`.
 
-#### 2.7 Default setup
+#### 2.9 Default setup
 
 Go to [app/config/general.php](app/config/general.php#L50) and set desired options.
 
-#### 2.8 Required plugins
+#### 2.10 Required plugins
 
 - `nystudio107/craft-minify`
 

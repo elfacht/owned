@@ -25,14 +25,13 @@ return [
 	'*' => [
 		'omitScriptNameInUrls' => true,
 		'cpTrigger' => 'admin',
+    'useProjectConfigFile' => true,
 
 		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-		'aliases' => array(
-			'staticAssetsVersion' => '010',
-		),
-
-		'siteUrl' => array(
-			'default' => SITE_URL
+    'aliases' => array(
+			'staticAssetsVersion' => '038',
+			'assetsFolder' => SITE_URL . 'assets/',
+			'baseUrl' => SITE_URL,
 		),
 
 		// Default Week Start Day (0 = Sunday, 1 = Monday...)
@@ -45,13 +44,17 @@ return [
 		'securityKey' => getenv('SECURITY_KEY'),
 		'phpSessionName' => 'SessionId',
     'sendPoweredByHeader' => false,
+    'errorTemplatePrefix' => "pages/errors/",
 
     // Chose plugins and functions
     'setup' => array(
       'criticalCss' => false,
       'fontsLoaded' => false, // cookies required
       'cookies' => false // cookies plugin required
-    )
+    ),
+
+    'errorTemplatePrefix' => "pages/errors/",
+    'sendPoweredByHeader' => false,
 	],
 
 	// Dev site URL
@@ -77,9 +80,7 @@ return [
 		'trackerId' => 2,
 		'enableTracking' => true,
 		'enableTemplateCaching' => true,
-		'aliases' => array(
-			'staticAssetsVersion' => time(),
-		),
+    'allowAdminChanges' => true,
 	],
 
 	// Public site URL
@@ -89,7 +90,8 @@ return [
 		'membersOnly' => false,
 		'trackerId' => 1,
 		'enableTracking' => true,
-		'enableTemplateCaching' => true
+		'enableTemplateCaching' => true,
+    'allowAdminChanges' => false,
 	],
 
 ];
