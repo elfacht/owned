@@ -2,7 +2,7 @@
 
 People change, projects change, everything changes for a reason.
 
-## Unreleased
+## 1.0.3 – 2019-03-28
 ### Changed
 - Changed default configs.
 
