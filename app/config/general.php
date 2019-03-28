@@ -28,15 +28,10 @@ return [
     'useProjectConfigFile' => true,
 
 		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-		'aliases' => array(
-			'staticAssetsVersion' => '010',
+    'aliases' => array(
+			'staticAssetsVersion' => '038',
 			'assetsFolder' => SITE_URL . 'assets/',
-      '@baseUrl' => SITE_URL,
-			'baseUrl' => SITE_URL
-		),
-
-		'siteUrl' => array(
-			'default' => SITE_URL
+			'baseUrl' => SITE_URL,
 		),
 
 		// Default Week Start Day (0 = Sunday, 1 = Monday...)
@@ -56,7 +51,10 @@ return [
       'criticalCss' => false,
       'fontsLoaded' => false, // cookies required
       'cookies' => false // cookies plugin required
-    )
+    ),
+
+    'errorTemplatePrefix' => "pages/errors/",
+    'sendPoweredByHeader' => false,
 	],
 
 	// Dev site URL
@@ -82,10 +80,7 @@ return [
 		'trackerId' => 2,
 		'enableTracking' => true,
 		'enableTemplateCaching' => true,
-    'allowAdminChanges' => false,
-		'aliases' => array(
-			'staticAssetsVersion' => time(),
-		),
+    'allowAdminChanges' => true,
 	],
 
 	// Public site URL

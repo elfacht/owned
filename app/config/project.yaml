@@ -1,15 +1,23 @@
-dateModified: 1551476071
+dateModified: 1553766318
 email:
   fromEmail: martin@elfacht.com
   fromName: 'Craft Boiler'
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
   1bf68793-4605-4eb8-96e6-148f837f03e9:
-    name: Common
+    name: Matrix
   2a4ad02c-3617-40e0-9afd-d8a889434899:
-    name: Specials
+    name: Text
   31d18b5e-790f-45d1-a0e8-ad958838bd86:
-    name: SEO
+    name: '_ SEO'
+  9981ef49-3927-4035-826d-474f9948d67b:
+    name: Tables
+  ac30c9c1-7628-4998-bed5-92c1ab01c9f9:
+    name: Colors
+  af0691bd-53f2-4148-a076-6d31dcab64d4:
+    name: Assets
+  ffb8d24c-cd85-431a-bd39-282f11e7f9e1:
+    name: Controls
 fields:
   1a66228a-39b8-4997-a728-10e69931ecd4:
     contentColumnType: text
@@ -28,18 +36,23 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  79474aea-ca87-4588-8358-e6a73b4ec89e:
-    contentColumnType: boolean
+  d7f2745f-9bfc-4af4-b99b-087771791fb5:
+    contentColumnType: text
     fieldGroup: 2a4ad02c-3617-40e0-9afd-d8a889434899
-    handle: disableNewsletter
+    handle: excerpt
     instructions: ''
-    name: 'Newsletter im Footer deaktivieren'
-    searchable: '1'
+    name: Auszug
+    searchable: true
     settings:
-      default: ''
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '3'
+      multiline: '1'
+      placeholder: ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Lightswitch
+    type: craft\fields\PlainText
   db7bbe78-5705-4eae-8d7b-e3b456175686:
     contentColumnType: text
     fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
@@ -175,6 +188,52 @@ sections:
         template: sections/search/results
         uriFormat: search
     type: single
+  1f12c45b-1b19-4449-9402-fc335630bd72:
+    enableVersioning: true
+    entryTypes:
+      57ac73b8-3bbc-4c12-95d5-dd668c4e560d:
+        fieldLayouts:
+          1ec6e050-0853-48ee-bd10-a1c9ee380030:
+            tabs:
+              -
+                fields:
+                  d7f2745f-9bfc-4af4-b99b-087771791fb5:
+                    required: false
+                    sortOrder: 1
+                name: Einstellungen
+                sortOrder: 1
+              -
+                fields:
+                  1a66228a-39b8-4997-a728-10e69931ecd4:
+                    required: false
+                    sortOrder: 2
+                  db7bbe78-5705-4eae-8d7b-e3b456175686:
+                    required: false
+                    sortOrder: 1
+                  f0a2337d-f703-4420-b65b-8faa4f2e979a:
+                    required: false
+                    sortOrder: 3
+                name: SEO
+                sortOrder: 2
+        handle: page
+        hasTitleField: true
+        name: Seite
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Titel
+    handle: pages
+    name: Seiten
+    propagateEntries: true
+    siteSettings:
+      f462de77-5b6f-48ff-a87b-9c52bde3696d:
+        enabledByDefault: false
+        hasUrls: true
+        template: pages/_router
+        uriFormat: '{slug}'
+    structure:
+      maxLevels: ''
+      uid: 4717ebdc-85a3-4213-919b-34a8e622206a
+    type: structure
 siteGroups:
   5057a2b5-4e1c-4a4e-8c98-772176c1049e:
     name: 'Craft Boiler'

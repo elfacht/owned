@@ -3,6 +3,9 @@
 People change, projects change, everything changes for a reason.
 
 ## Unreleased
+### Changed
+- Changed default configs.
+
 ### Added
 - Added [family.scss](https://github.com/LukyVj/family.scss)
 
