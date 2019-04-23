@@ -32,6 +32,7 @@ pids
 # Ignore node modules
 source/node_modules
 source/bower_components
+app/templates/node_modules
 
 # Ignore cache
 /.sass-cache

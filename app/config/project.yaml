@@ -1,261 +1,369 @@
-dateModified: 1553766318
+categoryGroups:
+  fb7b3af4-bf40-4269-883d-aa4945d724ce:
+    name: Corporations
+    handle: corporations
+    structure:
+      uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
+      maxLevels: null
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        hasUrls: true
+        uriFormat: 'corporations/{slug}'
+        template: ''
+  5ff18d47-af9f-406c-a977-ff345fdc0578:
+    name: Categories
+    handle: categories
+    structure:
+      uid: c2920aa2-b0dd-4fae-822d-c631ef446fc7
+      maxLevels: null
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        hasUrls: true
+        uriFormat: 'types/{slug}'
+        template: ''
+  009b8f9d-ab7e-4bb9-a40e-add5791ea3f6:
+    name: Countries
+    handle: countries
+    structure:
+      uid: 431c3b15-a6fa-4eed-a274-4785f3908f95
+      maxLevels: null
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        hasUrls: true
+        uriFormat: 'countries/{slug}'
+        template: ''
+dateModified: 1556028598
 email:
   fromEmail: martin@elfacht.com
-  fromName: 'Craft Boiler'
+  fromName: owned
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
-  1bf68793-4605-4eb8-96e6-148f837f03e9:
-    name: Matrix
-  2a4ad02c-3617-40e0-9afd-d8a889434899:
-    name: Text
-  31d18b5e-790f-45d1-a0e8-ad958838bd86:
-    name: '_ SEO'
-  9981ef49-3927-4035-826d-474f9948d67b:
-    name: Tables
-  ac30c9c1-7628-4998-bed5-92c1ab01c9f9:
-    name: Colors
-  af0691bd-53f2-4148-a076-6d31dcab64d4:
-    name: Assets
-  ffb8d24c-cd85-431a-bd39-282f11e7f9e1:
+  04887042-9aa1-44e9-b100-dace878e95ea:
     name: Controls
+  6d6c51e7-f905-4ef8-85f3-ed10f51e2859:
+    name: Relations
+  6b8c4a95-1e43-487d-a5aa-66b779ea2fb0:
+    name: Text
+  7cbd02e2-f346-4570-8df9-03bc6cd3c090:
+    name: Assets
+  fb307d4e-eeb2-4c53-9d0c-85225df5608f:
+    name: Tables
+  39cb0973-d34a-4d0b-8b82-ad27e6ff2d45:
+    name: Dates
 fields:
-  1a66228a-39b8-4997-a728-10e69931ecd4:
-    contentColumnType: text
-    fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
-    handle: seoDescription
+  a149f707-9b00-4fe6-9a0a-51358943c406:
+    name: Category
+    handle: category
     instructions: ''
-    name: Beschreibung
-    searchable: '1'
-    settings:
-      charLimit: ''
-      code: false
-      columnType: text
-      initialRows: '4'
-      multiline: '1'
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  d7f2745f-9bfc-4af4-b99b-087771791fb5:
-    contentColumnType: text
-    fieldGroup: 2a4ad02c-3617-40e0-9afd-d8a889434899
-    handle: excerpt
-    instructions: ''
-    name: Auszug
     searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '3'
-      multiline: '1'
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  db7bbe78-5705-4eae-8d7b-e3b456175686:
-    contentColumnType: text
-    fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
-    handle: seoTitle
-    instructions: ''
-    name: Titel
-    searchable: '1'
-    settings:
-      charLimit: ''
-      code: false
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  f0a2337d-f703-4420-b65b-8faa4f2e979a:
-    contentColumnType: string
-    fieldGroup: 31d18b5e-790f-45d1-a0e8-ad958838bd86
-    handle: seoImage
-    instructions: 1200x630
-    name: 'SEO Image'
-    searchable: '1'
-    settings:
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: ''
-      defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      restrictFiles: '1'
-      selectionLabel: ''
-      singleUploadLocationSource: ''
-      singleUploadLocationSubpath: ''
-      source: null
-      sources: '*'
-      targetSiteId: null
-      useSingleFolder: '1'
-      viewMode: large
-    translationKeyFormat: null
     translationMethod: site
-    type: craft\fields\Assets
-globalSets:
-  c6c5b2a6-e8e6-4463-b242-d611ba885c82:
-    fieldLayouts:
-      b2280801-6c4f-49ed-a3f9-621b9c2ba788:
-        tabs:
-          -
-            fields:
-              1a66228a-39b8-4997-a728-10e69931ecd4:
-                required: '0'
-                sortOrder: '2'
-              db7bbe78-5705-4eae-8d7b-e3b456175686:
-                required: '0'
-                sortOrder: '1'
-              f0a2337d-f703-4420-b65b-8faa4f2e979a:
-                required: '0'
-                sortOrder: '3'
-            name: Inhalt
-            sortOrder: '1'
-    handle: seo
-    name: SEO
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      branchLimit: '1'
+      sources: '*'
+      source: 'group:5ff18d47-af9f-406c-a977-ff345fdc0578'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: 'Add types'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  466e2928-f31d-4ec5-95fd-9e59fabd42c3:
+    name: Corporations
+    handle: corporations
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:b73fb847-c20b-4318-ae96-e14162d6f299'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
+    name: Note
+    handle: note
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Standard.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+  28448627-8082-4751-8f14-befe9e7dde0a:
+    name: Country
+    handle: country
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      branchLimit: '1'
+      sources: '*'
+      source: 'group:009b8f9d-ab7e-4bb9-a40e-add5791ea3f6'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: 'Add country'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  a167b64d-ee60-414c-b153-32b0b1be573e:
+    name: 'is private'
+    handle: isPrivate
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
+  728b2cf1-ba58-48ff-badd-e45f3377b33b:
+    name: Founded
+    handle: founded
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Date
+    settings:
+      showDate: true
+      showTime: false
+      minuteIncrement: '30'
+    contentColumnType: datetime
+    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
+  c32db22f-b01b-4b03-9934-3c5805bed3cb:
+    name: 'Legal Form'
+    handle: legalForm
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+  eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
+    name: 'Start Ownership'
+    handle: ownedSince
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Date
+    settings:
+      showDate: true
+      showTime: false
+      minuteIncrement: '30'
+    contentColumnType: datetime
+    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
+  f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
+    name: City
+    handle: city
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+  2d362f2a-45c1-4235-bcb4-38535b6f802d:
+    name: Tags
+    handle: tags
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Tags
+    settings:
+      sources: '*'
+      source: 'taggroup:524e0c85-c0d7-460d-99aa-93e98676e4a6'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
 plugins:
-  architect:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 2.0.0
-    settings: null
-  cookies:
-    enabled: '1'
-    licenseKey: null
+  assetrev:
+    edition: standard
+    enabled: true
     schemaVersion: 1.0.0
-    settings: null
-  minify:
-    enabled: '1'
-    licenseKey: null
+  cp-field-inspect:
+    edition: standard
+    enabled: true
     schemaVersion: 1.0.0
-    settings: null
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   redactor:
-    enabled: '1'
-    licenseKey: null
+    edition: standard
+    enabled: true
     schemaVersion: 2.2.2
-    settings: null
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 sections:
-  0303d94b-b2fb-40f8-aadb-51308be503c3:
-    enableVersioning: '1'
-    entryTypes:
-      189e8b0d-271a-49b0-8684-488c6466f0cd:
-        handle: rss
-        hasTitleField: '0'
-        name: RSS
-        sortOrder: '1'
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
-    handle: rss
-    name: RSS
-    propagateEntries: '1'
-    siteSettings:
-      f462de77-5b6f-48ff-a87b-9c52bde3696d:
-        enabledByDefault: '1'
-        hasUrls: '1'
-        template: rss
-        uriFormat: rss
-    type: single
-  0691c30c-d4cb-4bd4-8e6a-1c6a698273ea:
-    enableVersioning: '1'
-    entryTypes:
-      ddbc8d41-ddd2-46c0-b467-046dbff788d8:
-        fieldLayouts:
-          2b93096a-1cc8-47d8-a201-8f80bf3fca49:
-            tabs:
-              -
-                fields:
-                  79474aea-ca87-4588-8358-e6a73b4ec89e:
-                    required: '0'
-                    sortOrder: '1'
-                name: Inhalt
-                sortOrder: '1'
-        handle: searchResults
-        hasTitleField: '0'
-        name: Suche
-        sortOrder: '1'
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
-    handle: searchResults
-    name: Suche
-    propagateEntries: '1'
-    siteSettings:
-      f462de77-5b6f-48ff-a87b-9c52bde3696d:
-        enabledByDefault: '1'
-        hasUrls: '1'
-        template: sections/search/results
-        uriFormat: search
-    type: single
-  1f12c45b-1b19-4449-9402-fc335630bd72:
+  949bad15-506a-4954-984f-9e7f54a6a4fb:
+    name: Breweries
+    handle: breweries
+    type: channel
     enableVersioning: true
-    entryTypes:
-      57ac73b8-3bbc-4c12-95d5-dd668c4e560d:
-        fieldLayouts:
-          1ec6e050-0853-48ee-bd10-a1c9ee380030:
-            tabs:
-              -
-                fields:
-                  d7f2745f-9bfc-4af4-b99b-087771791fb5:
-                    required: false
-                    sortOrder: 1
-                name: Einstellungen
-                sortOrder: 1
-              -
-                fields:
-                  1a66228a-39b8-4997-a728-10e69931ecd4:
-                    required: false
-                    sortOrder: 2
-                  db7bbe78-5705-4eae-8d7b-e3b456175686:
-                    required: false
-                    sortOrder: 1
-                  f0a2337d-f703-4420-b65b-8faa4f2e979a:
-                    required: false
-                    sortOrder: 3
-                name: SEO
-                sortOrder: 2
-        handle: page
-        hasTitleField: true
-        name: Seite
-        sortOrder: 1
-        titleFormat: ''
-        titleLabel: Titel
-    handle: pages
-    name: Seiten
     propagateEntries: true
     siteSettings:
-      f462de77-5b6f-48ff-a87b-9c52bde3696d:
-        enabledByDefault: false
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        enabledByDefault: true
         hasUrls: true
-        template: pages/_router
-        uriFormat: '{slug}'
-    structure:
-      maxLevels: ''
-      uid: 4717ebdc-85a3-4213-919b-34a8e622206a
-    type: structure
+        uriFormat: 'breweries/{slug}'
+        template: ''
+    entryTypes:
+      7b1d5a94-5858-4fc7-9cce-930ac7e3b039:
+        name: Breweries
+        handle: breweries
+        hasTitleField: true
+        titleLabel: Titel
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          cb03438f-1aaa-4527-987e-d251341a6900:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  728b2cf1-ba58-48ff-badd-e45f3377b33b:
+                    required: false
+                    sortOrder: 1
+                  c32db22f-b01b-4b03-9934-3c5805bed3cb:
+                    required: false
+                    sortOrder: 2
+                  f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
+                    required: false
+                    sortOrder: 3
+                  28448627-8082-4751-8f14-befe9e7dde0a:
+                    required: false
+                    sortOrder: 4
+                  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
+                    required: false
+                    sortOrder: 5
+                  2d362f2a-45c1-4235-bcb4-38535b6f802d:
+                    required: false
+                    sortOrder: 6
+              -
+                name: Ownership
+                sortOrder: 2
+                fields:
+                  a167b64d-ee60-414c-b153-32b0b1be573e:
+                    required: false
+                    sortOrder: 1
+                  466e2928-f31d-4ec5-95fd-9e59fabd42c3:
+                    required: false
+                    sortOrder: 2
+                  eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
+                    required: false
+                    sortOrder: 3
+  b73fb847-c20b-4318-ae96-e14162d6f299:
+    name: Corporations
+    handle: corporations
+    type: channel
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'corporations/{slug}'
+        template: ''
+    entryTypes:
+      d4647929-de67-41ff-b720-e95e9029c2f1:
+        name: Corporations
+        handle: corporations
+        hasTitleField: true
+        titleLabel: Titel
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          e776fa02-3427-4558-adfc-2a54c87fe954:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  28448627-8082-4751-8f14-befe9e7dde0a:
+                    required: false
+                    sortOrder: 1
+                  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
+                    required: false
+                    sortOrder: 2
+                  2d362f2a-45c1-4235-bcb4-38535b6f802d:
+                    required: false
+                    sortOrder: 3
 siteGroups:
-  5057a2b5-4e1c-4a4e-8c98-772176c1049e:
-    name: 'Craft Boiler'
+  a86a0999-46ab-4724-95af-d64dda5f60d6:
+    name: owned
 sites:
-  f462de77-5b6f-48ff-a87b-9c52bde3696d:
-    baseUrl: '@web/'
+  a577724c-1321-46dd-a56c-54de0ff63f07:
+    siteGroup: a86a0999-46ab-4724-95af-d64dda5f60d6
+    name: owned
     handle: default
-    hasUrls: '1'
     language: de
-    name: 'Craft Boiler'
-    primary: '1'
-    siteGroup: 5057a2b5-4e1c-4a4e-8c98-772176c1049e
-    sortOrder: '1'
+    hasUrls: true
+    baseUrl: $DEFAULT_SITE_URL
+    sortOrder: 1
+    primary: true
 system:
   edition: solo
-  live: true
   name: $SYSTEM_NAME
-  schemaVersion: 3.1.25
-  timeZone: America/Los_Angeles
+  live: true
+  schemaVersion: 3.1.27
+  timeZone: Europe/Berlin
+tagGroups:
+  524e0c85-c0d7-460d-99aa-93e98676e4a6:
+    name: Tags
+    handle: tags
 users:
+  requireEmailVerification: true
   allowPublicRegistration: false
   defaultGroup: null
-  photoSubpath: ''
   photoVolumeUid: null
-  requireEmailVerification: true
+  photoSubpath: ''

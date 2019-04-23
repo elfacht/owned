@@ -1,0 +1,35 @@
+/* Custom Media Queries */
+@custom-media --md (min-width: 520px);
+@custom-media --lg (min-width: 768px);
+@custom-media --xl (min-width: 1024px);
+
+/* Global baseline */
+@define-mixin baseline $size, $type {
+  $(type): resolve(8 * ($size / 16))rem;
+}
+
+/* Font Baseline */
+@define-mixin font-baseline $size, $lineheight {
+  font-size: resolve($size / 16)rem;
+  line-height: resolve($lineheight / $size);
+}
+
+/* Font Include Mixin */
+@define-mixin font $size: 16, $line: 24, $family: var(--copy-font) {
+  @mixin font-baseline $size, $line;
+  font-family: $family;
+}
+
+/* Basic Container Padding */
+@define-mixin container-padding {
+  @mixin baseline 3, padding-left;
+  @mixin baseline 3, padding-right;
+}
+
+@define-mixin el-invisible {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}

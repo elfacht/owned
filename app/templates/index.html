@@ -17,14 +17,30 @@
  # http://craftcms.com/docs/routing
  #}
 
-{% extends "_layout" %}
-
-{% block _inline_css %}
-    <style>
-        {{ source ('assets/css/index_critical.min.css', ignore_missing = true) }}
-    </style>
-{% endblock %}
-
-{% block content %}
-  <h1>{{siteName}}</h1>
-{% endblock %}
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+     <title>owned</title>
+      <link href="https://fonts.googleapis.com/css?family=Heebo:300,700|Montserrat:200,400,600|Crimson+Text:400,400i,700,700i" rel="stylesheet">
+      <script>
+       window.csrfToken = "{{ craft.app.request.csrfToken }}"
+       </script>
+       {# <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" /> #}
+       {% if getenv('ENVIRONMENT') != 'dev' and getenv('ENVIRONMENT') != 'local' %}
+          <link rel="stylesheet" href="{{ rev('app.css') }}">
+      {% endif %}
+   </head>
+   <body>
+     <div id="app"></div>
+     <!-- built files will be auto injected -->
+     {% if getenv('ENVIRONMENT') == 'dev' or getenv('ENVIRONMENT') == 'local' %}
+        <script src="http://localhost:8080/app.js"></script>
+      {% else %}
+        <script src="{{ rev('manifest.js') }}"></script>
+        <script src="{{ rev('vendor.js') }}"></script>
+        <script src="{{ rev('app.js') }}"></script>
+    {% endif %}
+   </body>
+ </html>
