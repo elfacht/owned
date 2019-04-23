@@ -10,6 +10,8 @@ import '@/assets/app.css'
 
 Vue.config.productionTip = false
 
+Vue.use(require('vue-moment'))
+
 /**
  * Activate progress bar before resolving path,
  * stop it in store/index.js

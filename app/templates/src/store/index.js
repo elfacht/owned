@@ -39,7 +39,7 @@ const store = new Vuex.Store({
         NProgress.done()
 
         // Scroll to top
-        window.scrollTo(0, 0)
+        // window.scrollTo(0, 0)
       }, (err) => {
         console.log(err)
       })

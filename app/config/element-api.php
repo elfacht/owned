@@ -8,7 +8,7 @@ use craft\helpers\UrlHelper;
 
 return [
   'defaults' => [
-    'elementsPerPage' => 50,
+    'elementsPerPage' => 100,
     'transformer' => function(Entry $entry) {
 
       /**
@@ -62,6 +62,7 @@ return [
         'jsonUrl' => UrlHelper::url("api/breweries/{$entry->slug}"),
         // 'is_private' => $entry->isPrivate || false,
         // 'corporation' => $corporations,
+        'city' => $entry->city,
         'country' => $country,
         'ownership' => $ownership,
         'note' => $entry->note,
@@ -168,6 +169,12 @@ return [
         // 'cache' => 'PT10M',
         'pretty' => true,
         'transformer' => function(Entry $entry) {
+          $criteria = Entry::find()->section('breweries');
+          $getBreweries = $criteria->relatedTo($entry, [
+            'targetElement' => $entry,
+            'field' => 'corporations'
+          ])->all();
+
           return [
             'id' => $entry->id,
             'title' => $entry->title,
@@ -175,6 +182,7 @@ return [
             'date_created' => $entry->postDate->format(\DateTime::ATOM),
             'date_modified' => $entry->dateUpdated->format(\DateTime::ATOM),
             'jsonUrl' => UrlHelper::url("api/corporations/{$entry->slug}"),
+            'breweries' => (int) count($getBreweries),
           ];
         }
       ];
