@@ -4,17 +4,26 @@
       ownership.is_private ? $style.isPrivate : $style.isOwned
     ]">
     <h2 :class="$style.subtitle">Owned by</h2>
-    <div v-if="ownership.is_private" :class="$style.private">
+    <div
+      v-if="ownership.is_private"
+      :class="$style.private"
+    >
       private
     </div>
     <div v-else>
       <div v-if="ownership && ownership.corporations">
         <ul :class="$style.list">
-          <li :class="$style.item" v-for="item in ownership.corporations" :key="item.id">
+          <li
+            :class="$style.item" v-for="item in ownership.corporations"
+            :key="item.id"
+          >
             <router-link :to="{path: '/corporations/' + item.slug}">{{item.title}}</router-link>
           </li>
         </ul>
-        <div v-if="ownership && ownership.owned_since" :class="$style.since">
+        <div
+          v-if="ownership && ownership.owned_since"
+          :class="$style.since"
+        >
           — since {{ ownership.owned_since | moment('YYYY') }}
         </div>
       </div>
@@ -28,6 +37,7 @@
 <script>
 export default {
   name: 'Ownership',
+
   props: {
     ownership: Object
   }

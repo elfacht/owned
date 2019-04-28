@@ -5,11 +5,15 @@
         See all:
       </li>
       <li :class="$style.item">
-        <router-link :class="$style.link" :to="{name: 'BreweriesListing'}">Breweries</router-link>
+        <router-link
+          :class="$style.link"
+          :to="{name: 'BreweriesList'}">Breweries</router-link>
         ({{breweriesCount}})
       </li>
       <li :class="$style.item">
-        <router-link :class="$style.link" :to="{name: 'CorporationsListing'}">Corporations</router-link>
+        <router-link
+          :class="$style.link"
+          :to="{name: 'CorporationsList'}">Corporations</router-link>
         ({{corporations.length}})
       </li>
     </ul>
@@ -21,6 +25,7 @@ import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'Navigation',
+
   computed: {
     ...mapState([
       'breweries',
@@ -29,13 +34,16 @@ export default {
       'pagination',
       'loading'
     ]),
+
     ...mapGetters([
       'breweriesCount'
     ])
   },
+
   mounted: function () {
     this.getBreweries()
   },
+
   methods: {
     getBreweries: function () {
       this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})

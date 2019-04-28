@@ -1,26 +1,23 @@
 <template lang="html">
   <div :class="$style.container">
     <div :class="$style.branding">
-      <router-link :to="{name: 'Home'}" :class="$style.title">owned</router-link>
+      <router-link
+        :to="{name: 'Home'}"
+        :class="$style.title"
+      >
+        owned
+      </router-link>
       <div :class="$style.subtitle">
         Your beer is propably not that crafty.
       </div>
     </div>
-    <Search />
-    <Navigation />
+    <slot></slot>
   </div>
 </template>
 
 <script>
-import Search from './Search'
-import Navigation from './Navigation'
-
 export default {
-  name: 'Header',
-  components: {
-    Search,
-    Navigation
-  }
+  name: 'Header'
 }
 </script>
 

@@ -2,7 +2,10 @@
   <div :class="$style.container">
 
     <div :class="$style.list">
-      <table cellpadding="0" cellspacing="0">
+      <table
+        cellpadding="0"
+        cellspacing="0"
+      >
         <colgroup>
           <col style="width:60%" />
           <!-- <col style="width:100px" /> -->
@@ -16,24 +19,34 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="brewery in breweries" :key="brewery.id"
-              :class="[
-                brewery.ownership.is_private ? $style.isPrivate : ''
-              ]"
-            >
+          <tr
+            v-for="brewery in breweries"
+            :key="brewery.id"
+            :class="[
+              brewery.ownership.is_private ? $style.isPrivate : ''
+            ]"
+          >
             <td>
-              <router-link :class="$style.item" :to="{path: '/breweries/' + brewery.slug}">
+              <router-link
+                :class="$style.item"
+                :to="{path: '/breweries/' + brewery.slug}"
+              >
                 {{brewery.title}}
               </router-link>
             </td>
             <!-- <td>{{brewery.country.slug}}</td> -->
             <td :class="$style.secondary">
-              <div v-if="brewery.ownership.is_private" :class="$style.item">
+              <div
+                v-if="brewery.ownership.is_private"
+                :class="$style.item"
+              >
                 <strong>private</strong>
               </div>
               <div v-else :class="$style.item">
                 <span v-for="corp in brewery.ownership.corporations" :key="corp.id">
-                  <router-link :to="{path: '/corporations/' + corp.slug}">
+                  <router-link
+                    :to="{path: '/corporations/' + corp.slug}"
+                  >
                     {{corp.title}}
                   </router-link>
                 </span>
@@ -50,20 +63,17 @@
 import { mapState, mapGetters } from 'vuex'
 
 export default {
-  name: 'BreweriesListing',
+  name: 'BreweriesList',
+
   data () {
     return {
       thBreweries: 'Brewery',
       thCountry: 'Country',
       thCorporation: 'Owned by',
-      title: 'Home',
-      errors: []
+      title: 'Home'
     }
   },
-  metaInfo: {
-    title: 'Breweries',
-    titleTemplate: null
-  },
+
   computed: {
     ...mapState([
       'breweries',
@@ -71,11 +81,24 @@ export default {
       'pagination',
       'loading'
     ]),
+
     ...mapGetters(['recipe'])
   },
+
   mounted: function () {
     this.getBreweries()
   },
+
+  destroyed: function () {
+    /**
+     * Destroy default list
+     * @return {Callback}
+     */
+    if (!parseInt(this.$route.params.id)) {
+      this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})
+    }
+  },
+
   methods: {
     /**
      * Get recipes by type
@@ -87,14 +110,10 @@ export default {
       this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: id})
     }
   },
-  destroyed: function () {
-    /**
-     * Destroy default list
-     * @return {Callback}
-     */
-    if (!parseInt(this.$route.params.id)) {
-      this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})
-    }
+
+  metaInfo: {
+    title: 'Breweries',
+    titleTemplate: null
   }
 }
 </script>
@@ -179,7 +198,8 @@ tr {
 }
 
 .isPrivate td {
-  background-color: #e7e89b !important;
+  /* background-color: #e7e89b !important; */
+  background: linear-gradient(180deg, rgba(231,232,155,1) 0%, rgba(226,227,155,1) 100%);
 }
 
 .secondary {

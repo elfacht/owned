@@ -19,14 +19,17 @@ import Autocomplete from 'vue2-autocomplete'
 
 export default {
   name: 'Search',
+
   components: {
     Autocomplete
   },
+
   data () {
     return {
       min: 3
     }
   },
+
   methods: {
     prerenderLink: function (e) {
       let head = document.getElementsByTagName('head')[0]
@@ -45,12 +48,15 @@ export default {
       prerenderTag.href = e.currentTarget.href
       ref.parentNode.insertBefore(prerenderTag, ref)
     },
+
     toggle: function () {
       this.menuOpen = !this.menuOpen
     },
+
     itemSelected: function (data) {
       this.$router.push({ path: data.url })
     },
+
     processJsonData: function (json) {
       return json.data
     }

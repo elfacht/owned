@@ -4,7 +4,10 @@
       loading …
     </div>
     <div v-else :class="$style.card">
-      <Ownership v-if="brewery.ownership" v-bind:ownership="brewery.ownership" />
+      <Ownership
+        v-if="brewery.ownership"
+        :ownership="brewery.ownership"
+      />
 
       <div :class="$style.inner">
         <h1 :class="$style.title">{{brewery.title}}</h1>
@@ -27,38 +30,44 @@
 
 <script>
 import { mapState } from 'vuex'
-import Ownership from './Ownership'
+import Ownership from './BreweriesDetailOwnership'
 
 export default {
   name: 'BreweriesDetail',
+
   components: {
     Ownership
   },
+
   data () {
     return {
-      errors: []
+      title: this.title
     }
   },
+
   computed: {
     ...mapState([
       'brewery',
       'loading'
     ])
   },
+
   mounted: function () {
     this.$store.dispatch('LOAD_BREWERIES_ITEM', {item: this.$route.params.slug})
     this.$store.state.loading = true
   },
+
   beforeUpdate: function () {
     this.title = this.brewery.title
   },
+
   destroyed: function () {
     this.$store.dispatch('RESET_BREWERY')
   },
+
   metaInfo () {
     return {
-      title: this.title,
-      titleTemplate: null
+      title: this.title
     }
   }
 }

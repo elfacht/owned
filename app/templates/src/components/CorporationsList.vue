@@ -2,7 +2,10 @@
   <div :class="$style.container">
     <ul :class="$style.list">
       <li :class="$style.item" v-for="item in corporations" :key="item.id">
-        <router-link :class="$style.link" :to="{path: '/corporations/' + item.slug}">
+        <router-link
+          :class="$style.link"
+          :to="{path: '/corporations/' + item.slug}"
+        >
           {{item.title}} ({{item.breweries}})
         </router-link>
       </li>
@@ -14,25 +17,19 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'CorporationsListing',
-  data () {
-    return {
-      errors: []
-    }
-  },
-  metaInfo: {
-    title: 'Corporations',
-    titleTemplate: null
-  },
+  name: 'CorporationsList',
+
   computed: {
     ...mapState([
       'corporations',
       'loading'
     ])
   },
+
   mounted: function () {
     this.getCorporations()
   },
+
   methods: {
     /**
      * Get recipes by type
@@ -42,6 +39,11 @@ export default {
     getCorporations: function () {
       this.$store.dispatch('LOAD_CORPORATIONS_LIST')
     }
+  },
+
+  metaInfo: {
+    title: 'Corporations',
+    titleTemplate: null
   }
 }
 </script>

@@ -2,9 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Meta from 'vue-meta'
 import Home from '@/components/Home'
-import BreweriesListing from '@/components/BreweriesListing'
+import BreweriesList from '@/components/BreweriesList'
 import BreweriesDetail from '@/components/BreweriesDetail'
-import CorporationsListing from '@/components/CorporationsListing'
+import CreateBrewery from '@/components/CreateBrewery'
+import CorporationsList from '@/components/CorporationsList'
+import CorporationsDetail from '@/components/CorporationsDetail'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -25,8 +27,8 @@ export default new Router({
      */
     {
       path: '/breweries/',
-      name: 'BreweriesListing',
-      component: BreweriesListing
+      name: 'BreweriesList',
+      component: BreweriesList
     },
 
     /**
@@ -39,12 +41,30 @@ export default new Router({
     },
 
     /**
+     * Brand detail
+     */
+    {
+      path: '/create/brewery',
+      name: 'CreateBrewery',
+      component: CreateBrewery
+    },
+
+    /**
      * Corporations
      */
     {
       path: '/corporations/',
-      name: 'CorporationsListing',
-      component: CorporationsListing
+      name: 'CorporationsList',
+      component: CorporationsList
+    },
+
+    /**
+     * Brand detail
+     */
+    {
+      path: '/corporations/:slug',
+      name: 'CorporationsDetail',
+      component: CorporationsDetail
     }
 
     /**
@@ -55,5 +75,13 @@ export default new Router({
     //   name: 'CompaniesDetail',
     //   component: CompaniesDetail
     // },
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
+
 })

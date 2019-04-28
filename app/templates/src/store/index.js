@@ -13,6 +13,7 @@ const store = new Vuex.Store({
     breweriesTotal: 0,
     corporationsTotal: 0,
     corporations: [],
+    corporation: [],
     pagination: [],
     loading: { type: Boolean }
   },
@@ -88,12 +89,41 @@ const store = new Vuex.Store({
     },
 
     /**
+     * Load brand single item
+     * @param  {Function} commit
+     * @param  {Object}   state
+     * @param  {String}   item [item slug]
+     * @return {Function}
+     */
+    LOAD_CORPORATIONS_ITEM: function ({commit, state}, {item}) {
+      if (item) {
+        axios.get('/api/corporations/' + item, item).then((response) => {
+          commit('SET_CORPORATIONS_ITEM', {corporation: response.data})
+
+          // Remove progress bar
+          NProgress.done()
+        }, (err) => {
+          console.log(err)
+        })
+      }
+    },
+
+    /**
      * Reset brand when leaving view
      * @param  {Function} commit
      * @return {Function}
      */
     RESET_BREWERY: function ({commit}) {
-      commit('SET_BREWERY_RESET', {brrewery: null})
+      commit('SET_BREWERY_RESET', {brewery: null})
+    },
+
+    /**
+     * Reset brand when leaving view
+     * @param  {Function} commit
+     * @return {Function}
+     */
+    RESET_CORPORATION: function ({commit}) {
+      commit('SET_CORPORATION_RESET', {corporation: null})
     }
   },
   mutations: {
@@ -144,12 +174,32 @@ const store = new Vuex.Store({
     },
 
     /**
+     * Set brand states
+     * @param {Array} state
+     * @param {Array} brewery
+     */
+    SET_CORPORATIONS_ITEM: (state, {corporation}) => {
+      state.corporation = corporation
+      state.loading = false
+    },
+
+    /**
      * Set brand reset states
      * @param {Array} state
      * @param {Array} brewery
      */
     SET_BREWERY_RESET: (state, {brewery}) => {
       state.brewery = {}
+      state.loading = false
+    },
+
+    /**
+     * Set brand reset states
+     * @param {Array} state
+     * @param {Array} brewery
+     */
+    SET_CORPORATION_RESET: (state, {corporation}) => {
+      state.corporation = {}
       state.loading = false
     }
   },

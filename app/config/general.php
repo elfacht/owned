@@ -55,6 +55,7 @@ return [
 
     'errorTemplatePrefix' => "pages/errors/",
     'sendPoweredByHeader' => false,
+    // 'csrfTokenName' => 'THE_TOKEN',
 	],
 
 	// Dev site URL

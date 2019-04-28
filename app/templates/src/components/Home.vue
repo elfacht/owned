@@ -5,23 +5,21 @@
 </template>
 
 <script>
-// import { mapState, mapGetters } from 'vuex'
-// import Header from './Header'
 import NProgress from 'nprogress'
 
 export default {
   name: 'Home',
-  components: {
+
+  mounted: function () {
+    // Remove progress bar
+    NProgress.done()
   },
+
   metaInfo () {
     return {
       title: 'owned',
       titleTemplate: null
     }
-  },
-  mounted: function () {
-    // Remove progress bar
-    NProgress.done()
   }
 }
 </script>

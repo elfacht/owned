@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <Header />
+    <app-header>
+      <Search />
+      <Navigation />
+    </app-header>
     <router-view :key="$route.fullPath"/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
+import AppHeader from './components/AppHeader'
+import Search from './components/AppSearch'
+import Navigation from './components/AppNavigation'
 
 export default {
   name: 'App',
   components: {
-    Header
+    AppHeader,
+    Search,
+    Navigation
   },
   metaInfo: {
     title: 'owned',

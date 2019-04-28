@@ -8,7 +8,7 @@ use craft\helpers\UrlHelper;
 
 return [
   'defaults' => [
-    'elementsPerPage' => 100,
+    'elementsPerPage' => 500,
     'transformer' => function(Entry $entry) {
 
       /**
@@ -34,17 +34,27 @@ return [
        * Get brand country
        * @var array
        */
-      $entryCountry = $entry->country->one();
-      if ($entryCountry) {
+      // $entryCountry = $entry->country->one();
+      // if ($entryCountry) {
+      //   $country = [
+      //     'id' => $entryCountry->id,
+      //     'title' => $entryCountry->title,
+      //     'slug' => $entryCountry->slug,
+      //   ];
+      // } else {
+      //   $country = null;
+      // }
+
+      $countrySlug = $entry->country->value;
+
+      if ($countrySlug && $countrySlug !== 'null') {
         $country = [
-          'id' => $entryCountry->id,
-          'title' => $entryCountry->title,
-          'slug' => $entryCountry->slug,
+          'title' => $entry->country->label,
+          'slug' => $entry->country->value,
         ];
       } else {
         $country = null;
       }
-
 
 
       $ownership = [
@@ -201,20 +211,27 @@ return [
             'field' => 'corporations'
           ])->all();
 
-          if ($getBreweries) {
+          if (count($getBreweries) >= 1) {
             $breweries = [];
             foreach ($getBreweries as $brewery) {
-              $breweryCountry = [
-                'id' => $brewery->country->one()->id,
-                'title' => $brewery->country->one()->title,
-                'slug' => $brewery->country->one()->slug,
-              ];
+              $breweryCountrySlug = $brewery->country->value;
+
+              if ($breweryCountrySlug && $breweryCountrySlug !== 'null') {
+                $breweryCountry = [
+                  'title' => $brewery->country->label,
+                  'slug' => $brewery->country->value,
+                ];
+              } else {
+                $breweryCountry = null;
+              }
+
 
               $breweries[] = [
                 'id' => $brewery->id,
                 'title' => $brewery->title,
-                'url' => '/breweries/' . $brewery->slug . '/',
+                'slug' => $brewery->slug,
                 'country' => $breweryCountry,
+                'owned_since' => $brewery->ownedSince,
               ];
             }
           } else {
@@ -226,11 +243,18 @@ return [
            * Get brand country
            * @var array
            */
-          $country = [
-            'id' => $entry->country->one()->id,
-            'title' => $entry->country->one()->title,
-            'slug' => $entry->country->one()->slug,
-          ];
+          $countrySlug = $entry->country->value;
+
+          if ($countrySlug !== 'null') {
+            $country = [
+              'title' => $entry->country->label,
+              'slug' => $entry->country->value,
+            ];
+          } else {
+            $country = null;
+          }
+
+
 
           return [
             'id' => $entry->id,
@@ -262,11 +286,16 @@ return [
          * Get all course categories
          * @var array
          */
-        $country = [
-          'id' => $entry->country->one()->id,
-          'title' => $entry->country->one()->title,
-          'slug' => $entry->country->one()->slug,
-        ];
+        $countrySlug = $entry->country->value;
+
+        if ($countrySlug && $countrySlug !== 'null') {
+          $country = [
+            'title' => $entry->country->label,
+            'slug' => $entry->country->value,
+          ];
+        } else {
+          $country = null;
+        }
 
         return [
           'id' => $entry->id,
