@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'countries/{slug}'
         template: ''
-dateModified: 1556521381
+dateModified: 1556529000
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -100,11 +100,13 @@ fields:
     settings:
       redactorConfig: Standard.json
       purifierConfig: ''
-      cleanupHtml: '1'
       purifyHtml: '1'
       columnType: text
       availableVolumes: '*'
       availableTransforms: '*'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     contentColumnType: text
     fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
   a167b64d-ee60-414c-b153-32b0b1be573e:
@@ -1240,7 +1242,7 @@ plugins:
   redactor:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.2
+    schemaVersion: 2.3.0
   cookies:
     edition: standard
     enabled: true

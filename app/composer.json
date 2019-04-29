@@ -49,10 +49,6 @@
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ],
-    "post-update-cmd": [
-      "./craft migrate/all",
-      "./craft project-config/sync"
-    ],
     "post-install-cmd": [
       "./craft migrate/all",
       "./craft project-config/sync"
