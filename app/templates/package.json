@@ -85,7 +85,7 @@
     "vue-svg-loader": "^0.12.0",
     "vue-svg-sprite-loader": "^1.2.1",
     "vue-template-compiler": "^2.5.2",
-    "vue2-autocomplete": "git://github.com/nystudio107/vue2-autocomplete.git#master",
+    "vue2-autocomplete-js": "git://github.com/elfacht/vue2-autocomplete.git#master",
     "vuelidate": "^0.7.4",
     "vuex-cache": "^3.0.0",
     "webpack": "^3.6.0",

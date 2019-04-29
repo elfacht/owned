@@ -193,7 +193,7 @@ export default {
   },
 
   mounted: function () {
-    this.$store.dispatch('LOAD_CORPORATIONS_LIST')
+    this.$store.dispatch('LOAD_OWNERS_LIST')
     this.$store.state.loading = true
   },
 

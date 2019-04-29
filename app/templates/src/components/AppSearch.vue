@@ -1,21 +1,29 @@
 <template lang="html">
-  <div class="search">
+  <div :class="{
+    active: isActive,
+    search: true
+    }">
     <Autocomplete
         id='searchbox'
         url='/api/search'
         anchor='title'
+        label="type"
         placeholder='Search for a brewery or owner …'
+        labelType="type"
+        :classes="{item: 'autocomplete-item'}"
         :min='min'
         :on-select='itemSelected'
         :process='processJsonData'
+        :on-focus="setActive"
+        :on-blur="unsetActive"
         >
     </Autocomplete>
   </div>
 </template>
 
 <script>
-// @see https://github.com/BosNaufal/vue2-autocomplete
-import Autocomplete from 'vue2-autocomplete'
+// @see https://github.com/elfacht/vue2-autocomplete
+import Autocomplete from 'vue2-autocomplete-js'
 
 export default {
   name: 'Search',
@@ -26,35 +34,25 @@ export default {
 
   data () {
     return {
+      isActive: false,
       min: 3
     }
   },
 
   methods: {
-    prerenderLink: function (e) {
-      let head = document.getElementsByTagName('head')[0]
-      let refs = head.childNodes
-      let ref = refs[refs.length - 1]
-
-      let elements = head.getElementsByTagName('link')
-      Array.prototype.forEach.call(elements, function (el, i) {
-        if (('rel' in el) && (el.rel === 'prerender')) {
-          el.parentNode.removeChild(el)
-        }
-      })
-
-      let prerenderTag = document.createElement('link')
-      prerenderTag.rel = 'prerender'
-      prerenderTag.href = e.currentTarget.href
-      ref.parentNode.insertBefore(prerenderTag, ref)
+    setActive: function () {
+      this.isActive = true
     },
-
+    unsetActive: function () {
+      this.isActive = false
+    },
     toggle: function () {
       this.menuOpen = !this.menuOpen
     },
 
     itemSelected: function (data) {
       this.$router.push({ path: data.url })
+      this.unsetActive()
     },
 
     processJsonData: function (json) {
@@ -71,6 +69,25 @@ export default {
   @mixin baseline 7, margin-bottom;
   position: relative;
   width: 100%;
+
+  &:after {
+    background-color: rgba(0, 0, 0, .5);
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+    z-index: 10;
+  }
+
+  &.active:after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 </style>
 
@@ -79,6 +96,7 @@ export default {
 .autocomplete-wrapper {
   position: relative;
   width: 100%;
+  z-index: 11;
 }
 
 .autocomplete-input {
@@ -143,6 +161,42 @@ export default {
     display: block;
     font-weight: 200;
     text-decoration: none;
+  }
+}
+
+.autocomplete-item {
+  > a > div {
+    display: flex;
+  }
+
+  b {
+    font-weight: 200;
+  }
+}
+
+.autocomplete-anchor-text {
+  order: 2;
+}
+
+.autocomplete-anchor-label {
+  @mixin font 10, 24, var(--heading-font);
+  @mixin baseline 11, width;
+  @mixin baseline 2, margin-right;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: .1rem;
+  order: 1;
+  padding: 4px 0 0 2px;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+
+  &.brewery {
+    background-color: #fde3a7;
+  }
+
+  &.owner {
+    background-color: #89c4f4;
   }
 }
 </style>

@@ -7,6 +7,7 @@ import BreweriesDetail from '@/components/BreweriesDetail'
 import CreateBrewery from '@/components/CreateBrewery'
 import OwnersList from '@/components/OwnersList'
 import OwnersDetail from '@/components/OwnersDetail'
+import NotFound from '@/components/NotFound'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -14,6 +15,11 @@ Vue.use(Meta)
 export default new Router({
   mode: 'history',
   routes: [
+    {
+      path: '*',
+      component: NotFound
+    },
+
     /**
      * Homepage
      */

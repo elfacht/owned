@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'countries/{slug}'
         template: ''
-dateModified: 1556533013
+dateModified: 1556533781
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -1342,6 +1342,29 @@ sections:
                   2d362f2a-45c1-4235-bcb4-38535b6f802d:
                     required: false
                     sortOrder: 4
+  2cb44c95-045e-4525-b454-6816ea4137b4:
+    name: Pages
+    handle: pages
+    type: structure
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{parent.uri}/{slug}'
+        template: ''
+    structure:
+      uid: 38d84ec6-f7a7-4ae4-8b1e-6d7c43be94fb
+      maxLevels: null
+    entryTypes:
+      f08d8f10-36b0-4e75-809f-4f6094bf9a41:
+        name: Pages
+        handle: pages
+        hasTitleField: true
+        titleLabel: Titel
+        titleFormat: null
+        sortOrder: 1
 siteGroups:
   a86a0999-46ab-4724-95af-d64dda5f60d6:
     name: owned

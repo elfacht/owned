@@ -73,11 +73,11 @@ const store = new Vuex.Store({
      * @param  {Number}   pageNum [current page number]
      * @return {Function}
      */
-    LOAD_CORPORATIONS_LIST: function ({commit, state}) {
+    LOAD_OWNERS_LIST: function ({commit, state}) {
       let pageUrl = '/api/owners'
 
       axios.get(pageUrl).then((response) => {
-        commit('SET_CORPORATIONS_LIST', {
+        commit('SET_OWNERS_LIST', {
           list: response.data.data
         })
 
@@ -95,10 +95,10 @@ const store = new Vuex.Store({
      * @param  {String}   item [item slug]
      * @return {Function}
      */
-    LOAD_CORPORATIONS_ITEM: function ({commit, state}, {item}) {
+    LOAD_OWNERS_ITEM: function ({commit, state}, {item}) {
       if (item) {
         axios.get('/api/owners/' + item, item).then((response) => {
-          commit('SET_CORPORATIONS_ITEM', {owner: response.data})
+          commit('SET_OWNERS_ITEM', {owner: response.data})
 
           // Remove progress bar
           NProgress.done()
@@ -122,8 +122,8 @@ const store = new Vuex.Store({
      * @param  {Function} commit
      * @return {Function}
      */
-    RESET_CORPORATION: function ({commit}) {
-      commit('SET_CORPORATION_RESET', {owner: null})
+    RESET_OWNER: function ({commit}) {
+      commit('SET_OWNER_RESET', {owner: null})
     }
   },
   mutations: {
@@ -167,7 +167,7 @@ const store = new Vuex.Store({
      * @param {Array} meta        [recipe meta data]
      * @param {Array} pagination  [recipe meta pagination]
      */
-    SET_CORPORATIONS_LIST: (state, {list}) => {
+    SET_OWNERS_LIST: (state, {list}) => {
       state.owners = list
       state.loading = false
       state.ownersTotal = list.length
@@ -178,7 +178,7 @@ const store = new Vuex.Store({
      * @param {Array} state
      * @param {Array} brewery
      */
-    SET_CORPORATIONS_ITEM: (state, {owner}) => {
+    SET_OWNERS_ITEM: (state, {owner}) => {
       state.owner = owner
       state.loading = false
     },
@@ -198,7 +198,7 @@ const store = new Vuex.Store({
      * @param {Array} state
      * @param {Array} brewery
      */
-    SET_CORPORATION_RESET: (state, {owner}) => {
+    SET_OWNER_RESET: (state, {owner}) => {
       state.owner = {}
       state.loading = false
     }

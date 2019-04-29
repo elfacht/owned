@@ -37,7 +37,7 @@ export default {
      * @return {Callback}
      */
     getOwners: function () {
-      this.$store.dispatch('LOAD_CORPORATIONS_LIST')
+      this.$store.dispatch('LOAD_OWNERS_LIST')
     }
   },
 

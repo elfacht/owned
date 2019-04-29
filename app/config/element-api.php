@@ -258,11 +258,14 @@ return [
           $country = null;
         }
 
+        $entryType = ($entry->type->handle == 'breweries') ? 'brewery' : 'owner';
+
         return [
           'id' => $entry->id,
           'title' => $entry->title,
           'url' => '/'.$entry->type .'/' . $entry->slug . '/',
           'country' => $country,
+          'type' => $entryType
         ];
       },
     ]

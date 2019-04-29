@@ -47,7 +47,7 @@ export default {
   methods: {
     getBreweries: function () {
       this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})
-      this.$store.dispatch('LOAD_CORPORATIONS_LIST', {pageNum: 1})
+      this.$store.dispatch('LOAD_OWNERS_LIST', {pageNum: 1})
     }
   }
 }

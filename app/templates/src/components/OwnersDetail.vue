@@ -95,7 +95,7 @@ export default {
   },
 
   mounted: function () {
-    this.$store.dispatch('LOAD_CORPORATIONS_ITEM', {item: this.$route.params.slug})
+    this.$store.dispatch('LOAD_OWNERS_ITEM', {item: this.$route.params.slug})
     this.$store.state.loading = true
   },
 
@@ -104,7 +104,7 @@ export default {
   },
 
   destroyed: function () {
-    this.$store.dispatch('RESET_CORPORATION')
+    this.$store.dispatch('RESET_OWNER')
   },
 
   metaInfo () {
@@ -145,67 +145,63 @@ export default {
 }
 
 .table {
-  width: 100%;
-}
-
-table {
   @mixin font 26, 32, var(--copy-font);
   /* border: 1px solid #916f34; */
   /* box-shadow: 0 4px 20px rgba(108, 122, 137, .3); */
   border-collapse: separate;
   width: 100%;
-}
 
-th,
-td {
-  transition: all .2s ease-in-out;
+  th,
+  td {
+    transition: all .2s ease-in-out;
 
-  &:not(:last-child) {
-    border-right: 1px solid var(--color-concrete);
-  }
-}
-
-th {
-  @mixin font 16, 24, var(--heading-font);
-  @mixin baseline 2, padding;
-  background-color: #2c5c7c;
-  color: var(--color-sand);
-  letter-spacing: .2rem;
-  text-transform: uppercase;
-}
-
-.item {
-  @mixin baseline 3, padding;
-  display: block;
-}
-
-td {
-  &:last-child {
-    text-align: center;
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
-
-tr {
-  position: relative;
-  transition: all .01s ease-in-out;
-
-  &:hover td {
-    background-color: var(--color-alto) !important;
-  }
-
-  &:nth-child(odd) {
-    td {
-      background-color: #fff;
+    &:not(:last-child) {
+      border-right: 1px solid var(--color-concrete);
     }
   }
 
-  &:nth-child(even) {
-    td {
-      background-color: var(--color-sand);
+  th {
+    @mixin font 16, 24, var(--heading-font);
+    @mixin baseline 2, padding;
+    background-color: #2c5c7c;
+    color: var(--color-sand);
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+  }
+
+  .item {
+    @mixin baseline 3, padding;
+    display: block;
+  }
+
+  td {
+    &:last-child {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  tr {
+    position: relative;
+    transition: all .01s ease-in-out;
+
+    &:hover td {
+      background-color: var(--color-alto) !important;
+    }
+
+    &:nth-child(odd) {
+      td {
+        background-color: #fff;
+      }
+    }
+
+    &:nth-child(even) {
+      td {
+        background-color: var(--color-sand);
+      }
     }
   }
 }

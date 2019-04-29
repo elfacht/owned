@@ -3,7 +3,7 @@
 :root {
 	--baseline: 8;
 	--heading-font: 'Montserrat', sans-serif;
-	--copy-font: 'Heebo', sans-serif;
+	--copy-font: 'Montserrat', sans-serif;
 	--background-body: #e8ecf1;
 	--color-body: #333;
 	--color-accent: #ffcb05;
@@ -38,6 +38,7 @@ body {
 	background-attachment: fixed;
   font-size: 100%;
   font-family: var(--copy-font);
+	font-weight: 200;
   line-height: 1.5;
   margin: 0;
   overflow-x: hidden;
