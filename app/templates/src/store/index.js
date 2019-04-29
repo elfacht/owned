@@ -73,13 +73,15 @@ const store = new Vuex.Store({
      * @param  {Number}   pageNum [current page number]
      * @return {Function}
      */
-    LOAD_OWNERS_LIST: function ({commit, state}) {
+    LOAD_OWNERS_LIST: function ({commit, state, getters}) {
       let pageUrl = '/api/owners'
 
       axios.get(pageUrl).then((response) => {
         commit('SET_OWNERS_LIST', {
-          list: response.data.data
-        })
+          list: response.data.data,
+          meta: response.data.meta,
+          pagination: response.data.meta.pagination
+        }, getters)
 
         // Remove progress bar
         NProgress.done()
@@ -167,10 +169,19 @@ const store = new Vuex.Store({
      * @param {Array} meta        [recipe meta data]
      * @param {Array} pagination  [recipe meta pagination]
      */
-    SET_OWNERS_LIST: (state, {list}) => {
+    SET_OWNERS_LIST: (state, {list, meta, pagination, getters}) => {
+      pagination = {
+        total: pagination.total,
+        current_page: pagination.current_page,
+        next_page_url: pagination.links.next,
+        prev_page_url: pagination.links.previous,
+        total_pages: pagination.total_pages
+      }
+
       state.owners = list
       state.loading = false
-      state.ownersTotal = list.length
+      // state.pagination = pagination
+      state.ownersTotal = pagination.total
     },
 
     /**
@@ -208,6 +219,7 @@ const store = new Vuex.Store({
       return state.breweriesTotal
     },
     ownersCount: state => {
+      console.log('total', state.ownersTotal)
       return state.ownersTotal
     }
   },

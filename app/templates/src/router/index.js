@@ -29,6 +29,12 @@ export default new Router({
       component: Home
     },
 
+    {
+      path: '/breweries/page/:id',
+      name: 'BreweriesPaged',
+      component: BreweriesList
+    },
+
     /**
      * Brands List
      */

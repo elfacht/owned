@@ -8,7 +8,7 @@ use craft\helpers\UrlHelper;
 
 return [
   'defaults' => [
-    'elementsPerPage' => 500,
+    'elementsPerPage' => 30,
     'transformer' => function(Entry $entry) {
 
       /**
@@ -118,7 +118,7 @@ return [
           'section' => 'owners',
           'orderBy' => 'title asc',
         ],
-        'paginate' => false,
+        'elementsPerPage' => 1000,
         // 'cache' => 'PT10M',
         'pretty' => true,
         'transformer' => function(Entry $entry) {

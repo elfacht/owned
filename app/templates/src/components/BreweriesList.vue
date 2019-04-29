@@ -9,13 +9,11 @@
       >
         <colgroup>
           <col style="width:60%" />
-          <!-- <col style="width:100px" /> -->
           <col style="width:40%" />
         </colgroup>
         <thead>
           <tr>
             <th>{{thBreweries}}</th>
-            <!-- <th>{{thCountry}}</th> -->
             <th>{{thCorporation}}</th>
           </tr>
         </thead>
@@ -35,7 +33,6 @@
                 {{brewery.title}}
               </router-link>
             </td>
-            <!-- <td>{{brewery.country.slug}}</td> -->
             <td :class="$style.secondary">
               <div
                 v-if="brewery.ownership.is_private"
@@ -54,17 +51,32 @@
               </div>
             </td>
           </tr>
+
         </tbody>
       </table>
+
+      <Pagination
+        v-if='pagination.total_pages > 1'
+        path="/breweries/page/"
+        :pagination='pagination'
+        :class='$style.pagination'
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex'
+import Pagination from './Pagination'
+// import Observer from './Observer'
 
 export default {
   name: 'BreweriesList',
+
+  components: {
+    // Observer
+    Pagination
+  },
 
   data () {
     return {
@@ -108,6 +120,7 @@ export default {
      */
     getBreweries: function () {
       let id = this.$route.params.id ? parseInt(this.$route.params.id) : 1
+      console.log(id)
       this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: id})
     }
   },
@@ -134,6 +147,7 @@ export default {
 
 .table {
   @mixin font 26, 32, var(--copy-font);
+  @mixin baseline 3, margin-bottom;
   /* border: 1px solid #916f34; */
   box-shadow: 0 4px 20px rgba(108, 122, 137, .3);
   border-collapse: separate;

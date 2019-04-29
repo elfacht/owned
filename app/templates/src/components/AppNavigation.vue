@@ -14,40 +14,20 @@
         <router-link
           :class="$style.link"
           :to="{name: 'OwnersList'}">Owners</router-link>
-        ({{owners.length}})
+        ({{ownersCount}})
       </li>
     </ul>
   </diV>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
-
 export default {
   name: 'Navigation',
 
-  computed: {
-    ...mapState([
-      'breweries',
-      'owners',
-      'meta',
-      'pagination',
-      'loading'
-    ]),
-
-    ...mapGetters([
-      'breweriesCount'
-    ])
-  },
-
-  mounted: function () {
-    this.getBreweries()
-  },
-
-  methods: {
-    getBreweries: function () {
-      this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})
-      this.$store.dispatch('LOAD_OWNERS_LIST', {pageNum: 1})
+  data () {
+    return {
+      breweriesCount: window.breweriesCount,
+      ownersCount: window.ownersCount
     }
   }
 }

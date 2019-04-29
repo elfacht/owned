@@ -19,5 +19,5 @@
  */
 
 return [
-  // '<url:(?!api|localhost\/).*>' => ['template' => 'index']
+  '<url:(?!api|localhost\/).*>' => ['template' => 'index']
 ];
