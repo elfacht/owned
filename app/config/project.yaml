@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'countries/{slug}'
         template: ''
-dateModified: 1556529000
+dateModified: 1556533013
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -1318,7 +1318,7 @@ sections:
     entryTypes:
       d4647929-de67-41ff-b720-e95e9029c2f1:
         name: Owners
-        handle: Owners
+        handle: owners
         hasTitleField: true
         titleLabel: Titel
         titleFormat: ''
