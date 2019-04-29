@@ -12,8 +12,13 @@
       <div :class="$style.inner">
         <h1 :class="$style.title">{{brewery.title}}</h1>
 
-        <p v-if="brewery.country">
-          {{brewery.city}}, {{brewery.country.title}}
+        <p v-if="brewery.city || brewery.country">
+          <template v-if="brewery.city">
+            {{brewery.city}},
+          </template>
+          <template v-if="brewery.country">
+            {{brewery.country.title}}
+          </template>
         </p>
 
         <div v-if="brewery.category">
