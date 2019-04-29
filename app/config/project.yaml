@@ -1,14 +1,14 @@
 categoryGroups:
   fb7b3af4-bf40-4269-883d-aa4945d724ce:
-    name: Corporations
-    handle: corporations
+    name: Owners
+    handle: owners
     structure:
       uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
       maxLevels: null
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         hasUrls: true
-        uriFormat: 'corporations/{slug}'
+        uriFormat: 'owners/{slug}'
         template: ''
   5ff18d47-af9f-406c-a977-ff345fdc0578:
     name: Categories
@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'countries/{slug}'
         template: ''
-dateModified: 1556467083
+dateModified: 1556521381
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -71,8 +71,8 @@ fields:
     contentColumnType: string
     fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
   466e2928-f31d-4ec5-95fd-9e59fabd42c3:
-    name: Corporations
-    handle: corporations
+    name: Owners
+    handle: owners
     instructions: ''
     searchable: true
     translationMethod: site
@@ -1302,8 +1302,8 @@ sections:
                     required: false
                     sortOrder: 3
   b73fb847-c20b-4318-ae96-e14162d6f299:
-    name: Corporations
-    handle: corporations
+    name: Owners
+    handle: owners
     type: channel
     enableVersioning: true
     propagateEntries: true
@@ -1311,12 +1311,12 @@ sections:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: 'corporations/{slug}'
+        uriFormat: 'owners/{slug}'
         template: ''
     entryTypes:
       d4647929-de67-41ff-b720-e95e9029c2f1:
-        name: Corporations
-        handle: corporations
+        name: Owners
+        handle: Owners
         hasTitleField: true
         titleLabel: Titel
         titleFormat: ''

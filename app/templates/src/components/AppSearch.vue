@@ -4,7 +4,7 @@
         id='searchbox'
         url='/api/search'
         anchor='title'
-        placeholder='Search for a brewery or corporation …'
+        placeholder='Search for a brewery or owner …'
         :min='min'
         :on-select='itemSelected'
         :process='processJsonData'

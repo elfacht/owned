@@ -13,8 +13,8 @@
       <li :class="$style.item">
         <router-link
           :class="$style.link"
-          :to="{name: 'CorporationsList'}">Corporations</router-link>
-        ({{corporations.length}})
+          :to="{name: 'OwnersList'}">Owners</router-link>
+        ({{owners.length}})
       </li>
     </ul>
   </diV>
@@ -29,7 +29,7 @@ export default {
   computed: {
     ...mapState([
       'breweries',
-      'corporations',
+      'owners',
       'meta',
       'pagination',
       'loading'

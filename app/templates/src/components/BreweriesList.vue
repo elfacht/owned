@@ -43,9 +43,9 @@
                 <strong>private</strong>
               </div>
               <div v-else :class="$style.item">
-                <span v-for="corp in brewery.ownership.corporations" :key="corp.id">
+                <span v-for="corp in brewery.ownership.owners" :key="corp.id">
                   <router-link
-                    :to="{path: '/corporations/' + corp.slug}"
+                    :to="{path: '/owners/' + corp.slug}"
                   >
                     {{corp.title}}
                   </router-link>

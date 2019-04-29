@@ -102,11 +102,11 @@
         <div :class="$style.item">
           <label for="ownedBy">Owned by</label>
           <FormSelect
-            v-model="form.fields['corporations']"
-            id="corporations"
-            name="fields[corporations]"
-            empty-option="Select corporation …"
-            :list="corporations"
+            v-model="form.fields['owners']"
+            id="owners"
+            name="fields[owners]"
+            empty-option="Select owner …"
+            :list="owners"
           />
         </div>
 
@@ -160,7 +160,7 @@ export default {
           country: '',
           note: '',
           tags: [''],
-          corporations: '',
+          owners: '',
           isPrivate: '',
           ownedSince: ''
         },
@@ -175,7 +175,7 @@ export default {
 
   computed: {
     ...mapState([
-      'corporations',
+      'owners',
       'loading'
     ]),
 

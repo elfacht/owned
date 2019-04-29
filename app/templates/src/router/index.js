@@ -5,8 +5,8 @@ import Home from '@/components/Home'
 import BreweriesList from '@/components/BreweriesList'
 import BreweriesDetail from '@/components/BreweriesDetail'
 import CreateBrewery from '@/components/CreateBrewery'
-import CorporationsList from '@/components/CorporationsList'
-import CorporationsDetail from '@/components/CorporationsDetail'
+import OwnersList from '@/components/OwnersList'
+import OwnersDetail from '@/components/OwnersDetail'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -50,21 +50,21 @@ export default new Router({
     },
 
     /**
-     * Corporations
+     * Owners
      */
     {
-      path: '/corporations/',
-      name: 'CorporationsList',
-      component: CorporationsList
+      path: '/owners/',
+      name: 'OwnersList',
+      component: OwnersList
     },
 
     /**
      * Brand detail
      */
     {
-      path: '/corporations/:slug',
-      name: 'CorporationsDetail',
-      component: CorporationsDetail
+      path: '/owners/:slug',
+      name: 'OwnersDetail',
+      component: OwnersDetail
     }
 
     /**

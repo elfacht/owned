@@ -16,17 +16,17 @@ return [
        * @var array
        */
 
-      if ($entry->corporations->all()) {
-        $corporations = [];
-        foreach ($entry->corporations->all() as $corporation) {
-          $corporations[] = [
-            'id' => $corporation->id,
-            'title' => $corporation->title,
-            'slug' => $corporation->slug,
+      if ($entry->owners->all()) {
+        $owners = [];
+        foreach ($entry->owners->all() as $owner) {
+          $owners[] = [
+            'id' => $owner->id,
+            'title' => $owner->title,
+            'slug' => $owner->slug,
           ];
         }
       } else {
-        $corporations = null;
+        $owners = null;
       }
 
 
@@ -34,19 +34,7 @@ return [
        * Get brand country
        * @var array
        */
-      // $entryCountry = $entry->country->one();
-      // if ($entryCountry) {
-      //   $country = [
-      //     'id' => $entryCountry->id,
-      //     'title' => $entryCountry->title,
-      //     'slug' => $entryCountry->slug,
-      //   ];
-      // } else {
-      //   $country = null;
-      // }
-
       $countrySlug = $entry->country->value;
-
       if ($countrySlug && $countrySlug !== 'null') {
         $country = [
           'title' => $entry->country->label,
@@ -60,7 +48,7 @@ return [
       $ownership = [
         'is_private' => $entry->isPrivate || false,
         'owned_since' => $entry->ownedSince ? $entry->ownedSince->format(\DateTime::ATOM) : null,
-        'corporations' => $corporations,
+        'owners' => $owners,
       ];
 
       return [
@@ -71,58 +59,13 @@ return [
         'date_modified' => $entry->dateUpdated->format(\DateTime::ATOM),
         'jsonUrl' => UrlHelper::url("api/breweries/{$entry->slug}"),
         // 'is_private' => $entry->isPrivate || false,
-        // 'corporation' => $corporations,
+        // 'owner' => $owners,
         'city' => $entry->city,
         'country' => $country,
         'ownership' => $ownership,
         'note' => $entry->note,
       ];
     },
-    // 'transformer' => function(Entry $entry) {
-    //
-    //   /**
-    //    * Get corportations
-    //    * @var array
-    //    */
-    //
-    //   if ($entry->corporations->all()) {
-    //     $corporations = [];
-    //     foreach ($entry->corporations->all() as $corporation) {
-    //       $corporations[] = [
-    //         'id' => $corporation->id,
-    //         'title' => $corporation->title,
-    //         'slug' => $corporation->slug,
-    //         'url' => '/corporations/' . $corporation->slug,
-    //       ];
-    //     }
-    //   } else {
-    //     $corporations = null;
-    //   }
-    //
-    //
-    //   /**
-    //    * Get brand country
-    //    * @var array
-    //    */
-    //   $country = [
-    //     'id' => $entry->country->one()->id || null,
-    //     'title' => $entry->country->one()->title || null,
-    //     'slug' => $entry->country->one()->slug || null,
-    //   ];
-    //
-    //   return [
-    //     'id' => $entry->id,
-    //     'title' => $entry->title,
-    //     'slug' => $entry->slug,
-    //     'date_created' => $entry->postDate->format(\DateTime::ATOM),
-    //     'date_modified' => $entry->dateUpdated->format(\DateTime::ATOM),
-    //     'jsonUrl' => UrlHelper::url("api/breweries/{$entry->slug}"),
-    //     'is_private' => $entry->isPrivate || false,
-    //     'corporation' => $corporations,
-    //     'country' => $country,
-    //     'note' => $entry->note,
-    //   ];
-    // },
   ],
 
 
@@ -148,7 +91,7 @@ return [
           'orderBy' => 'title asc',
           'search' =>
             (Craft::$app->request->getParam('q'))
-            ? 'corporations:'.Craft::$app->request->getParam('q')
+            ? 'owners:'.Craft::$app->request->getParam('q')
             .' OR ' . 'country:'.Craft::$app->request->getParam('q')
             .' OR ' . 'isPrivate:'.Craft::$app->request->getParam('q')
             : ''
@@ -166,13 +109,13 @@ return [
         'one' => true,
       ];
     },
-    'api/corporations' => function() {
+    'api/owners' => function() {
       // Craft::$app->getResponse()->getHeaders()->set('Access-Control-Allow-Origin', '*');
 
       return [
         'elementType' => Entry::class,
         'criteria' => [
-          'section' => 'corporations',
+          'section' => 'owners',
           'orderBy' => 'title asc',
         ],
         'paginate' => false,
@@ -182,7 +125,7 @@ return [
           $criteria = Entry::find()->section('breweries');
           $getBreweries = $criteria->relatedTo($entry, [
             'targetElement' => $entry,
-            'field' => 'corporations'
+            'field' => 'owners'
           ])->all();
 
           return [
@@ -191,13 +134,13 @@ return [
             'slug' => $entry->slug,
             'date_created' => $entry->postDate->format(\DateTime::ATOM),
             'date_modified' => $entry->dateUpdated->format(\DateTime::ATOM),
-            'jsonUrl' => UrlHelper::url("api/corporations/{$entry->slug}"),
+            'jsonUrl' => UrlHelper::url("api/owners/{$entry->slug}"),
             'breweries' => (int) count($getBreweries),
           ];
         }
       ];
     },
-    'api/corporations/<entryId:{slug}+>' => function($entryId) {
+    'api/owners/<entryId:{slug}+>' => function($entryId) {
       return [
         'elementType' => Entry::class,
         'criteria' => [
@@ -208,7 +151,7 @@ return [
           $criteria = Entry::find()->section('breweries');
           $getBreweries = $criteria->relatedTo($entry, [
             'targetElement' => $entry,
-            'field' => 'corporations'
+            'field' => 'owners'
           ])->all();
 
           if (count($getBreweries) >= 1) {
@@ -240,6 +183,23 @@ return [
 
 
           /**
+           * Subsidiaries
+           */
+          if ($entry->subsidiary->all()) {
+            $subsidiaries = [];
+            foreach ($entry->subsidiary->all() as $subsidiary) {
+              $subsidiaries[] = [
+                'id' => $subsidiary->id,
+                'title' => $subsidiary->title,
+                'slug' => $subsidiary->slug,
+              ];
+            }
+          } else {
+            $subsidiaries = null;
+          }
+
+
+          /**
            * Get brand country
            * @var array
            */
@@ -263,6 +223,7 @@ return [
             'date_created' => $entry->postDate->format(\DateTime::ATOM),
             'date_modified' => $entry->dateUpdated->format(\DateTime::ATOM),
             'country' => $country,
+            'subsidiaries' => $subsidiaries,
             'breweries' => $breweries,
           ];
         }
@@ -272,7 +233,7 @@ return [
       'elementType' => Entry::class,
       'paginate' => false,
       'criteria' => [
-          'section' => ['breweries', 'corporations'],
+          'section' => ['breweries', 'owners'],
           'limit' => 10,
           'search' =>
             (Craft::$app->request->getParam('q'))

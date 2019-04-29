@@ -8,7 +8,7 @@
         owned
       </router-link>
       <div :class="$style.subtitle">
-        Your beer is propably not that crafty.
+        Check if your favourite brewery is owned by a corporation.
       </div>
     </div>
     <slot></slot>

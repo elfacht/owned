@@ -1,10 +1,10 @@
 <template lang="html">
   <div :class="$style.container">
     <ul :class="$style.list">
-      <li :class="$style.item" v-for="item in corporations" :key="item.id">
+      <li :class="$style.item" v-for="item in owners" :key="item.id">
         <router-link
           :class="$style.link"
-          :to="{path: '/corporations/' + item.slug}"
+          :to="{path: '/owners/' + item.slug}"
         >
           {{item.title}} ({{item.breweries}})
         </router-link>
@@ -17,17 +17,17 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'CorporationsList',
+  name: 'OwnersList',
 
   computed: {
     ...mapState([
-      'corporations',
+      'owners',
       'loading'
     ])
   },
 
   mounted: function () {
-    this.getCorporations()
+    this.getOwners()
   },
 
   methods: {
@@ -36,13 +36,13 @@ export default {
      * @param  {String} type
      * @return {Callback}
      */
-    getCorporations: function () {
+    getOwners: function () {
       this.$store.dispatch('LOAD_CORPORATIONS_LIST')
     }
   },
 
   metaInfo: {
-    title: 'Corporations',
+    title: 'Owners',
     titleTemplate: null
   }
 }

@@ -5,21 +5,31 @@
     </div>
     <div v-else :class="$style.card">
       <div :class="$style.inner">
-        <h1 :class="$style.title">{{corporation.title}}</h1>
+        <h1 :class="$style.title">{{owner.title}}</h1>
 
-        <p v-if="corporation.country">
-          {{corporation.country.title}}
+        <p v-if="owner.country">
+          {{owner.country.title}}
         </p>
 
         <div
-          v-if="corporation.note"
-          v-html="corporation.note"
+          v-if="owner.note"
+          v-html="owner.note"
         ></div>
+
+        <div
+          v-if="owner.subsidiaries"
+          :class="$style.subsidiaries"
+        >
+          — Subsidiary of
+          <template v-for="owner in owner.subsidiaries">
+            <router-link :key="owner.id" :to="{path: '/owners/' + owner.slug}">{{owner.title}}</router-link>
+          </template>
+        </div>
 
       </div>
 
       <div
-        v-if="corporation.breweries"
+        v-if="owner.breweries"
         :class="$style.listing"
       >
         <table
@@ -29,7 +39,7 @@
         >
           <thead>
             <tr>
-              <th>Breweries ({{corporation.breweries.length}})</th>
+              <th>Breweries ({{owner.breweries.length}})</th>
               <th>Ownership since</th>
             </tr>
           </thead>
@@ -48,7 +58,7 @@
                   {{ item.owned_since.date | moment('YYYY') }}
                 </div>
                 <div v-else :class="$style.na">
-                  N/A
+                  unknown
                 </div>
               </td>
             </tr>
@@ -65,7 +75,7 @@ import { mapState } from 'vuex'
 import _ from 'lodash'
 
 export default {
-  name: 'CorporationsDetail',
+  name: 'OwnersDetail',
 
   data () {
     return {
@@ -75,12 +85,12 @@ export default {
 
   computed: {
     ...mapState([
-      'corporation',
+      'owner',
       'loading'
     ]),
 
     orderedBreweries: function () {
-      return _.orderBy(this.corporation.breweries, 'title')
+      return _.orderBy(this.owner.breweries, 'title')
     }
   },
 
@@ -90,7 +100,7 @@ export default {
   },
 
   beforeUpdate: function () {
-    this.title = this.corporation.title
+    this.title = this.owner.title
   },
 
   destroyed: function () {
@@ -122,7 +132,7 @@ export default {
 
 .inner {
   @mixin baseline 5, padding-top;
-  @mixin baseline 3, padding-bottom;
+  @mixin baseline 5, padding-bottom;
   @mixin baseline 5, padding-left;
   @mixin baseline 5, padding-right;
 }
@@ -202,6 +212,22 @@ tr {
 
 .na {
   color: var(--color-bombay);
+}
+
+.subsidiaries {
+  @mixin font 14, 24;
+  color: var(--color-boulder);
+
+  a {
+    border-bottom: 1px solid currentColor;
+    color: var(--color-tundora);
+    text-decoration: none;
+    transition: border .1s ease-in-out;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
 }
 
 /* .list {

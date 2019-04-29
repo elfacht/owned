@@ -11,13 +11,13 @@
       private
     </div>
     <div v-else>
-      <div v-if="ownership && ownership.corporations">
+      <div v-if="ownership && ownership.owners">
         <ul :class="$style.list">
           <li
-            :class="$style.item" v-for="item in ownership.corporations"
+            :class="$style.item" v-for="item in ownership.owners"
             :key="item.id"
           >
-            <router-link :to="{path: '/corporations/' + item.slug}">{{item.title}}</router-link>
+            <router-link :to="{path: '/owners/' + item.slug}">{{item.title}}</router-link>
           </li>
         </ul>
         <div

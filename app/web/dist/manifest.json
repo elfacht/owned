@@ -1,0 +1,11 @@
+{
+  "vendor.js": "/dist/assets/js/vendor.118061dba9f5582cdc14.js",
+  "vendor.js.map": "/dist/assets/js/vendor.118061dba9f5582cdc14.js.map",
+  "app.js": "/dist/assets/js/app.53edb57316ff345a774e.js",
+  "app.css": "/dist/css/app.74a06ff3dcbebb1abd34ac3c5956a2dc.css",
+  "app.js.map": "/dist/assets/js/app.53edb57316ff345a774e.js.map",
+  "manifest.js": "/dist/assets/js/manifest.17490b280f1afd2d1291.js",
+  "manifest.js.map": "/dist/assets/js/manifest.17490b280f1afd2d1291.js.map",
+  "css/app.74a06ff3dcbebb1abd34ac3c5956a2dc.css.map": "/dist/css/app.74a06ff3dcbebb1abd34ac3c5956a2dc.css.map",
+  "../../templates/dist/index.html": "/dist/../../templates/dist/index.html"
+}
