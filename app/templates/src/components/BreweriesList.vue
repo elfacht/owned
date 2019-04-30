@@ -2,6 +2,7 @@
   <div :class="$style.container">
 
     <div :class="$style.list">
+      <router-link :to="{path: '/create/brewery'}">+ Add Brewery</router-link>
       <table
         cellpadding="0"
         cellspacing="0"
@@ -120,7 +121,6 @@ export default {
      */
     getBreweries: function () {
       let id = this.$route.params.id ? parseInt(this.$route.params.id) : 1
-      console.log(id)
       this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: id})
     }
   },

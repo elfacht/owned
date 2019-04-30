@@ -1,14 +1,20 @@
 <template>
   <div id="app">
-    <app-header>
-      <Search />
-      <Navigation />
-    </app-header>
-    <router-view :key="$route.fullPath"/>
+    <transition name="fade">
+      <router-view name="header"></router-view>
+    </transition>
+      <!-- <app-header>
+        <Search />
+        <Navigation />
+      </app-header> -->
+    <transition name="fade">
+      <router-view v-if="!loadingUser" :key="$route.fullPath" :loggedIn="loggedIn" />
+    </transition>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppHeader from './components/AppHeader'
 import Search from './components/AppSearch'
 import Navigation from './components/AppNavigation'
@@ -23,6 +29,19 @@ export default {
   metaInfo: {
     title: 'owned',
     titleTemplate: '%s | owned'
+  },
+  computed: {
+    ...mapState([
+      'user',
+      'loggedIn',
+      'loadingUser'
+    ])
+  },
+  mounted: function () {
+    this.$store.dispatch('LOAD_USER')
+  },
+  ready: function () {
+
   }
 }
 </script>
@@ -36,5 +55,13 @@ export default {
   overflow-x: hidden;
   min-height: 100vh;
   width: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

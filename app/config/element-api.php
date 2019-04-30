@@ -8,7 +8,7 @@ use craft\helpers\UrlHelper;
 
 return [
   'defaults' => [
-    'elementsPerPage' => 30,
+    'elementsPerPage' => 100,
     'transformer' => function(Entry $entry) {
 
       /**
@@ -81,6 +81,21 @@ return [
    *
    */
   'endpoints' => [
+    'api/user' => function() {
+      return [
+        'elementType' => craft\elements\User::class,
+        'one' => true,
+        'transformer' => function(craft\elements\User $user) {
+          $isLoggedIn = $user->isCurrent;
+
+          return [
+            // 'user' => $user,
+            'loggedIn' => (bool) $user->isCurrent
+          ];
+        }
+      ];
+    },
+
     'api/breweries' => function() {
       // Craft::$app->getResponse()->getHeaders()->set('Access-Control-Allow-Origin', '*');
 
@@ -145,6 +160,7 @@ return [
         'elementType' => Entry::class,
         'criteria' => [
           'slug' => $entryId,
+          'section' => 'owners'
         ],
         'one' => true,
         'transformer' => function(Entry $entry) {
@@ -185,7 +201,7 @@ return [
           /**
            * Subsidiaries
            */
-          if ($entry->subsidiary->all()) {
+          if ($entry->subsidiary->all() ?? null) {
             $subsidiaries = [];
             foreach ($entry->subsidiary->all() as $subsidiary) {
               $subsidiaries[] = [

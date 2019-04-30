@@ -2,11 +2,11 @@
   <div class="pagination">
     <button @click="paginate(pagination.prev_page_url)"
             :disabled="!pagination.prev_page_url">
-        Vorige
+        Prev
     </button>
-    <span class="body">Seite <strong>{{pagination.current_page}}</strong> von {{pagination.total_pages}}</span>
+    <span class="body">Page <strong>{{pagination.current_page}}</strong> of {{pagination.total_pages}}</span>
     <button @click="paginate(pagination.next_page_url)"
-            :disabled="!pagination.next_page_url">Nächste
+            :disabled="!pagination.next_page_url">Next
     </button>
   </div>
 </template>
@@ -63,16 +63,18 @@ export default {
   width: 100%;
 }
 
-@media (--lg) {
+/* @media (--lg) {
   .pagination {
     text-align: right;
   }
-}
+} */
 
 .body {
   @mixin baseline 2, margin-left;
   @mixin baseline 2, margin-right;
+  color: #fff;
   display: inline-block;
+  font-weight: 400;
 }
 
 button {

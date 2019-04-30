@@ -1,6 +1,6 @@
 <template>
   <div :class='$style.container'>
-
+    HOME
   </div>
 </template>
 

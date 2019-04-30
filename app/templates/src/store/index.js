@@ -15,9 +15,24 @@ const store = new Vuex.Store({
     owners: [],
     owner: [],
     pagination: [],
-    loading: { type: Boolean }
+    user: [],
+    loggedIn: { type: Boolean },
+    loading: { type: Boolean },
+    loadingUser: { type: Boolean }
   },
   actions: {
+    LOAD_USER: function ({commit, state}) {
+      let pageUrl = '/api/user'
+
+      axios.get(pageUrl).then((response) => {
+        commit('SET_USER', {
+          user: response.data
+        })
+
+        NProgress.done()
+      })
+    },
+
     /**
      * Load default recipe list on Home
      * @param  {Function} commit
@@ -40,7 +55,7 @@ const store = new Vuex.Store({
         NProgress.done()
 
         // Scroll to top
-        // window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
       }, (err) => {
         console.log(err)
       })
@@ -129,6 +144,12 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
+    SET_USER: (state, {user}) => {
+      state.user = user
+      state.loggedIn = user.loggedIn
+      state.loadingUser = false
+    },
+
     /**
      * Set recipe list states
      * @param {Array} state

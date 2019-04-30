@@ -11,13 +11,22 @@
         Check if your favourite brewery is owned by a corporation.
       </div>
     </div>
-    <slot></slot>
+    <Search />
+    <Navigation />
   </div>
 </template>
 
 <script>
+import Search from './AppSearch'
+import Navigation from './AppNavigation'
+
 export default {
-  name: 'Header'
+  name: 'Header',
+
+  components: {
+    Search,
+    Navigation
+  }
 }
 </script>
 

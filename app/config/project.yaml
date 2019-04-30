@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'countries/{slug}'
         template: ''
-dateModified: 1556533781
+dateModified: 1556645760
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -135,23 +135,6 @@ fields:
       minuteIncrement: '30'
     contentColumnType: datetime
     fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
-  c32db22f-b01b-4b03-9934-3c5805bed3cb:
-    name: 'Legal Form'
-    handle: legalForm
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    contentColumnType: text
-    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
   eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
     name: 'Start Ownership'
     handle: ownedSince
@@ -1373,7 +1356,7 @@ sites:
     siteGroup: a86a0999-46ab-4724-95af-d64dda5f60d6
     name: owned
     handle: default
-    language: de
+    language: en
     hasUrls: true
     baseUrl: $DEFAULT_SITE_URL
     sortOrder: 1

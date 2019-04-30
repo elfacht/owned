@@ -1,36 +1,38 @@
 <template lang="html">
-  <div :class='$style.container'>
-    <div v-if="loading">
-      loading …
-    </div>
-    <div v-else :class="$style.card">
-      <Ownership
-        v-if="brewery.ownership"
-        :ownership="brewery.ownership"
-      />
+  <transition name="fade">
+    <div :class='$style.container'>
+      <div v-if="loading">
+        loading …
+      </div>
+      <div v-else :class="$style.card">
+        <Ownership
+          v-if="brewery.ownership"
+          :ownership="brewery.ownership"
+        />
 
-      <div :class="$style.inner">
-        <h1 :class="$style.title">{{brewery.title}}</h1>
+        <div :class="$style.inner">
+          <h1 :class="$style.title">{{brewery.title}}</h1>
 
-        <p v-if="brewery.city || brewery.country">
-          <template v-if="brewery.city">
-            {{brewery.city}},
-          </template>
-          <template v-if="brewery.country">
-            {{brewery.country.title}}
-          </template>
-        </p>
+          <p v-if="brewery.city || brewery.country">
+            <template v-if="brewery.city">
+              {{brewery.city}},
+            </template>
+            <template v-if="brewery.country">
+              {{brewery.country.title}}
+            </template>
+          </p>
 
-        <div v-if="brewery.category">
-          {{brewery.category.title}}
+          <div v-if="brewery.category">
+            {{brewery.category.title}}
+          </div>
+
+          <div v-if="brewery.note" v-html="brewery.note"></div>
         </div>
 
-        <div v-if="brewery.note" v-html="brewery.note"></div>
       </div>
 
     </div>
-
-  </div>
+  </transition>
 </template>
 
 <script>

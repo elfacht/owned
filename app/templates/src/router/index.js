@@ -4,10 +4,12 @@ import Meta from 'vue-meta'
 import Home from '@/components/Home'
 import BreweriesList from '@/components/BreweriesList'
 import BreweriesDetail from '@/components/BreweriesDetail'
-import CreateBrewery from '@/components/CreateBrewery'
+import Create from '@/components/Create'
 import OwnersList from '@/components/OwnersList'
 import OwnersDetail from '@/components/OwnersDetail'
 import NotFound from '@/components/NotFound'
+import Header from '@/components/AppHeader'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -21,18 +23,38 @@ export default new Router({
     },
 
     /**
+     * Login
+     */
+    {
+      path: '/login',
+      name: 'Login',
+      components: {
+        default: Login
+      },
+      props: {
+        default: true
+      }
+    },
+
+    /**
      * Homepage
      */
     {
       path: '/',
       name: 'Home',
-      component: Home
+      components: {
+        default: Home,
+        header: Header
+      }
     },
 
     {
       path: '/breweries/page/:id',
       name: 'BreweriesPaged',
-      component: BreweriesList
+      components: {
+        default: BreweriesList,
+        header: Header
+      }
     },
 
     /**
@@ -41,7 +63,10 @@ export default new Router({
     {
       path: '/breweries/',
       name: 'BreweriesList',
-      component: BreweriesList
+      components: {
+        default: BreweriesList,
+        header: Header
+      }
     },
 
     /**
@@ -50,16 +75,21 @@ export default new Router({
     {
       path: '/breweries/:slug',
       name: 'BreweriesDetail',
-      component: BreweriesDetail
+      components: {
+        default: BreweriesDetail,
+        header: Header
+      }
     },
 
     /**
      * Brand detail
      */
     {
-      path: '/create/brewery',
+      path: '/create/:type',
       name: 'CreateBrewery',
-      component: CreateBrewery
+      components: {
+        default: Create
+      }
     },
 
     /**
@@ -68,7 +98,10 @@ export default new Router({
     {
       path: '/owners/',
       name: 'OwnersList',
-      component: OwnersList
+      components: {
+        default: OwnersList,
+        header: Header
+      }
     },
 
     /**
@@ -77,7 +110,10 @@ export default new Router({
     {
       path: '/owners/:slug',
       name: 'OwnersDetail',
-      component: OwnersDetail
+      components: {
+        default: OwnersDetail,
+        header: Header
+      }
     }
 
     /**
@@ -92,8 +128,6 @@ export default new Router({
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
-    } else {
-      return { x: 0, y: 0 }
     }
   }
 
