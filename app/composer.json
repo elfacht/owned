@@ -50,7 +50,6 @@
       "@php craft setup/welcome"
     ],
     "post-install-cmd": [
-      "./craft migrate/all",
       "./craft project-config/sync"
     ]
   }
