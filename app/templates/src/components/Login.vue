@@ -1,46 +1,52 @@
 <template lang="html">
   <div :class="$style.container">
-    <div :class="$style.card">
-      <h1 :class="$style.title">{{heading}}</h1>
+    <div :class="$style.wrapper">
+      <div :class="$style.card">
+        <h1 :class="$style.title">{{heading}}</h1>
 
-      <form accept-charset="UTF-8" @submit.prevent="doLogin">
-        <input type="hidden" :name="csrfName" :value="csrfToken">
+        <form accept-charset="UTF-8" @submit.prevent="doLogin">
+          <input type="hidden" :name="csrfName" :value="csrfToken">
 
-        <div :class="$style.item">
-          <FormInput
-            type="text"
-            id="loginName"
-            name="loginName"
-            label="Username"
-            v-model="theUser.loginName"
-            v-validate="'required'"
-          />
-        </div>
+          <div :class="$style.item">
+            <FormInput
+              type="text"
+              id="loginName"
+              name="loginName"
+              label="Username"
+              v-model="theUser.loginName"
+              v-validate="'required'"
+            />
+          </div>
 
-        <div :class="$style.item">
-          <FormInput
-            type="password"
-            id="password"
-            name="password"
-            label="Password"
-            v-model="theUser.password"
-            v-validate="'required'"
-          />
-        </div>
+          <div :class="$style.item">
+            <FormInput
+              type="password"
+              id="password"
+              name="password"
+              label="Password"
+              v-model="theUser.password"
+              v-validate="'required'"
+            />
+          </div>
 
-        <div v-if="formErrors.length" :class="$style.errors">
-          {{formErrors}}
-        </div>
-        <!-- :disabled='errors.any() || !isComplete' -->
-        <base-button
-          :disabled='errors.any() || !isComplete'
-          :loading="inProgress"
-          :success="success"
-          alignRight
-        >
-          Login
-        </base-button>
-      </form>
+          <div v-if="formErrors.length" :class="$style.errors">
+            {{formErrors}}
+          </div>
+          <!-- :disabled='errors.any() || !isComplete' -->
+          <base-button
+            :disabled='errors.any() || !isComplete'
+            :loading="inProgress"
+            :success="success"
+            alignRight
+          >
+            Login
+          </base-button>
+        </form>
+      </div>
+
+      <base-link path="/">
+        Back to homepage
+      </base-link>
     </div>
   </div>
 </template>
@@ -48,6 +54,7 @@
 <script>
 import FormInput from './BaseInput.vue'
 import BaseButton from './BaseButton.vue'
+import BaseLink from './BaseLink.vue'
 import NProgress from 'nprogress'
 
 export default {
@@ -55,7 +62,8 @@ export default {
 
   components: {
     FormInput,
-    BaseButton
+    BaseButton,
+    BaseLink
   },
 
   props: {
@@ -142,14 +150,19 @@ export default {
   min-height: 100vh;
 }
 
+.wrapper {
+  max-width: 600px;
+  width: 100%;
+}
+
 .card {
   @mixin baseline 4, padding;
+  @mixin baseline 3, margin-bottom;
   background: rgb(85,85,85);
   background: linear-gradient(127deg, rgba(85,85,85,1) 0%, rgba(40,41,40,1) 100%);
   box-shadow: 0 6px 12px rgba(0, 0, 0, .3);
   color: var(--color-alto);
-  max-width: 600px;
-  width: 100%;
+
 }
 
 .title {

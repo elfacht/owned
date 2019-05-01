@@ -33,6 +33,14 @@ export default {
 }
 </script>
 
+<style lang="postcss" scoped>
+@import '../assets/_mixins';
+
+.router-link-active {
+  border-color: var(--color-tundora);
+}
+</style>
+
 <style lang="postcss" module>
 @import '../assets/_mixins';
 
@@ -67,4 +75,6 @@ export default {
     border-color: transparent;
   }
 }
+
+
 </style>

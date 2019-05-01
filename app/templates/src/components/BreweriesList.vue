@@ -2,7 +2,12 @@
   <div :class="$style.container">
 
     <div :class="$style.list">
-      <router-link :to="{path: '/create/brewery'}">+ Add Brewery</router-link>
+      <div :class="$style.menu">
+        <base-link path="/create/brewery">
+          Add brewery
+        </base-link>
+      </div>
+
       <table
         cellpadding="0"
         cellspacing="0"
@@ -69,6 +74,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Pagination from './Pagination'
+import BaseLink from './BaseLink.vue'
 // import Observer from './Observer'
 
 export default {
@@ -76,7 +82,8 @@ export default {
 
   components: {
     // Observer
-    Pagination
+    Pagination,
+    BaseLink
   },
 
   data () {
@@ -139,6 +146,11 @@ export default {
   @mixin container-padding;
   @mixin baseline 10, margin-bottom;
   lost-center: 2800px;
+}
+
+.menu {
+  @mixin baseline 3, margin-bottom;
+  text-align: right;
 }
 
 .list {
