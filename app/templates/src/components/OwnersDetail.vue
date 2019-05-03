@@ -7,7 +7,10 @@
       <div :class="$style.inner">
         <h1 :class="$style.title">{{owner.title}}</h1>
 
-        <p v-if="owner.country">
+        <p
+          v-if="owner.country"
+          :class="$style.location"
+        >
           {{owner.country.title}}
         </p>
 
@@ -131,17 +134,35 @@ export default {
 }
 
 .inner {
-  @mixin baseline 5, padding-top;
-  @mixin baseline 5, padding-bottom;
-  @mixin baseline 5, padding-left;
-  @mixin baseline 5, padding-right;
+  @mixin baseline 3, padding;
+}
+
+@media (--lg) {
+  .inner {
+    @mixin baseline 5, padding-top;
+    @mixin baseline 3, padding-bottom;
+    @mixin baseline 5, padding-left;
+    @mixin baseline 5, padding-right;
+  }
 }
 
 .title {
-  @mixin font 64, 72, var(--heading-font);
+  @mixin font 32, 40, var(--heading-font);
   font-weight: 200;
   margin: 0;
-  transform: translateX(-7px);
+  transform: translateX(-2px);
+}
+
+@media (--lg) {
+  .title {
+    @mixin font 64, 72, var(--heading-font);
+    transform: translateX(-5px);
+  }
+}
+
+.location {
+  @mixin baseline 2, margin-top;
+  @mixin font 14, 24;
 }
 
 .table {

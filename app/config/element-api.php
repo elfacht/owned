@@ -8,7 +8,7 @@ use craft\helpers\UrlHelper;
 
 return [
   'defaults' => [
-    'elementsPerPage' => 100,
+    'elementsPerPage' => 20,
     'transformer' => function(Entry $entry) {
 
       /**
@@ -282,6 +282,28 @@ return [
           'url' => '/'.$entry->type .'/' . $entry->slug . '/',
           'country' => $country,
           'type' => $entryType
+        ];
+      },
+    ],
+
+    'api/latest/breweries' => [
+      'elementType' => Entry::class,
+      'paginate' => false,
+      'criteria' => [
+          'section' => 'breweries',
+          'limit' => 5,
+          'orderBy' => 'postDate desc',
+          'search' =>
+            (Craft::$app->request->getParam('q'))
+            ? 'section:'.'*'.Craft::$app->request->getParam('q').'*'
+            : ''
+          ],
+      'transformer' => function(Entry $entry) {
+        return [
+          'id' => $entry->id,
+          'title' => $entry->title,
+          'date_created' => $entry->postDate->format(\DateTime::ATOM),
+          'slug' => $entry->slug,
         ];
       },
     ]

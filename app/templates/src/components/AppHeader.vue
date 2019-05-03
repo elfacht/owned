@@ -8,7 +8,7 @@
         owned
       </router-link>
       <div :class="$style.subtitle">
-        Check if your favourite brewery is owned by a corporation.
+        Check if a brewery is owned by a corporation.
       </div>
     </div>
     <Search />
@@ -35,10 +35,17 @@ export default {
 
 .container {
   @mixin container-padding;
-  @mixin baseline 10, padding-top;
-  @mixin baseline 10, margin-bottom;
+  @mixin baseline 6, padding-top;
+  @mixin baseline 6, margin-bottom;
   color: #fff;
   lost-center: var(--grid-max-width);
+}
+
+@media (--lg) {
+  .container {
+    @mixin baseline 10, padding-top;
+    @mixin baseline 10, margin-bottom;
+  }
 }
 
 .branding {

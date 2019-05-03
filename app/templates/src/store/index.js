@@ -11,9 +11,13 @@ const store = new Vuex.Store({
     brewery: [],
     breweries: [],
     breweriesTotal: 0,
+    latestBreweries: [],
+    loadingLatestBreweries: { type: Boolean },
+
     ownersTotal: 0,
     owners: [],
     owner: [],
+
     pagination: [],
     user: [],
     loggedIn: { type: Boolean },
@@ -79,6 +83,23 @@ const store = new Vuex.Store({
           console.log(err)
         })
       }
+    },
+
+    /**
+     * Load brand single item
+     * @param  {Function} commit
+     * @param  {Object}   state
+     * @param  {String}   item [item slug]
+     * @return {Function}
+     */
+    LOAD_LATEST_BREWERIES: function ({commit, state, getters}) {
+      axios.get('/api/latest/breweries').then((response) => {
+        commit('SET_LATEST_BREWERIES', {
+          list: response.data.data
+        })
+      }, (err) => {
+        console.log(err)
+      })
     },
 
     /**
@@ -190,6 +211,19 @@ const store = new Vuex.Store({
      * @param {Array} meta        [recipe meta data]
      * @param {Array} pagination  [recipe meta pagination]
      */
+    SET_LATEST_BREWERIES: (state, {list, getters}) => {
+      state.latestBreweries = list
+      state.loadingLatestBreweries = false
+      state.loading = false
+    },
+
+    /**
+     * Set recipe list states
+     * @param {Array} state
+     * @param {Array} list        [recipe item]
+     * @param {Array} meta        [recipe meta data]
+     * @param {Array} pagination  [recipe meta pagination]
+     */
     SET_OWNERS_LIST: (state, {list, meta, pagination, getters}) => {
       pagination = {
         total: pagination.total,
@@ -242,6 +276,9 @@ const store = new Vuex.Store({
     ownersCount: state => {
       console.log('total', state.ownersTotal)
       return state.ownersTotal
+    },
+    latestBreweries: state => {
+      return state.breweries
     }
   },
   plugins: [createCache()]

@@ -48,10 +48,19 @@ export default {
 @import '../assets/_mixins';
 
 .owner {
-  @mixin baseline 4, padding-top;
-  @mixin baseline 4, padding-bottom;
-  @mixin baseline 5, padding-left;
-  @mixin baseline 5, padding-right;
+  @mixin baseline 2, padding-top;
+  @mixin baseline 2, padding-bottom;
+  @mixin baseline 3, padding-left;
+  @mixin baseline 3, padding-right;
+}
+
+@media (--lg) {
+  .owner {
+    @mixin baseline 4, padding-top;
+    @mixin baseline 4, padding-bottom;
+    @mixin baseline 5, padding-left;
+    @mixin baseline 5, padding-right;
+  }
 }
 
 .isOwned {
@@ -72,13 +81,19 @@ export default {
 }
 
 .subtitle {
-  @mixin font 12, 24, var(--heading-font);
+  @mixin font 8, 24, var(--heading-font);
   @mixin baseline 1, margin-bottom;
   color: var(--color-bombay);
   font-weight: normal;
   letter-spacing: .1rem;
   margin: 0;
   text-transform: uppercase;
+}
+
+@media (--lg) {
+  .subtitle {
+    @mixin font 12, 24, var(--heading-font);
+  }
 }
 
 .list {
@@ -90,12 +105,12 @@ export default {
 }
 
 .item {
-  @mixin baseline 2, margin-right;
-  @mixin font 42, 48, var(--heading-font);
+  @mixin baseline .5, margin-right;
+  @mixin font 20, 32, var(--heading-font);
   color: var(--color-sand);
   display: inline-block;
   font-weight: 200;
-  transform: translateX(-3px);
+  /* transform: translateX(-3px); */
 
   a {
     border-bottom: 2px solid transparent;
@@ -109,16 +124,33 @@ export default {
   }
 }
 
+@media (--lg) {
+  .item {
+    @mixin font 42, 48, var(--heading-font);
+    @mixin baseline 2, margin-right;
+  }
+}
+
 .since {
-  @mixin font 42, 48, var(--heading-font);
+  @mixin font 20, 32, var(--heading-font);
   color: var(--color-boulder);
   display: inline-block;
   font-weight: 200;
 }
 
 .private {
-  @mixin font 42, 48, var(--heading-font);
+  @mixin font 20, 32, var(--heading-font);
   font-weight: 200;
-  transform: translateX(-3px);
+  /* transform: translateX(-3px); */
+}
+
+@media (--lg) {
+  .since {
+    @mixin font 42, 48, var(--heading-font);
+  }
+
+  .private {
+    @mixin font 42, 48, var(--heading-font);
+  }
 }
 </style>

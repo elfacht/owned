@@ -1,15 +1,9 @@
 <template>
   <div id="app">
-    <transition name="fade">
-      <router-view name="header"></router-view>
-    </transition>
-      <!-- <app-header>
-        <Search />
-        <Navigation />
-      </app-header> -->
-    <transition name="fade">
+    <router-view name="header"></router-view>
+    <!-- <transition name="fade"> -->
       <router-view v-if="!loadingUser" :key="$route.fullPath" :loggedIn="loggedIn" />
-    </transition>
+    <!-- </transition> -->
   </div>
 </template>
 

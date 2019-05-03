@@ -13,14 +13,17 @@
         <div :class="$style.inner">
           <h1 :class="$style.title">{{brewery.title}}</h1>
 
-          <p v-if="brewery.city || brewery.country">
+          <div
+            v-if="brewery.city || brewery.country"
+            :class="$style.location"
+          >
             <template v-if="brewery.city">
               {{brewery.city}},
             </template>
             <template v-if="brewery.country">
               {{brewery.country.title}}
             </template>
-          </p>
+          </div>
 
           <div v-if="brewery.category">
             {{brewery.category.title}}
@@ -89,22 +92,42 @@ export default {
 }
 
 .card {
+  @mixin baseline 5, margin-bottom;
   background-color: #fff;
   box-shadow: 0 4px 20px rgba(108, 122, 137, .3);
+  border-radius: 3px;
+  overflow: hidden;
   width: 100%;
 }
 
 .inner {
-  @mixin baseline 5, padding-top;
-  @mixin baseline 3, padding-bottom;
-  @mixin baseline 5, padding-left;
-  @mixin baseline 5, padding-right;
+  @mixin baseline 3, padding;
+}
+
+@media (--lg) {
+  .inner {
+    @mixin baseline 5, padding-top;
+    @mixin baseline 3, padding-bottom;
+    @mixin baseline 5, padding-left;
+    @mixin baseline 5, padding-right;
+  }
+}
+
+.location {
+  @mixin baseline 2, margin-top;
+  @mixin font 14, 24;
 }
 
 .title {
-  @mixin font 64, 72, var(--heading-font);
+  @mixin font 32, 40, var(--heading-font);
   font-weight: 200;
   margin: 0;
-  transform: translateX(-7px);
+}
+
+@media (--lg) {
+  .title {
+    @mixin font 64, 72, var(--heading-font);
+    transform: translateX(-5px);
+  }
 }
 </style>

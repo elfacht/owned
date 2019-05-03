@@ -2,7 +2,7 @@
   <div :class="$style.container">
 
     <div :class="$style.list">
-      <div :class="$style.menu">
+      <div  v-if="loggedIn" :class="$style.menu">
         <base-link path="/create/brewery">
           Add brewery
         </base-link>
@@ -24,6 +24,9 @@
           </tr>
         </thead>
         <tbody>
+          <div v-if="loading" :class="$style.loading" >
+            <Spinner :class="$style.spinner" />
+          </div>
           <tr
             v-for="brewery in breweries"
             :key="brewery.id"
@@ -75,15 +78,21 @@
 import { mapState, mapGetters } from 'vuex'
 import Pagination from './Pagination'
 import BaseLink from './BaseLink.vue'
+import Spinner from './BaseSpinner'
 // import Observer from './Observer'
 
 export default {
   name: 'BreweriesList',
 
+  props: {
+    loggedIn: Boolean
+  },
+
   components: {
     // Observer
     Pagination,
-    BaseLink
+    BaseLink,
+    Spinner
   },
 
   data () {
@@ -116,7 +125,7 @@ export default {
      * @return {Callback}
      */
     if (!parseInt(this.$route.params.id)) {
-      this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})
+      // this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: 1})
     }
   },
 
@@ -129,6 +138,7 @@ export default {
     getBreweries: function () {
       let id = this.$route.params.id ? parseInt(this.$route.params.id) : 1
       this.$store.dispatch('LOAD_BREWERIES_LIST', {pageNum: id})
+      this.$store.state.loading = true
     }
   },
 
@@ -163,7 +173,12 @@ export default {
   /* border: 1px solid #916f34; */
   box-shadow: 0 4px 20px rgba(108, 122, 137, .3);
   border-collapse: separate;
+  position: relative;
   width: 100%;
+
+  tbody {
+    position: relative;
+  }
 
   th,
   td {
@@ -235,5 +250,22 @@ export default {
   a {
     color: inherit;
   }
+}
+
+.loading {
+  /* height: 0; */
+}
+
+.loading {
+  /* @mixin baseline 6, padding; */
+  background-color: rgba(255, 255, 255, .7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 </style>

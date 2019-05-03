@@ -100,15 +100,24 @@ export default {
 }
 
 .autocomplete-input {
-  @mixin baseline 10, height;
-  @mixin baseline 4, padding-left;
-  @mixin baseline 4, padding-right;
-  @mixin font 32, 40, var(--heading-font);
+  @mixin baseline 7, height;
+  @mixin baseline 3, padding-left;
+  @mixin baseline 3, padding-right;
+  @mixin font 18, 32, var(--heading-font);
   border: 1px solid var(--color-alto);
   border-radius: 4px;
   box-shadow: inset 1px 2px 6px rgba(0, 0, 0, .15);
   font-weight: 200;
   width: 100%;
+}
+
+@media (--lg) {
+  .autocomplete-input {
+    @mixin baseline 10, height;
+    @mixin baseline 4, padding-left;
+    @mixin baseline 4, padding-right;
+    @mixin font 32, 40, var(--heading-font);
+  }
 }
 
 .autocomplete-list {
@@ -157,10 +166,16 @@ export default {
     @mixin baseline 2.5, padding;
     @mixin baseline 3, padding-left;
     @mixin baseline 3, padding-right;
-    @mixin font 22, 32, var(--copy-font);
+    @mixin font 16, 24, var(--copy-font);
     display: block;
     font-weight: 200;
     text-decoration: none;
+  }
+}
+
+@media (--lg) {
+  .autocomplete-list a {
+    @mixin font 22, 32, var(--copy-font);
   }
 }
 
@@ -171,6 +186,13 @@ export default {
 
   b {
     font-weight: 200;
+    width: calc(100% - 56px);
+  }
+}
+
+@media (--lg) {
+  .autocomplete-item b {
+    width: calc(100% - 106px);
   }
 }
 
@@ -179,14 +201,16 @@ export default {
 }
 
 .autocomplete-anchor-label {
-  @mixin font 10, 24, var(--heading-font);
-  @mixin baseline 11, width;
+  @mixin font 8, 24, var(--heading-font);
+  @mixin baseline 3, height;
+  @mixin baseline 5, width;
   @mixin baseline 2, margin-right;
   display: inline-block;
+  flex: 1 0 72px;
   font-weight: 400;
   letter-spacing: .1rem;
   order: 1;
-  padding: 4px 0 0 2px;
+  padding: 0 0 0 2px;
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
@@ -197,6 +221,16 @@ export default {
 
   &.owner {
     background-color: #89c4f4;
+  }
+}
+
+@media (--lg) {
+  .autocomplete-anchor-label {
+    @mixin font 10, 24, var(--heading-font);
+    @mixin baseline 4, height;
+    @mixin baseline 11, width;
+    flex: 1 0 88px;
+    padding: 4px 0 0 2px;
   }
 }
 </style>
