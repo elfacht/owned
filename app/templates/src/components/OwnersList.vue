@@ -6,7 +6,9 @@
           :class="$style.link"
           :to="{path: '/owners/' + item.slug}"
         >
-          {{item.title}} ({{item.breweries}})
+          <span :class="$style.title">
+            <span>{{item.title}}</span>
+          </span> <span :class="$style.count">({{item.breweries}})</span>
         </router-link>
       </li>
     </ul>
@@ -62,32 +64,74 @@ export default {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .item {
-  @mixin baseline 2, margin-right;
   @mixin baseline 2, margin-bottom;
-  display: inline-block;
+  display: block;
+  max-width: 100%;
+}
+
+@media (--lg) {
+  .item {
+    @mixin baseline 2, margin-right;
+    display: inline-block;
+  }
 }
 
 .link {
-  @mixin font 22, 32;
+  @mixin font 16, 24;
   @mixin baseline 2, padding-left;
   @mixin baseline 2, padding-right;
   @mixin baseline 1, padding-top;
-  @mixin baseline 6, height;
+  @mixin baseline 5, height;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
-  display: inline-block;
   text-decoration: none;
   transition: all .2s ease-in-out;
   opacity: .85;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
 
   &:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
     transform: translateY(-1px);
     opacity: 1;
   }
+}
+
+@media (--md) {
+  .link {
+    @mixin font 22, 32;
+    @mixin baseline 2, padding-left;
+    @mixin baseline 2, padding-right;
+    @mixin baseline 1, padding-top;
+    @mixin baseline 6, height;
+  }
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+
+  span {
+    display: inline-block;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}
+
+.count {
+  @mixin baseline 1, margin-left;
+  display: inline-block;
+  transform: translateY(-3px);
+  vertical-align: top;
+  white-space: nowrap;
 }
 </style>

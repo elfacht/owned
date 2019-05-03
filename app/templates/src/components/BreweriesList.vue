@@ -34,15 +34,17 @@
               brewery.ownership.is_private ? $style.isPrivate : ''
             ]"
           >
-            <td>
+            <td data-label="Brewery">
               <router-link
                 :class="$style.item"
                 :to="{path: '/breweries/' + brewery.slug}"
               >
-                {{brewery.title}}
+                <span :class="$style.tableValue">
+                  {{brewery.title}}
+                </span>
               </router-link>
             </td>
-            <td :class="$style.secondary">
+            <td :class="$style.secondary" data-label="Owned by">
               <div
                 v-if="brewery.ownership.is_private"
                 :class="$style.item"
@@ -168,13 +170,19 @@ export default {
 }
 
 .table {
-  @mixin font 26, 32, var(--copy-font);
+  /* @mixin font 26, 32, var(--copy-font); */
+  @mixin font 14, 16, var(--heading-font);
   @mixin baseline 3, margin-bottom;
   /* border: 1px solid #916f34; */
-  box-shadow: 0 4px 20px rgba(108, 122, 137, .3);
+  /* box-shadow: 0 4px 20px rgba(108, 122, 137, .3); */
   border-collapse: separate;
   position: relative;
+  max-width: 100%;
   width: 100%;
+
+  thead {
+    display: none;
+  }
 
   tbody {
     position: relative;
@@ -206,14 +214,11 @@ export default {
     }
   }
 
-  td {
-    a {
-      text-decoration: none;
-    }
-  }
-
   tr {
-    position: relative;
+    @mixin baseline 4, margin-bottom;
+    float: left;
+    width: 100%;
+    /* position: relative; */
     transition: all .01s ease-in-out;
 
     &:hover td {
@@ -232,11 +237,79 @@ export default {
       }
     }
   }
+
+  td {
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(108, 122, 137, .3);
+    display: block;
+    /* float: left; */
+    width: 100%;
+
+    &:before {
+      @mixin font 10, 16, var(--heading-font);
+      @mixin baseline 2, padding;
+      background-color: #2c5c7c;
+      color: var(--color-sand);
+      content:attr(data-label);
+      display: block;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+  		word-wrap: break-word;
+  		/* border-right:2px solid #15354a; */
+  		width: 100%;
+  		/* float:left; */
+  		/* padding:1em; */
+  		/* margin:-1em 1em -1em -1em; */
+  	}
+
+    &:last-child:before {
+      background-color: var(--color-tundora);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+@media (--lg) {
+  .table {
+    @mixin font 26, 32, var(--copy-font);
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr {
+      float: none;
+    }
+
+    td {
+      box-shadow: none;
+      display: table-cell;
+      hyphens: auto;
+      width: auto;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
 }
 
 .item {
-  @mixin baseline 3, padding;
+  /* @mixin baseline 3, padding; */
+  @mixin baseline 2, padding;
   display: block;
+  /* float: left; */
+  /* display: block; */
+}
+
+@media (--lg) {
+  .item {
+    @mixin baseline 3, padding;
+  }
 }
 
 .isPrivate td {
@@ -250,6 +323,14 @@ export default {
   a {
     color: inherit;
   }
+}
+
+.tableValue {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .loading {

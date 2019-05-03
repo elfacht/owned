@@ -55,7 +55,7 @@ export default {
   .router-link-active,
   .router-link-active:focus {
     background-color: transparent;
-    
+
     strong {
       border-color: #2c5c7c;
     }

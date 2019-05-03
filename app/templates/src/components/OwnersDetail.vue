@@ -7,29 +7,39 @@
       <div :class="$style.inner">
         <h1 :class="$style.title">{{owner.title}}</h1>
 
-        <p
-          v-if="owner.country"
-          :class="$style.location"
+        <div
+          v-if="owner.country || owner.subsidiaries"
+          :class="$style.meta"
         >
-          {{owner.country.title}}
-        </p>
+          <div
+            v-if="owner.country"
+            :class="$style.location"
+          >
+            {{owner.country.title}}
+          </div>
+          <div
+            v-if="owner.subsidiaries"
+            :class="$style.subsidiaries"
+          >
+            — Subsidiary of
+            <template v-for="owner in owner.subsidiaries">
+              <router-link :key="owner.id" :to="{path: '/owners/' + owner.slug}">{{owner.title}}</router-link>
+            </template>
+          </div>
+        </div>
 
         <div
           v-if="owner.note"
-          v-html="owner.note"
-        ></div>
-
-        <div
-          v-if="owner.subsidiaries"
-          :class="$style.subsidiaries"
+          :class="$style.note"
         >
-          — Subsidiary of
-          <template v-for="owner in owner.subsidiaries">
-            <router-link :key="owner.id" :to="{path: '/owners/' + owner.slug}">{{owner.title}}</router-link>
-          </template>
+          <div v-html="owner.note"></div>
+          <div v-if="owner.source">
+            — <a :href="owner.source">Wikipedia</a>
+          </div>
         </div>
-
       </div>
+
+
 
       <div
         v-if="owner.breweries"
@@ -121,9 +131,11 @@ export default {
 <style lang="postcss" module>
 @import '../assets/_mixins';
 
-.container {
-  @mixin container-padding;
-  lost-center: var(--grid-max-width);
+@media (--md) {
+  .container {
+    @mixin container-padding;
+    lost-center: var(--grid-max-width);
+  }
 }
 
 .card {
@@ -135,20 +147,20 @@ export default {
 
 .inner {
   @mixin baseline 3, padding;
+  @mixin baseline 5, padding-bottom;
 }
 
 @media (--lg) {
   .inner {
-    @mixin baseline 5, padding-top;
-    @mixin baseline 3, padding-bottom;
-    @mixin baseline 5, padding-left;
-    @mixin baseline 5, padding-right;
+    @mixin baseline 5, padding;
+    @mixin baseline 4, padding-top;
   }
 }
 
 .title {
   @mixin font 32, 40, var(--heading-font);
   font-weight: 200;
+  hyphens: auto;
   margin: 0;
   transform: translateX(-2px);
 }
@@ -156,13 +168,48 @@ export default {
 @media (--lg) {
   .title {
     @mixin font 64, 72, var(--heading-font);
+    lost-column: 6/7;
     transform: translateX(-5px);
   }
 }
 
+.meta {
+  @mixin baseline 4, margin-bottom;
+  @mixin baseline 1, margin-top;
+
+  div {
+    display: inline-block;
+  }
+}
+
+.note {
+  /* hyphens: auto; */
+  p {
+    @mixin baseline 2, margin-bottom;
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (--md) {
+  .note {
+    lost-column: 4/5;
+  }
+}
+
+@media (--lg) {
+  .note {
+    lost-column: 3/5;
+  }
+}
+
 .location {
-  @mixin baseline 2, margin-top;
+  /* @mixin baseline 2, margin-top; */
   @mixin font 14, 24;
+  color: var(--color-boulder);
 }
 
 .table {

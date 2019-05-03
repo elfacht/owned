@@ -8,7 +8,7 @@ use craft\helpers\UrlHelper;
 
 return [
   'defaults' => [
-    'elementsPerPage' => 20,
+    'elementsPerPage' => 100,
     'transformer' => function(Entry $entry) {
 
       /**
@@ -241,6 +241,8 @@ return [
             'country' => $country,
             'subsidiaries' => $subsidiaries,
             'breweries' => $breweries,
+            'note' => $entry->note,
+            'source' => $entry->sourceUrl,
           ];
         }
       ];

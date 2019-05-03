@@ -86,9 +86,11 @@ export default {
 <style lang="postcss" module>
 @import '../assets/_mixins';
 
-.container {
-  @mixin container-padding;
-  lost-center: var(--grid-max-width);
+@media (--md) {
+  .container {
+    @mixin container-padding;
+    lost-center: var(--grid-max-width);
+  }
 }
 
 .card {
@@ -102,25 +104,25 @@ export default {
 
 .inner {
   @mixin baseline 3, padding;
+  @mixin baseline 5, padding-bottom;
 }
 
 @media (--lg) {
   .inner {
-    @mixin baseline 5, padding-top;
-    @mixin baseline 3, padding-bottom;
-    @mixin baseline 5, padding-left;
-    @mixin baseline 5, padding-right;
+    @mixin baseline 5, padding;
+    @mixin baseline 4, padding-top;
   }
 }
 
 .location {
-  @mixin baseline 2, margin-top;
+  @mixin baseline 1, margin-top;
   @mixin font 14, 24;
 }
 
 .title {
   @mixin font 32, 40, var(--heading-font);
   font-weight: 200;
+  hyphens: auto;
   margin: 0;
 }
 
