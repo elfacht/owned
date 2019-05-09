@@ -207,6 +207,7 @@ export default {
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 4px 20px rgba(108, 122, 137, .3);
+  clear: both;
   /* lost-column: 2/2; */
   overflow: hidden;
 }
