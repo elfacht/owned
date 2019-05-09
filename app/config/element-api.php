@@ -308,6 +308,28 @@ return [
           'slug' => $entry->slug,
         ];
       },
+    ],
+
+    'api/latest/owners' => [
+      'elementType' => Entry::class,
+      'paginate' => false,
+      'criteria' => [
+          'section' => 'owners',
+          'limit' => 5,
+          'orderBy' => 'postDate desc',
+          'search' =>
+            (Craft::$app->request->getParam('q'))
+            ? 'section:'.'*'.Craft::$app->request->getParam('q').'*'
+            : ''
+          ],
+      'transformer' => function(Entry $entry) {
+        return [
+          'id' => $entry->id,
+          'title' => $entry->title,
+          'date_created' => $entry->postDate->format(\DateTime::ATOM),
+          'slug' => $entry->slug,
+        ];
+      },
     ]
   ]
 ];

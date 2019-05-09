@@ -43,38 +43,45 @@
         v-if="owner.breweries"
         :class="$style.listing"
       >
-        <table
-          :class="$style.table"
-          cellpadding="0"
-          cellspacing="0"
+        <base-table
+          :cols="table.cols"
+          :headers="tableHeaders"
+          :items="orderedBreweries"
+          :loading="loading"
         >
-          <thead>
-            <tr>
-              <th>Breweries ({{owner.breweries.length}})</th>
-              <th>Ownership since</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in orderedBreweries" :key="item.id">
-              <td>
-                <router-link
-                  :to="{path: '/breweries/' + item.slug}"
-                  :class="$style.item"
-                >
-                  {{item.title}}
-                </router-link>
-              </td>
-              <td>
-                <div v-if="item.owned_since">
-                  {{ item.owned_since.date | moment('YYYY') }}
-                </div>
-                <div v-else :class="$style.na">
-                  unknown
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <template
+            slot="items"
+            slot-scope="props"
+          >
+            <template
+              slot="baseItem"
+              :url="{path: '/breweries/' + props.item.slug}"
+              :label="props.item.title"
+              >
+            </template>
+
+            <td>
+              <router-link
+                :to="{path: '/breweries/' + props.item.slug}"
+                class="item"
+              >
+                {{props.item.title}}
+              </router-link>
+            </td>
+
+            <td :class="[
+              !props.item.owned_since ? 'secondary' : null
+            ]">
+              <div v-if="props.item.owned_since" class="item">
+                {{ props.item.owned_since.date | moment('YYYY') }}
+              </div>
+              <div v-else class="item">
+                unknown
+              </div>
+            </td>
+
+          </template>
+        </base-table>
 
       </div>
     </div>
@@ -84,13 +91,23 @@
 <script>
 import { mapState } from 'vuex'
 import _ from 'lodash'
+import BaseTable from './BaseTable'
 
 export default {
   name: 'OwnersDetail',
 
+  components: {
+    BaseTable
+  },
+
+  // ${owner.breweries.length}
+
   data () {
     return {
-      title: this.title
+      title: this.title,
+      table: {
+
+      }
     }
   },
 
@@ -102,6 +119,19 @@ export default {
 
     orderedBreweries: function () {
       return _.orderBy(this.owner.breweries, 'title')
+    },
+
+    tableHeaders: function () {
+      let data = [
+        {
+          name: `Breweries (${this.owner.breweries.length})`
+        },
+        {
+          name: 'Owning since'
+        }
+      ]
+
+      return data
     }
   },
 
@@ -209,120 +239,4 @@ export default {
   @mixin font 14, 24;
   color: var(--color-boulder);
 }
-
-.table {
-  @mixin font 26, 32, var(--copy-font);
-  /* border: 1px solid #916f34; */
-  /* box-shadow: 0 4px 20px rgba(108, 122, 137, .3); */
-  border-collapse: separate;
-  width: 100%;
-
-  th,
-  td {
-    transition: all .2s ease-in-out;
-
-    &:not(:last-child) {
-      border-right: 1px solid var(--color-concrete);
-    }
-  }
-
-  th {
-    @mixin font 16, 24, var(--heading-font);
-    @mixin baseline 2, padding;
-    background-color: #2c5c7c;
-    color: var(--color-sand);
-    letter-spacing: .2rem;
-    text-transform: uppercase;
-  }
-
-  .item {
-    @mixin baseline 3, padding;
-    display: block;
-  }
-
-  td {
-    &:last-child {
-      text-align: center;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-
-  tr {
-    position: relative;
-    transition: all .01s ease-in-out;
-
-    &:hover td {
-      background-color: var(--color-alto) !important;
-    }
-
-    &:nth-child(odd) {
-      td {
-        background-color: #fff;
-      }
-    }
-
-    &:nth-child(even) {
-      td {
-        background-color: var(--color-sand);
-      }
-    }
-  }
-}
-
-.na {
-  color: var(--color-bombay);
-}
-
-.subsidiaries {
-  @mixin font 14, 24;
-  color: var(--color-boulder);
-
-  a {
-    border-bottom: 1px solid currentColor;
-    color: var(--color-tundora);
-    text-decoration: none;
-    transition: border .1s ease-in-out;
-
-    &:hover {
-      border-color: transparent;
-    }
-  }
-}
-
-/* .list {
-  font-size: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.item {
-  @mixin baseline 2, margin-right;
-  @mixin baseline 2, margin-bottom;
-  display: inline-block;
-}
-
-.link {
-  @mixin font 22, 32;
-  @mixin baseline 2, padding-left;
-  @mixin baseline 2, padding-right;
-  @mixin baseline 1, padding-top;
-  @mixin baseline 6, height;
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
-  display: inline-block;
-  text-decoration: none;
-  transition: all .2s ease-in-out;
-  opacity: .85;
-
-  &:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
-    transform: translateY(-1px);
-    opacity: 1;
-  }
-} */
 </style>
