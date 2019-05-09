@@ -1,11 +1,11 @@
 {
   "vendor.js": "/dist/assets/js/vendor.4c25f25aee96a6554a2c.js",
   "vendor.js.map": "/dist/assets/js/vendor.4c25f25aee96a6554a2c.js.map",
-  "app.js": "/dist/assets/js/app.c2dedce7b1f735ed0aeb.js",
-  "app.css": "/dist/css/app.9b55a4d4fa6f5c38e5bd78e8d0d06f04.css",
-  "app.js.map": "/dist/assets/js/app.c2dedce7b1f735ed0aeb.js.map",
+  "app.js": "/dist/assets/js/app.5857906a0c2f3bb1a1e9.js",
+  "app.css": "/dist/css/app.4e7f79e497599e71c08ffd2344e4ed2b.css",
+  "app.js.map": "/dist/assets/js/app.5857906a0c2f3bb1a1e9.js.map",
   "manifest.js": "/dist/assets/js/manifest.17490b280f1afd2d1291.js",
   "manifest.js.map": "/dist/assets/js/manifest.17490b280f1afd2d1291.js.map",
-  "css/app.9b55a4d4fa6f5c38e5bd78e8d0d06f04.css.map": "/dist/css/app.9b55a4d4fa6f5c38e5bd78e8d0d06f04.css.map",
+  "css/app.4e7f79e497599e71c08ffd2344e4ed2b.css.map": "/dist/css/app.4e7f79e497599e71c08ffd2344e4ed2b.css.map",
   "../../templates/dist/index.html": "/dist/../../templates/dist/index.html"
 }
