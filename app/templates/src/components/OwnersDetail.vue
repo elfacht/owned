@@ -196,8 +196,10 @@ export default {
 @media (--lg) {
   .title {
     @mixin font 64, 72, var(--heading-font);
-    lost-column: 6/7;
+    /* lost-column: 6/7; */
+    hyphens: none;
     transform: translateX(-5px);
+    width: calc(100% - 100px);
   }
 }
 
