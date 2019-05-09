@@ -18,6 +18,17 @@
  * set to the value `2012`.
  */
 
-return [
-  // '<url:(?!api\/).*>' => ['template' => 'index']
-];
+
+$routes = array();
+
+$stagingRoutes = array(
+    '<url:(?!api\/).*>' => ['template' => 'index'],
+);
+
+if (strpos(CRAFT_ENVIRONMENT, 'staging') !== false || strpos(CRAFT_ENVIRONMENT, 'production') !== false) {
+    $routes = array_merge($routes, $stagingRoutes);
+} else {
+    $routes = array_merge($routes);
+}
+
+return $routes;

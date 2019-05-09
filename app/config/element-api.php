@@ -46,7 +46,7 @@ return [
 
 
       $ownership = [
-        'is_private' => $entry->isPrivate || false,
+        'is_independent' => $entry->isPrivate || false,
         'owned_since' => $entry->ownedSince ? $entry->ownedSince->format(\DateTime::ATOM) : null,
         'owners' => $owners,
       ];

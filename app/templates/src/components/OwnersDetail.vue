@@ -39,8 +39,6 @@
         </div>
       </div>
 
-
-
       <div
         v-if="owner.breweries"
         :class="$style.listing"

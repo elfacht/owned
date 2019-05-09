@@ -31,7 +31,7 @@
             v-for="brewery in breweries"
             :key="brewery.id"
             :class="[
-              brewery.ownership.is_private ? $style.isPrivate : ''
+              brewery.ownership.is_independent ? $style.isPrivate : ''
             ]"
           >
             <td data-label="Brewery">
@@ -46,10 +46,10 @@
             </td>
             <td :class="$style.secondary" data-label="Owned by">
               <div
-                v-if="brewery.ownership.is_private"
+                v-if="brewery.ownership.is_independent"
                 :class="$style.item"
               >
-                <strong>private</strong>
+                <strong>{{statusIndependent}}</strong>
               </div>
               <div v-else :class="$style.item">
                 <span v-for="corp in brewery.ownership.owners" :key="corp.id">
@@ -102,7 +102,8 @@ export default {
       thBreweries: 'Brewery',
       thCountry: 'Country',
       thCorporation: 'Owned by',
-      title: 'Home'
+      title: 'Home',
+      statusIndependent: 'independent'
     }
   },
 
@@ -222,16 +223,16 @@ export default {
     transition: all .01s ease-in-out;
 
     &:hover td {
-      background-color: var(--color-alto) !important;
+      background-color: var(--color-alto);
     }
 
-    &:nth-child(odd) {
+    &:nth-child(odd):not(.isPrivate):not(:hover) {
       td {
         background-color: #fff;
       }
     }
 
-    &:nth-child(even) {
+    &:nth-child(even):not(.isPrivate):not(:hover) {
       td {
         background-color: var(--color-sand);
       }
@@ -255,13 +256,9 @@ export default {
       font-weight: normal;
       text-transform: uppercase;
       letter-spacing: .1rem;
-  		word-wrap: break-word;
-  		/* border-right:2px solid #15354a; */
-  		width: 100%;
-  		/* float:left; */
-  		/* padding:1em; */
-  		/* margin:-1em 1em -1em -1em; */
-  	}
+      word-wrap: break-word;
+      width: 100%;
+    }
 
     &:last-child:before {
       background-color: var(--color-tundora);
@@ -312,9 +309,24 @@ export default {
   }
 }
 
-.isPrivate td {
-  /* background-color: #e7e89b !important; */
-  background: linear-gradient(180deg, rgba(231,232,155,1) 0%, rgba(226,227,155,1) 100%);
+tr.isPrivate {
+  &:nth-child(odd) {
+    td {
+      background-color: var(--color-primrose);
+    }
+  }
+
+  &:nth-child(even) {
+    td {
+      background-color: var(--color-zombie);
+    }
+  }
+
+  &:hover {
+    td {
+      background: var(--color-alto);
+    }
+  }
 }
 
 .secondary {
