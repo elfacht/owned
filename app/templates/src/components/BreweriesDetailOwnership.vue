@@ -1,14 +1,14 @@
 <template lang="html">
   <div :class="[
       $style.owner,
-      ownership.is_private ? $style.isPrivate : $style.isOwned
+      ownership.is_independent ? $style.isPrivate : $style.isOwned
     ]">
     <h2 :class="$style.subtitle">Owned by</h2>
     <div
-      v-if="ownership.is_private"
-      :class="$style.private"
+      v-if="ownership.is_independent"
+      :class="$style.independent"
     >
-      private
+      {{statusIndependent}}
     </div>
     <div v-else>
       <div v-if="ownership && ownership.owners">
@@ -40,6 +40,12 @@ export default {
 
   props: {
     ownership: Object
+  },
+
+  data () {
+    return {
+      statusIndependent: 'independent'
+    }
   }
 }
 </script>
@@ -138,7 +144,7 @@ export default {
   font-weight: 200;
 }
 
-.private {
+.independent {
   @mixin font 20, 32, var(--heading-font);
   font-weight: 200;
   /* transform: translateX(-3px); */
@@ -149,7 +155,7 @@ export default {
     @mixin font 42, 48, var(--heading-font);
   }
 
-  .private {
+  .independent {
     @mixin font 42, 48, var(--heading-font);
   }
 }
