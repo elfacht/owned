@@ -48,9 +48,6 @@
     "post-create-project-cmd": [
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
-    ],
-    "post-install-cmd": [
-      "./craft project-config/sync"
     ]
   }
 }
