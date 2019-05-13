@@ -11,14 +11,14 @@
       class="select"
       :name="name"
       :id="id"
-      @input="$emit('input', $event.target.value)"
+      @input="$emit('input', [$event.target.value])"
       v-if="getList"
     >
       <option v-if="emptyOption" value="0">{{emptyOption}}</option>
       <option
         v-for="(item, index) in getList"
         :key="index"
-        :value="item.value"
+        :value="item.value || item.id"
       >
         {{item.title || item.label}}
       </option>

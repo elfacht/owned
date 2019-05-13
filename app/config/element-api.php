@@ -257,7 +257,7 @@ return [
             (Craft::$app->request->getParam('q'))
             ? 'title:'.'*'.Craft::$app->request->getParam('q').'*'
             .' OR ' . 'country:'.'*'.Craft::$app->request->getParam('q').'*'
-            .' OR ' . 'tags:'.'*'.Craft::$app->request->getParam('q').'*'
+            .' OR ' . 'note:'.'*'.Craft::$app->request->getParam('q').'*'
             : ''
           ],
       'transformer' => function(Entry $entry) {

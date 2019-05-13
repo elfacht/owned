@@ -2,6 +2,7 @@
   <div class="container">
     <label v-if="label" :for="id || null">{{label}}</label>
     <input
+      v-if="type !== 'textarea'"
       :type="type || 'text'"
       :id="id || null"
       :name="name || null"
@@ -10,6 +11,17 @@
       @focus="setActive"
       @blur="unsetActive"
     >
+
+    <textarea
+      v-else
+      :id="id || null"
+      :name="name || null"
+      :rows="rows || 5"
+      @input="$emit('input', $event.target.value)"
+      :class="{active: isActive}"
+      @focus="setActive"
+      @blur="unsetActive"
+    ></textarea>
   </div>
 </template>
 
@@ -21,7 +33,8 @@ export default {
     type: String,
     id: String,
     name: String,
-    label: String
+    label: String,
+    rows: String
   },
 
   data () {
@@ -58,8 +71,8 @@ label {
   text-transform: uppercase;
 }
 
-input {
-  @mixin baseline 6, height;
+input,
+textarea {
   @mixin baseline 2, padding-left;
   @mixin baseline 2, padding-right;
   @mixin font 14, 24, var(--copy-font);
@@ -79,5 +92,24 @@ input {
     box-shadow: inset 1px 2px 2px 0 rgba(0, 0, 0, .5),
                 0 0 10px rgba(255, 255, 255, .3)
   }
+}
+
+input {
+  @mixin baseline 6, height;
+}
+
+input[type='text'],
+input[type='date'] {
+  @mixin baseline 5, height;
+  width: 100%;
+}
+
+textarea {
+  @mixin baseline 2, padding-top;
+  @mixin baseline 2, padding-bottom;
+}
+
+textarea {
+  width: 100%;
 }
 </style>

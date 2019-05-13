@@ -74,29 +74,20 @@
         </div>
 
         <div :class="$style.item">
-          <label for="note">Note</label>
-          <textarea
-            v-model="form.fields['note']"
+          <FormInput
+            type="textarea"
             id="note"
-            type="text"
             name="note"
-            rows="4"
-          ></textarea>
-        </div>
-
-        <div :class="$style.item">
-          <label for="tags">Tags</label>
-          <input
-            v-model="form.fields['tags']"
-            id="tags"
-            type="text"
-            name="tags"
-            value=""
+            label="Note"
+            rows="7"
+            v-model="form.fields['note']"
           />
         </div>
 
+        <hr>
+
         <div :class="$style.item">
-          <label for="isPrivate">is private</label>
+          <label for="isPrivate">is independent</label>
           <input
             v-model="form.fields['isPrivate']"
             id="isPrivate"
@@ -127,16 +118,22 @@
         </div>
 
         <base-button
-          :disabled='errors.any() || !isComplete'>
-          My Button
+          :disabled='errors.any() || !isComplete'
+          :loading="inProgress"
+          :success="success"
+          alignRight
+          >
+          Create Brewery
         </base-button>
       </form>
 
-      <!-- <ul>
+      {{success}}
+
+      <ul>
         <li v-for="(item, k) in form" :key="k">
          <strong>{{ k }}:</strong> {{ item }}
         </li>
-      </ul> -->
+      </ul>
     </div>
 
   </div>
@@ -147,6 +144,36 @@ import { mapState } from 'vuex'
 import FormSelect from './BaseSelect.vue'
 import BaseButton from './BaseButton.vue'
 import FormInput from './BaseInput.vue'
+
+function initialState () {
+  return {
+    form: {
+      title: '',
+      fields: {
+        founded: '',
+        city: '',
+        country: '',
+        note: '',
+        owners: [],
+        isPrivate: '',
+        ownedSince: ''
+      },
+      method: 'post',
+      action: 'entries/save-entry',
+      returnUrl: '/#/breweries/',
+      sectionId: 1,
+      enabled: 1
+    },
+    theUser: {
+      loginName: null,
+      password: null,
+      action: 'users/login',
+      returnUrl: '/create/brewery'
+    },
+    inProgress: false,
+    success: false
+  }
+}
 
 export default {
   name: 'CreateBrewery',
@@ -162,32 +189,7 @@ export default {
   },
 
   data () {
-    return {
-      form: {
-        title: '',
-        fields: {
-          founded: '',
-          city: '',
-          country: '',
-          note: '',
-          tags: [''],
-          owners: '',
-          isPrivate: '',
-          ownedSince: ''
-        },
-        method: 'post',
-        action: 'entries/save-entry',
-        returnUrl: '/#/breweries/',
-        sectionId: 1,
-        enabled: 1
-      },
-      theUser: {
-        loginName: null,
-        password: null,
-        action: 'users/login',
-        returnUrl: '/create/brewery'
-      }
-    }
+    return initialState()
   },
 
   computed: {
@@ -221,31 +223,34 @@ export default {
 
           data[window.csrfTokenName] = window.csrfTokenValue
 
+          this.inProgress = true
+
           this.$http.post('/', data)
             .then(function (response) {
-              console.log('saved', response)
               e.target.reset()
+              this.resetForm()
+
+              this.success = true
+              this.inProgress = false
+              this.$store.state.loading = false
+
+              setTimeout(function () {
+                this.success = false
+              }.bind(this), 2000)
             })
         }
       })
     },
-    doLogin (e) {
-      let data = this.theUser
 
-      console.log(e.target)
+    resetForm () {
+      Object.assign(this.$data, initialState())
+    }
+  },
 
-      data[window.csrfTokenName] = window.csrfTokenValue
-
-      this.$http.post('/', data)
-        .then(function (response) {
-          console.log(response)
-          if (response.body.success) {
-            this.$router.go('/create/brewery')
-          }
-          if (response.body.error) {
-            this.errors = response.body.error
-          }
-        })
+  metaInfo () {
+    return {
+      title: 'Add a new brewery',
+      titleTemplate: null
     }
   }
 }
@@ -288,17 +293,6 @@ export default {
 
   label {
     display: block;
-  }
-
-  input[type='text'],
-  input[type='date'],
-  textarea {
-    @mixin baseline 5, height;
-    width: 100%;
-  }
-
-  textarea {
-    @mixin baseline 10, height;
   }
 
   [aria-invalid='true'] {
