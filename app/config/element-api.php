@@ -253,13 +253,15 @@ return [
       'criteria' => [
           'section' => ['breweries', 'owners'],
           'limit' => 10,
-          'search' =>
-            (Craft::$app->request->getParam('q'))
-            ? 'title:'.'*'.Craft::$app->request->getParam('q').'*'
-            .' OR ' . 'country:'.'*'.Craft::$app->request->getParam('q').'*'
-            .' OR ' . 'note:'.'*'.Craft::$app->request->getParam('q').'*'
-            : ''
-          ],
+          'search' => [
+            'query' => !Craft::$app->getRequest()->getIsConsoleRequest() ? 'title:'.'*'.Craft::$app->request->getParam('q').'*'
+              .' OR ' . 'country:'.'*'.Craft::$app->request->getParam('q').'*'
+              .' OR ' . 'note:'.'*'.Craft::$app->request->getParam('q').'*' : null,
+            'subLeft' => true,
+            'subRight' => true,
+          ]
+
+      ],
       'transformer' => function(Entry $entry) {
         /**
          * Get all course categories
@@ -295,11 +297,10 @@ return [
           'section' => 'breweries',
           'limit' => 5,
           'orderBy' => 'postDate desc',
-          'search' =>
-            (Craft::$app->request->getParam('q'))
-            ? 'section:'.'*'.Craft::$app->request->getParam('q').'*'
-            : ''
-          ],
+          'search' => [
+            'query' => !Craft::$app->getRequest()->getIsConsoleRequest() ? 'section:'.'*'.Craft::$app->request->getParam('q').'*' : null,
+          ]
+      ],
       'transformer' => function(Entry $entry) {
         return [
           'id' => $entry->id,
@@ -317,11 +318,10 @@ return [
           'section' => 'owners',
           'limit' => 5,
           'orderBy' => 'postDate desc',
-          'search' =>
-            (Craft::$app->request->getParam('q'))
-            ? 'section:'.'*'.Craft::$app->request->getParam('q').'*'
-            : ''
-          ],
+          'search' => [
+            'query' => !Craft::$app->getRequest()->getIsConsoleRequest() ? 'section:'.'*'.Craft::$app->request->getParam('q').'*' : null,
+          ]
+      ],
       'transformer' => function(Entry $entry) {
         return [
           'id' => $entry->id,
