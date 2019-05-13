@@ -49,5 +49,11 @@
       "@composer dump-autoload -o",
       "@php craft setup/welcome"
     ]
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./plugins/*"
+    }
+  ]
 }
