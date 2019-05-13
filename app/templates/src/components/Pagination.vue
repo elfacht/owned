@@ -45,7 +45,6 @@ export default {
        * Set paging types with default
        * @type {String}
        */
-      // this.$emit('getBreweries')
       this.$router.push({ path: this.path + pageId + '/' })
     }
   }

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <router-view name="header"></router-view>
-    <!-- <transition name="fade"> -->
+    <transition>
       <router-view v-if="!loadingUser" :key="$route.fullPath" :loggedIn="loggedIn" />
-    <!-- </transition> -->
+    </transition>
   </div>
 </template>
 
@@ -15,15 +15,24 @@ import Navigation from './components/AppNavigation'
 
 export default {
   name: 'App',
+
   components: {
     AppHeader,
     Search,
     Navigation
   },
+
+  data () {
+    return {
+      currentTransition: 'fade'
+    }
+  },
+
   metaInfo: {
     title: 'owned',
     titleTemplate: '%s | owned'
   },
+
   computed: {
     ...mapState([
       'user',
@@ -31,9 +40,11 @@ export default {
       'loadingUser'
     ])
   },
+
   mounted: function () {
     this.$store.dispatch('LOAD_USER')
   },
+
   ready: function () {
 
   }

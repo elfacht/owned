@@ -28,15 +28,18 @@
           </div>
         </div>
 
-        <div
-          v-if="owner.note"
-          :class="$style.note"
-        >
-          <div v-html="owner.note"></div>
-          <div v-if="owner.source">
-            — <a :href="owner.source">Wikipedia</a>
+        <div :class="$style.body">
+          <div
+            v-if="owner.note"
+            :class="$style.note"
+          >
+            <div v-html="owner.note"></div>
+            <div v-if="owner.source">
+              — <a :href="owner.source">Wikipedia</a>
+            </div>
           </div>
         </div>
+
       </div>
 
       <div
@@ -210,6 +213,10 @@ export default {
   div {
     display: inline-block;
   }
+}
+
+.body {
+  lost-center: 100%;
 }
 
 .note {
