@@ -297,9 +297,6 @@ return [
           'section' => 'breweries',
           'limit' => 5,
           'orderBy' => 'postDate desc',
-          'search' => [
-            'query' => !Craft::$app->getRequest()->getIsConsoleRequest() ? 'section:'.'*'.Craft::$app->request->getParam('q').'*' : null,
-          ]
       ],
       'transformer' => function(Entry $entry) {
         return [
@@ -318,10 +315,7 @@ return [
           'section' => 'owners',
           'limit' => 5,
           'orderBy' => 'postDate desc',
-          'search' => [
-            'query' => !Craft::$app->getRequest()->getIsConsoleRequest() ? 'section:'.'*'.Craft::$app->request->getParam('q').'*' : null,
-          ]
-      ],
+        ],
       'transformer' => function(Entry $entry) {
         return [
           'id' => $entry->id,
