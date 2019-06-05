@@ -11,7 +11,9 @@
         />
 
         <div :class="$style.inner">
-          <h1 :class="$style.title">{{brewery.title}}</h1>
+          <h1 :class="$style.title">
+            {{brewery.title}}
+          </h1>
 
           <div
             v-if="brewery.city || brewery.country"
@@ -22,6 +24,13 @@
             </template>
             <template v-if="brewery.country">
               {{brewery.country.title}}
+            </template>
+
+            <template v-if="brewery.founded">
+              <template v-if="brewery.city || brewery.country">
+                –
+              </template>
+              opened {{brewery.founded | moment('YYYY')}}
             </template>
           </div>
 
@@ -131,5 +140,9 @@ export default {
     @mixin font 64, 72, var(--heading-font);
     transform: translateX(-5px);
   }
+}
+
+.subtitle {
+  color: var(--color-bombay);
 }
 </style>

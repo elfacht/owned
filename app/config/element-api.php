@@ -62,6 +62,7 @@ return [
         // 'owner' => $owners,
         'city' => $entry->city,
         'country' => $country,
+        'founded' => $entry->founded ? $entry->founded->format(\DateTime::ATOM) : null,
         'ownership' => $ownership,
         'note' => $entry->note,
       ];
