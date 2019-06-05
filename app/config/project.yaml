@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'countries/{slug}'
         template: ''
-dateModified: 1557765686
+dateModified: 1559722921
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -1249,7 +1249,6 @@ sections:
     handle: breweries
     type: channel
     enableVersioning: true
-    propagateEntries: true
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         enabledByDefault: true
@@ -1299,12 +1298,12 @@ sections:
                   eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
                     required: false
                     sortOrder: 3
+    propagationMethod: all
   b73fb847-c20b-4318-ae96-e14162d6f299:
     name: Owners
     handle: owners
     type: channel
     enableVersioning: true
-    propagateEntries: true
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         enabledByDefault: true
@@ -1341,12 +1340,12 @@ sections:
                   2d362f2a-45c1-4235-bcb4-38535b6f802d:
                     required: false
                     sortOrder: 5
+    propagationMethod: all
   2cb44c95-045e-4525-b454-6816ea4137b4:
     name: Pages
     handle: pages
     type: structure
     enableVersioning: true
-    propagateEntries: true
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         enabledByDefault: true
@@ -1364,6 +1363,7 @@ sections:
         titleLabel: Titel
         titleFormat: null
         sortOrder: 1
+    propagationMethod: all
 siteGroups:
   a86a0999-46ab-4724-95af-d64dda5f60d6:
     name: owned
@@ -1381,7 +1381,7 @@ system:
   edition: solo
   name: $SYSTEM_NAME
   live: true
-  schemaVersion: 3.1.28
+  schemaVersion: 3.2.8
   timeZone: Europe/Berlin
 tagGroups:
   524e0c85-c0d7-460d-99aa-93e98676e4a6:
