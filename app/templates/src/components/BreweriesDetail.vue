@@ -28,7 +28,7 @@
 
             <template v-if="brewery.founded">
               <template v-if="brewery.city || brewery.country">
-                –
+                —
               </template>
               opened {{brewery.founded | moment('YYYY')}}
             </template>
