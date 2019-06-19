@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0f23d669ecff62113cc8939694872ee",
+    "content-hash": "efd4fb730ef8920a4792f6a21d2a9dfe",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -401,16 +401,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.2.0-beta.1",
+            "version": "3.2.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "a58c1f50829dc1a09ced59f91623122da501c843"
+                "reference": "c9407c96f077334faacda04f0ae1ad207a01d3e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/a58c1f50829dc1a09ced59f91623122da501c843",
-                "reference": "a58c1f50829dc1a09ced59f91623122da501c843",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c9407c96f077334faacda04f0ae1ad207a01d3e8",
+                "reference": "c9407c96f077334faacda04f0ae1ad207a01d3e8",
                 "shasum": ""
             },
             "require": {
@@ -442,7 +442,7 @@
                 "true/punycode": "^2.1.0",
                 "twig/twig": "~2.11.0",
                 "yii2tech/ar-softdelete": "^1.0.2",
-                "yiisoft/yii2": "~2.0.19.0",
+                "yiisoft/yii2": "~2.0.21.0",
                 "yiisoft/yii2-debug": "^2.0.10",
                 "yiisoft/yii2-queue": "2.1.0",
                 "yiisoft/yii2-swiftmailer": "^2.1.0",
@@ -489,7 +489,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2019-06-04T17:52:05+00:00"
+            "time": "2019-06-18T21:15:15+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -813,20 +813,23 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5"
             },
             "type": "library",
             "extra": {
@@ -835,8 +838,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -857,13 +860,16 @@
                     "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
             "keywords": [
+                "annotations",
+                "docblock",
                 "lexer",
-                "parser"
+                "parser",
+                "php"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "time": "2019-06-08T11:03:04+00:00"
         },
         {
             "name": "dolphiq/sitemap",
@@ -1348,16 +1354,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.2.83",
+            "version": "v1.2.84",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "80f1357b431c605745eeb901fe4c32c8f25a5c52"
+                "reference": "b7f35477a56609dd0d753c07ada912b66af3df01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/80f1357b431c605745eeb901fe4c32c8f25a5c52",
-                "reference": "80f1357b431c605745eeb901fe4c32c8f25a5c52",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/b7f35477a56609dd0d753c07ada912b66af3df01",
+                "reference": "b7f35477a56609dd0d753c07ada912b66af3df01",
                 "shasum": ""
             },
             "require": {
@@ -1393,7 +1399,7 @@
                 "crawlerdetect",
                 "php crawler detect"
             ],
-            "time": "2019-06-04T19:56:51+00:00"
+            "time": "2019-06-14T21:10:21+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1463,16 +1469,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.52",
+            "version": "1.0.53",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "c5a5097156387970e6f0ccfcdf03f752856f3391"
+                "reference": "08e12b7628f035600634a5e76d95b5eb66cea674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c5a5097156387970e6f0ccfcdf03f752856f3391",
-                "reference": "c5a5097156387970e6f0ccfcdf03f752856f3391",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/08e12b7628f035600634a5e76d95b5eb66cea674",
+                "reference": "08e12b7628f035600634a5e76d95b5eb66cea674",
                 "shasum": ""
             },
             "require": {
@@ -1543,7 +1549,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-05-20T20:21:14+00:00"
+            "time": "2019-06-18T20:09:29+00:00"
         },
         {
             "name": "league/fractal",
@@ -3692,16 +3698,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.11.1",
+            "version": "v2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "0418e17113266e84c03ccf758680af8abc4b22dc"
+                "reference": "699ed2342557c88789a15402de5eb834dedd6792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/0418e17113266e84c03ccf758680af8abc4b22dc",
-                "reference": "0418e17113266e84c03ccf758680af8abc4b22dc",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/699ed2342557c88789a15402de5eb834dedd6792",
+                "reference": "699ed2342557c88789a15402de5eb834dedd6792",
                 "shasum": ""
             },
             "require": {
@@ -3755,7 +3761,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-06-04T11:32:47+00:00"
+            "time": "2019-06-18T15:37:11+00:00"
         },
         {
             "name": "verbb/field-manager",
@@ -3909,16 +3915,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.19",
+            "version": "2.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "3e74c7338dd83cea6ffc6f5c25202b9f2f271f89"
+                "reference": "7e4622252c5f272373e1339a47d331e4a55e9591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/3e74c7338dd83cea6ffc6f5c25202b9f2f271f89",
-                "reference": "3e74c7338dd83cea6ffc6f5c25202b9f2f271f89",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/7e4622252c5f272373e1339a47d331e4a55e9591",
+                "reference": "7e4622252c5f272373e1339a47d331e4a55e9591",
                 "shasum": ""
             },
             "require": {
@@ -4005,7 +4011,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2019-05-21T16:01:16+00:00"
+            "time": "2019-06-18T14:25:08+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",

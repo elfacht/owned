@@ -24,7 +24,7 @@ return [
 	// All environments
 	'*' => [
 		'omitScriptNameInUrls' => true,
-		'cpTrigger' => 'admin',
+		'cpTrigger' => 'oadmin',
     'useProjectConfigFile' => true,
 
 		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
