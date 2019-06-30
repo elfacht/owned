@@ -1,14 +1,14 @@
 categoryGroups:
-  fb7b3af4-bf40-4269-883d-aa4945d724ce:
-    name: Owners
-    handle: owners
+  009b8f9d-ab7e-4bb9-a40e-add5791ea3f6:
+    name: Countries
+    handle: countries
     structure:
-      uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
+      uid: 431c3b15-a6fa-4eed-a274-4785f3908f95
       maxLevels: null
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         hasUrls: true
-        uriFormat: 'owners/{slug}'
+        uriFormat: 'countries/{slug}'
         template: ''
   5ff18d47-af9f-406c-a977-ff345fdc0578:
     name: Categories
@@ -21,18 +21,18 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'types/{slug}'
         template: ''
-  009b8f9d-ab7e-4bb9-a40e-add5791ea3f6:
-    name: Countries
-    handle: countries
+  fb7b3af4-bf40-4269-883d-aa4945d724ce:
+    name: Owners
+    handle: owners
     structure:
-      uid: 431c3b15-a6fa-4eed-a274-4785f3908f95
+      uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
       maxLevels: null
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         hasUrls: true
-        uriFormat: 'countries/{slug}'
+        uriFormat: 'owners/{slug}'
         template: ''
-dateModified: 1560938071
+dateModified: 1561881598
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -40,150 +40,17 @@ email:
 fieldGroups:
   04887042-9aa1-44e9-b100-dace878e95ea:
     name: Controls
-  6d6c51e7-f905-4ef8-85f3-ed10f51e2859:
-    name: Relations
+  39cb0973-d34a-4d0b-8b82-ad27e6ff2d45:
+    name: Dates
   6b8c4a95-1e43-487d-a5aa-66b779ea2fb0:
     name: Text
+  6d6c51e7-f905-4ef8-85f3-ed10f51e2859:
+    name: Relations
   7cbd02e2-f346-4570-8df9-03bc6cd3c090:
     name: Assets
   fb307d4e-eeb2-4c53-9d0c-85225df5608f:
     name: Tables
-  39cb0973-d34a-4d0b-8b82-ad27e6ff2d45:
-    name: Dates
 fields:
-  a149f707-9b00-4fe6-9a0a-51358943c406:
-    name: Category
-    handle: category
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Categories
-    settings:
-      branchLimit: '1'
-      sources: '*'
-      source: 'group:5ff18d47-af9f-406c-a977-ff345fdc0578'
-      targetSiteId: null
-      viewMode: null
-      limit: null
-      selectionLabel: 'Add types'
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
-  466e2928-f31d-4ec5-95fd-9e59fabd42c3:
-    name: Owners
-    handle: owners
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
-    settings:
-      sources:
-        - 'section:b73fb847-c20b-4318-ae96-e14162d6f299'
-      source: null
-      targetSiteId: null
-      viewMode: null
-      limit: ''
-      selectionLabel: ''
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
-  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
-    name: Note
-    handle: note
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\redactor\Field
-    settings:
-      redactorConfig: Standard.json
-      purifierConfig: ''
-      purifyHtml: '1'
-      columnType: text
-      availableVolumes: '*'
-      availableTransforms: '*'
-      removeInlineStyles: '1'
-      removeEmptyTags: '1'
-      removeNbsp: '1'
-    contentColumnType: text
-    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
-  a167b64d-ee60-414c-b153-32b0b1be573e:
-    name: 'is private'
-    handle: isPrivate
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Lightswitch
-    settings:
-      default: ''
-    contentColumnType: boolean
-    fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
-  728b2cf1-ba58-48ff-badd-e45f3377b33b:
-    name: Founded
-    handle: founded
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Date
-    settings:
-      showDate: true
-      showTime: false
-      minuteIncrement: '30'
-    contentColumnType: datetime
-    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
-  eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
-    name: 'Start Ownership'
-    handle: ownedSince
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Date
-    settings:
-      showDate: true
-      showTime: false
-      minuteIncrement: '30'
-    contentColumnType: datetime
-    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
-  f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
-    name: City
-    handle: city
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    contentColumnType: text
-    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
-  2d362f2a-45c1-4235-bcb4-38535b6f802d:
-    name: Tags
-    handle: tags
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Tags
-    settings:
-      sources: '*'
-      source: 'taggroup:524e0c85-c0d7-460d-99aa-93e98676e4a6'
-      targetSiteId: null
-      viewMode: null
-      limit: null
-      selectionLabel: ''
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
   0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
     name: Country
     handle: country
@@ -1172,6 +1039,44 @@ fields:
           default: ''
     contentColumnType: string
     fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
+  2d362f2a-45c1-4235-bcb4-38535b6f802d:
+    name: Tags
+    handle: tags
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Tags
+    settings:
+      sources: '*'
+      source: 'taggroup:524e0c85-c0d7-460d-99aa-93e98676e4a6'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
+    name: Note
+    handle: note
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Standard.json
+      purifierConfig: ''
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+    contentColumnType: text
+    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
   3cea8865-f791-490b-ad28-f0911d539a71:
     name: 'Subsidiary of …'
     handle: subsidiary
@@ -1191,6 +1096,39 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  466e2928-f31d-4ec5-95fd-9e59fabd42c3:
+    name: Owners
+    handle: owners
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:b73fb847-c20b-4318-ae96-e14162d6f299'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  728b2cf1-ba58-48ff-badd-e45f3377b33b:
+    name: Founded
+    handle: founded
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Date
+    settings:
+      showDate: true
+      showTime: false
+      minuteIncrement: '30'
+    contentColumnType: datetime
+    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
   9d175f67-4ddf-4e39-b63a-634c077f4f33:
     name: 'Source Link (Wikipeadia)'
     handle: sourceUrl
@@ -1203,6 +1141,68 @@ fields:
       placeholder: ''
       maxLength: '255'
     contentColumnType: string(255)
+    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+  a149f707-9b00-4fe6-9a0a-51358943c406:
+    name: Category
+    handle: category
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      branchLimit: '1'
+      sources: '*'
+      source: 'group:5ff18d47-af9f-406c-a977-ff345fdc0578'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: 'Add types'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+  a167b64d-ee60-414c-b153-32b0b1be573e:
+    name: 'is private'
+    handle: isPrivate
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
+  eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
+    name: 'Start Ownership'
+    handle: ownedSince
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Date
+    settings:
+      showDate: true
+      showTime: false
+      minuteIncrement: '30'
+    contentColumnType: datetime
+    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
+  f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
+    name: City
+    handle: city
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
     fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
 globalSets:
   8734572b-3540-4e51-ac9d-1110080d78fc:
@@ -1244,6 +1244,29 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 sections:
+  2cb44c95-045e-4525-b454-6816ea4137b4:
+    name: Pages
+    handle: pages
+    type: structure
+    enableVersioning: true
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{parent.uri}/{slug}'
+        template: ''
+    structure:
+      uid: 38d84ec6-f7a7-4ae4-8b1e-6d7c43be94fb
+      maxLevels: null
+    entryTypes:
+      f08d8f10-36b0-4e75-809f-4f6094bf9a41:
+        name: Pages
+        handle: pages
+        hasTitleField: true
+        titleLabel: Titel
+        titleFormat: null
+        sortOrder: 1
+    propagationMethod: all
   949bad15-506a-4954-984f-9e7f54a6a4fb:
     name: Breweries
     handle: breweries
@@ -1270,31 +1293,31 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
+                  0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
+                    required: false
+                    sortOrder: 3
+                  2d362f2a-45c1-4235-bcb4-38535b6f802d:
+                    required: false
+                    sortOrder: 5
+                  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
+                    required: false
+                    sortOrder: 4
                   728b2cf1-ba58-48ff-badd-e45f3377b33b:
                     required: false
                     sortOrder: 1
                   f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
                     required: false
                     sortOrder: 2
-                  0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
-                    required: false
-                    sortOrder: 3
-                  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
-                    required: false
-                    sortOrder: 4
-                  2d362f2a-45c1-4235-bcb4-38535b6f802d:
-                    required: false
-                    sortOrder: 5
               -
                 name: Ownership
                 sortOrder: 2
                 fields:
-                  a167b64d-ee60-414c-b153-32b0b1be573e:
-                    required: false
-                    sortOrder: 1
                   466e2928-f31d-4ec5-95fd-9e59fabd42c3:
                     required: false
                     sortOrder: 2
+                  a167b64d-ee60-414c-b153-32b0b1be573e:
+                    required: false
+                    sortOrder: 1
                   eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
                     required: false
                     sortOrder: 3
@@ -1325,44 +1348,21 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  3cea8865-f791-490b-ad28-f0911d539a71:
-                    required: false
-                    sortOrder: 1
                   0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
                     required: false
                     sortOrder: 2
-                  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
-                    required: false
-                    sortOrder: 3
-                  9d175f67-4ddf-4e39-b63a-634c077f4f33:
-                    required: false
-                    sortOrder: 4
                   2d362f2a-45c1-4235-bcb4-38535b6f802d:
                     required: false
                     sortOrder: 5
-    propagationMethod: all
-  2cb44c95-045e-4525-b454-6816ea4137b4:
-    name: Pages
-    handle: pages
-    type: structure
-    enableVersioning: true
-    siteSettings:
-      a577724c-1321-46dd-a56c-54de0ff63f07:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: '{parent.uri}/{slug}'
-        template: ''
-    structure:
-      uid: 38d84ec6-f7a7-4ae4-8b1e-6d7c43be94fb
-      maxLevels: null
-    entryTypes:
-      f08d8f10-36b0-4e75-809f-4f6094bf9a41:
-        name: Pages
-        handle: pages
-        hasTitleField: true
-        titleLabel: Titel
-        titleFormat: null
-        sortOrder: 1
+                  32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
+                    required: false
+                    sortOrder: 3
+                  3cea8865-f791-490b-ad28-f0911d539a71:
+                    required: false
+                    sortOrder: 1
+                  9d175f67-4ddf-4e39-b63a-634c077f4f33:
+                    required: false
+                    sortOrder: 4
     propagationMethod: all
 siteGroups:
   a86a0999-46ab-4724-95af-d64dda5f60d6:
@@ -1381,7 +1381,7 @@ system:
   edition: solo
   name: $SYSTEM_NAME
   live: true
-  schemaVersion: 3.2.11
+  schemaVersion: 3.2.12
   timeZone: Europe/Berlin
 tagGroups:
   524e0c85-c0d7-460d-99aa-93e98676e4a6:
