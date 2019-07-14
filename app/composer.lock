@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b17d934da2bfdfd618bdacee48e8573",
+    "content-hash": "8fd88f87c48843a2b385c5514fa25f69",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -401,16 +401,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.2.0-RC2",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "d46c389981002c9bec933f1789cccdb3692e5d77"
+                "reference": "750b266e6fae824780dc24a52338bfcb1f66b846"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/d46c389981002c9bec933f1789cccdb3692e5d77",
-                "reference": "d46c389981002c9bec933f1789cccdb3692e5d77",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/750b266e6fae824780dc24a52338bfcb1f66b846",
+                "reference": "750b266e6fae824780dc24a52338bfcb1f66b846",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +489,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2019-06-27T00:06:12+00:00"
+            "time": "2019-07-11T19:07:49+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -1231,16 +1231,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "dc784032a3f6f4e7a4b882e272b771f6fe4c37cf"
+                "reference": "239400de7a173fe9901b9ac7c06497751f00727a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc784032a3f6f4e7a4b882e272b771f6fe4c37cf",
-                "reference": "dc784032a3f6f4e7a4b882e272b771f6fe4c37cf",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/239400de7a173fe9901b9ac7c06497751f00727a",
+                "reference": "239400de7a173fe9901b9ac7c06497751f00727a",
                 "shasum": ""
             },
             "require": {
@@ -1298,7 +1298,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2019-06-30T00:37:05+00:00"
+            "time": "2019-07-01T23:21:34+00:00"
         },
         {
             "name": "intervention/httpauth",
@@ -2344,16 +2344,16 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "1.7.0",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "84e09df79855ed3da84e2eab6850eb7741d8cbda"
+                "reference": "0c1346a1956347590b7db09533966307d20cb7cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/84e09df79855ed3da84e2eab6850eb7741d8cbda",
-                "reference": "84e09df79855ed3da84e2eab6850eb7741d8cbda",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/0c1346a1956347590b7db09533966307d20cb7cc",
+                "reference": "0c1346a1956347590b7db09533966307d20cb7cc",
                 "shasum": ""
             },
             "require": {
@@ -2434,7 +2434,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2019-05-26T02:50:36+00:00"
+            "time": "2019-07-08T21:21:25+00:00"
         },
         {
             "name": "pimple/pimple",
