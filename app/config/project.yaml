@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'owners/{slug}'
         template: ''
-dateModified: 1562916143
+dateModified: 1563351482
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -1381,7 +1381,7 @@ system:
   edition: solo
   name: $SYSTEM_NAME
   live: true
-  schemaVersion: 3.2.14
+  schemaVersion: 3.2.15
   timeZone: Europe/Berlin
 tagGroups:
   524e0c85-c0d7-460d-99aa-93e98676e4a6:
