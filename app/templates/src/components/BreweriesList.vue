@@ -2,7 +2,7 @@
   <div :class="$style.container">
 
     <div :class="$style.list">
-      <div  v-if="loggedIn" :class="$style.menu">
+      <div :class="$style.menu">
         <base-link path="/create/brewery">
           Add brewery
         </base-link>
