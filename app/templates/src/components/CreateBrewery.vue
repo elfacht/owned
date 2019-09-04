@@ -26,6 +26,7 @@
           :name="csrfName"
           :value="csrfToken"
         >
+        <input type="hidden" name="entryId" value="">
 
         <div :class="$style.item">
           <FormInput
@@ -129,11 +130,11 @@
 
       {{success}}
 
-      <ul>
+      <!-- <ul>
         <li v-for="(item, k) in form" :key="k">
          <strong>{{ k }}:</strong> {{ item }}
         </li>
-      </ul>
+      </ul> -->
     </div>
 
   </div>
@@ -149,6 +150,7 @@ function initialState () {
   return {
     form: {
       title: '',
+      entryId: '',
       fields: {
         founded: '',
         city: '',
@@ -224,6 +226,8 @@ export default {
           data[window.csrfTokenName] = window.csrfTokenValue
 
           this.inProgress = true
+
+          console.log(data)
 
           this.$http.post('/', data)
             .then(function (response) {
