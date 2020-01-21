@@ -1,38 +1,38 @@
 categoryGroups:
   009b8f9d-ab7e-4bb9-a40e-add5791ea3f6:
-    name: Countries
     handle: countries
-    structure:
-      uid: 431c3b15-a6fa-4eed-a274-4785f3908f95
-      maxLevels: null
+    name: Countries
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         hasUrls: true
+        template: ''
         uriFormat: 'countries/{slug}'
-        template: ''
+    structure:
+      maxLevels: null
+      uid: 431c3b15-a6fa-4eed-a274-4785f3908f95
   5ff18d47-af9f-406c-a977-ff345fdc0578:
-    name: Categories
     handle: categories
-    structure:
-      uid: c2920aa2-b0dd-4fae-822d-c631ef446fc7
-      maxLevels: null
+    name: Categories
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         hasUrls: true
+        template: ''
         uriFormat: 'types/{slug}'
-        template: ''
-  fb7b3af4-bf40-4269-883d-aa4945d724ce:
-    name: Owners
-    handle: owners
     structure:
-      uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
       maxLevels: null
+      uid: c2920aa2-b0dd-4fae-822d-c631ef446fc7
+  fb7b3af4-bf40-4269-883d-aa4945d724ce:
+    handle: owners
+    name: Owners
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         hasUrls: true
-        uriFormat: 'owners/{slug}'
         template: ''
-dateModified: 1566990089
+        uriFormat: 'owners/{slug}'
+    structure:
+      maxLevels: null
+      uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
+dateModified: 1579188724
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -52,1174 +52,1178 @@ fieldGroups:
     name: Tables
 fields:
   0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
-    name: Country
+    contentColumnType: string
+    fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
     handle: country
     instructions: ''
+    name: Country
     searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Dropdown
     settings:
       options:
         -
+          default: ''
           label: 'Select country …'
           value: 'null'
-          default: ''
         -
+          default: ''
           label: Afghanistan
           value: AF
-          default: ''
         -
+          default: ''
           label: 'Aland Islands'
           value: AX
-          default: ''
         -
+          default: ''
           label: Albania
           value: AL
-          default: ''
         -
+          default: ''
           label: Algeria
           value: DZ
-          default: ''
         -
+          default: ''
           label: 'American Samoa'
           value: AS
-          default: ''
         -
+          default: ''
           label: Andorra
           value: AD
-          default: ''
         -
+          default: ''
           label: Angola
           value: AO
-          default: ''
         -
+          default: ''
           label: Anguilla
           value: AI
-          default: ''
         -
+          default: ''
           label: Antarctica
           value: AQ
-          default: ''
         -
+          default: ''
           label: 'Antigua and Barbuda'
           value: AG
-          default: ''
         -
+          default: ''
           label: Argentina
           value: AR
-          default: ''
         -
+          default: ''
           label: Armenia
           value: AM
-          default: ''
         -
+          default: ''
           label: Aruba
           value: AW
-          default: ''
         -
+          default: ''
           label: Australia
           value: AU
-          default: ''
         -
+          default: ''
           label: Austria
           value: AT
-          default: ''
         -
+          default: ''
           label: Azerbaijan
           value: AZ
-          default: ''
         -
+          default: ''
           label: Bahamas
           value: BS
-          default: ''
         -
+          default: ''
           label: Bahrain
           value: BH
-          default: ''
         -
+          default: ''
           label: Bangladesh
           value: BD
-          default: ''
         -
+          default: ''
           label: Barbados
           value: BB
-          default: ''
         -
+          default: ''
           label: Belarus
           value: BY
-          default: ''
         -
+          default: ''
           label: Belgium
           value: BE
-          default: ''
         -
+          default: ''
           label: Belize
           value: BZ
-          default: ''
         -
+          default: ''
           label: Benin
           value: BJ
-          default: ''
         -
+          default: ''
           label: Bermuda
           value: BM
-          default: ''
         -
+          default: ''
           label: Bhutan
           value: BT
-          default: ''
         -
+          default: ''
           label: Bolivia
           value: BO
-          default: ''
         -
+          default: ''
           label: 'Bosnia and Herzegovina'
           value: BA
-          default: ''
         -
+          default: ''
           label: Botswana
           value: BW
-          default: ''
         -
+          default: ''
           label: 'Bouvet Island'
           value: BV
-          default: ''
         -
+          default: ''
           label: Brazil
           value: BR
-          default: ''
         -
+          default: ''
           label: 'British Indian Ocean Territory'
           value: IO
-          default: ''
         -
+          default: ''
           label: 'Brunei Darussalam'
           value: BN
-          default: ''
         -
+          default: ''
           label: Bulgaria
           value: BG
-          default: ''
         -
+          default: ''
           label: 'Burkina Faso'
           value: BF
-          default: ''
         -
+          default: ''
           label: Burundi
           value: BI
-          default: ''
         -
+          default: ''
           label: Cambodia
           value: KH
-          default: ''
         -
+          default: ''
           label: Cameroon
           value: CM
-          default: ''
         -
+          default: ''
           label: Canada
           value: CA
-          default: ''
         -
+          default: ''
           label: 'Cape Verde'
           value: CV
-          default: ''
         -
+          default: ''
           label: 'Cayman Islands'
           value: KY
-          default: ''
         -
+          default: ''
           label: 'Central African Republic'
           value: CF
-          default: ''
         -
+          default: ''
           label: Chad
           value: TD
-          default: ''
         -
+          default: ''
           label: Chile
           value: CL
-          default: ''
         -
+          default: ''
           label: China
           value: CN
-          default: ''
         -
+          default: ''
           label: 'Christmas Island'
           value: CX
-          default: ''
         -
+          default: ''
           label: 'Cocos (Keeling) Islands'
           value: CC
-          default: ''
         -
+          default: ''
           label: Colombia
           value: CO
-          default: ''
         -
+          default: ''
           label: Comoros
           value: KM
-          default: ''
         -
+          default: ''
           label: Congo
           value: CG
-          default: ''
         -
+          default: ''
           label: 'Congo, The Democratic Republic of the'
           value: CD
-          default: ''
         -
+          default: ''
           label: 'Cook Islands'
           value: CK
-          default: ''
         -
+          default: ''
           label: 'Costa Rica'
           value: CR
-          default: ''
         -
+          default: ''
           label: 'Cote D''Ivoire'
           value: CI
-          default: ''
         -
+          default: ''
           label: Croatia
           value: HR
-          default: ''
         -
+          default: ''
           label: Cuba
           value: CU
-          default: ''
         -
+          default: ''
           label: Cyprus
           value: CY
-          default: ''
         -
+          default: ''
           label: 'Czech Republic'
           value: CZ
-          default: ''
         -
+          default: ''
           label: Denmark
           value: DK
-          default: ''
         -
+          default: ''
           label: Djibouti
           value: DJ
-          default: ''
         -
+          default: ''
           label: Dominica
           value: DM
-          default: ''
         -
+          default: ''
           label: 'Dominican Republic'
           value: DO
-          default: ''
         -
+          default: ''
           label: Ecuador
           value: EC
-          default: ''
         -
+          default: ''
           label: Egypt
           value: EG
-          default: ''
         -
+          default: ''
           label: 'El Salvador'
           value: SV
-          default: ''
         -
+          default: ''
           label: 'Equatorial Guinea'
           value: GQ
-          default: ''
         -
+          default: ''
           label: Eritrea
           value: ER
-          default: ''
         -
+          default: ''
           label: Estonia
           value: EE
-          default: ''
         -
+          default: ''
           label: Ethiopia
           value: ET
-          default: ''
         -
+          default: ''
           label: 'Falkland Islands (Malvinas)'
           value: FK
-          default: ''
         -
+          default: ''
           label: 'Faroe Islands'
           value: FO
-          default: ''
         -
+          default: ''
           label: Fiji
           value: FJ
-          default: ''
         -
+          default: ''
           label: Finland
           value: FI
-          default: ''
         -
+          default: ''
           label: France
           value: FR
-          default: ''
         -
+          default: ''
           label: 'French Guiana'
           value: GF
-          default: ''
         -
+          default: ''
           label: 'French Polynesia'
           value: PF
-          default: ''
         -
+          default: ''
           label: 'French Southern Territories'
           value: TF
-          default: ''
         -
+          default: ''
           label: Gabon
           value: GA
-          default: ''
         -
+          default: ''
           label: Gambia
           value: GM
-          default: ''
         -
+          default: ''
           label: Georgia
           value: GE
-          default: ''
         -
+          default: ''
           label: Germany
           value: DE
-          default: ''
         -
+          default: ''
           label: Ghana
           value: GH
-          default: ''
         -
+          default: ''
           label: Gibraltar
           value: GI
-          default: ''
         -
+          default: ''
           label: Greece
           value: GR
-          default: ''
         -
+          default: ''
           label: Greenland
           value: GL
-          default: ''
         -
+          default: ''
           label: Grenada
           value: GD
-          default: ''
         -
+          default: ''
           label: Guadeloupe
           value: GP
-          default: ''
         -
+          default: ''
           label: Guam
           value: GU
-          default: ''
         -
+          default: ''
           label: Guatemala
           value: GT
-          default: ''
         -
+          default: ''
           label: Guernsey
           value: GG
-          default: ''
         -
+          default: ''
           label: Guinea
           value: GN
-          default: ''
         -
+          default: ''
           label: Guinea-Bissau
           value: GW
-          default: ''
         -
+          default: ''
           label: Guyana
           value: GY
-          default: ''
         -
+          default: ''
           label: Haiti
           value: HT
-          default: ''
         -
+          default: ''
           label: 'Heard Island and Mcdonald Islands'
           value: HM
-          default: ''
         -
+          default: ''
           label: 'Holy See (Vatican City State)'
           value: VA
-          default: ''
         -
+          default: ''
           label: Honduras
           value: HN
-          default: ''
         -
+          default: ''
           label: 'Hong Kong'
           value: HK
-          default: ''
         -
+          default: ''
           label: Hungary
           value: HU
-          default: ''
         -
+          default: ''
           label: Iceland
           value: IS
-          default: ''
         -
+          default: ''
           label: India
           value: IN
-          default: ''
         -
+          default: ''
           label: Indonesia
           value: ID
-          default: ''
         -
+          default: ''
           label: 'Iran, Islamic Republic Of'
           value: IR
-          default: ''
         -
+          default: ''
           label: Iraq
           value: IQ
-          default: ''
         -
+          default: ''
           label: Ireland
           value: IE
-          default: ''
         -
+          default: ''
           label: 'Isle of Man'
           value: IM
-          default: ''
         -
+          default: ''
           label: Israel
           value: IL
-          default: ''
         -
+          default: ''
           label: Italy
           value: IT
-          default: ''
         -
+          default: ''
           label: Jamaica
           value: JM
-          default: ''
         -
+          default: ''
           label: Japan
           value: JP
-          default: ''
         -
+          default: ''
           label: Jersey
           value: JE
-          default: ''
         -
+          default: ''
           label: Jordan
           value: JO
-          default: ''
         -
+          default: ''
           label: Kazakhstan
           value: KZ
-          default: ''
         -
+          default: ''
           label: Kenya
           value: KE
-          default: ''
         -
+          default: ''
           label: Kiribati
           value: KI
-          default: ''
         -
+          default: ''
           label: 'Korea, Democratic People''s Republic of'
           value: KP
-          default: ''
         -
+          default: ''
           label: 'Korea, Republic of'
           value: KR
-          default: ''
         -
+          default: ''
           label: Kuwait
           value: KW
-          default: ''
         -
+          default: ''
           label: Kyrgyzstan
           value: KG
-          default: ''
         -
+          default: ''
           label: 'Lao People''s Democratic Republic'
           value: LA
-          default: ''
         -
+          default: ''
           label: Latvia
           value: LV
-          default: ''
         -
+          default: ''
           label: Lebanon
           value: LB
-          default: ''
         -
+          default: ''
           label: Lesotho
           value: LS
-          default: ''
         -
+          default: ''
           label: Liberia
           value: LR
-          default: ''
         -
+          default: ''
           label: 'Libyan Arab Jamahiriya'
           value: LY
-          default: ''
         -
+          default: ''
           label: Liechtenstein
           value: LI
-          default: ''
         -
+          default: ''
           label: Lithuania
           value: LT
-          default: ''
         -
+          default: ''
           label: Luxembourg
           value: LU
-          default: ''
         -
+          default: ''
           label: Macao
           value: MO
-          default: ''
         -
+          default: ''
           label: 'Macedonia, The Former Yugoslav Republic of'
           value: MK
-          default: ''
         -
+          default: ''
           label: Madagascar
           value: MG
-          default: ''
         -
+          default: ''
           label: Malawi
           value: MW
-          default: ''
         -
+          default: ''
           label: Malaysia
           value: MY
-          default: ''
         -
+          default: ''
           label: Maldives
           value: MV
-          default: ''
         -
+          default: ''
           label: Mali
           value: ML
-          default: ''
         -
+          default: ''
           label: Malta
           value: MT
-          default: ''
         -
+          default: ''
           label: 'Marshall Islands'
           value: MH
-          default: ''
         -
+          default: ''
           label: Martinique
           value: MQ
-          default: ''
         -
+          default: ''
           label: Mauritania
           value: MR
-          default: ''
         -
+          default: ''
           label: Mauritius
           value: MU
-          default: ''
         -
+          default: ''
           label: Mayotte
           value: YT
-          default: ''
         -
+          default: ''
           label: Mexico
           value: MX
-          default: ''
         -
+          default: ''
           label: 'Micronesia, Federated States of'
           value: FM
-          default: ''
         -
+          default: ''
           label: 'Moldova, Republic of'
           value: MD
-          default: ''
         -
+          default: ''
           label: Monaco
           value: MC
-          default: ''
         -
+          default: ''
           label: Mongolia
           value: MN
-          default: ''
         -
+          default: ''
           label: Montserrat
           value: MS
-          default: ''
         -
+          default: ''
           label: Morocco
           value: MA
-          default: ''
         -
+          default: ''
           label: Mozambique
           value: MZ
-          default: ''
         -
+          default: ''
           label: Myanmar
           value: MM
-          default: ''
         -
+          default: ''
           label: Namibia
           value: NA
-          default: ''
         -
+          default: ''
           label: Nauru
           value: NR
-          default: ''
         -
+          default: ''
           label: Nepal
           value: NP
-          default: ''
         -
+          default: ''
           label: Netherlands
           value: NL
-          default: ''
         -
+          default: ''
           label: 'Netherlands Antilles'
           value: AN
-          default: ''
         -
+          default: ''
           label: 'New Caledonia'
           value: NC
-          default: ''
         -
+          default: ''
           label: 'New Zealand'
           value: NZ
-          default: ''
         -
+          default: ''
           label: Nicaragua
           value: NI
-          default: ''
         -
+          default: ''
           label: Niger
           value: NE
-          default: ''
         -
+          default: ''
           label: Nigeria
           value: NG
-          default: ''
         -
+          default: ''
           label: Niue
           value: NU
-          default: ''
         -
+          default: ''
           label: 'Norfolk Island'
           value: NF
-          default: ''
         -
+          default: ''
           label: 'Northern Mariana Islands'
           value: MP
-          default: ''
         -
+          default: ''
           label: Norway
           value: 'NO'
-          default: ''
         -
+          default: ''
           label: Oman
           value: OM
-          default: ''
         -
+          default: ''
           label: Pakistan
           value: PK
-          default: ''
         -
+          default: ''
           label: Palau
           value: PW
-          default: ''
         -
+          default: ''
           label: 'Palestinian Territory, Occupied'
           value: PS
-          default: ''
         -
+          default: ''
           label: Panama
           value: PA
-          default: ''
         -
+          default: ''
           label: 'Papua New Guinea'
           value: PG
-          default: ''
         -
+          default: ''
           label: Paraguay
           value: PY
-          default: ''
         -
+          default: ''
           label: Peru
           value: PE
-          default: ''
         -
+          default: ''
           label: Philippines
           value: PH
-          default: ''
         -
+          default: ''
           label: Pitcairn
           value: PN
-          default: ''
         -
+          default: ''
           label: Poland
           value: PL
-          default: ''
         -
+          default: ''
           label: Portugal
           value: PT
-          default: ''
         -
+          default: ''
           label: 'Puerto Rico'
           value: PR
-          default: ''
         -
+          default: ''
           label: Qatar
           value: QA
-          default: ''
         -
+          default: ''
           label: Reunion
           value: RE
-          default: ''
         -
+          default: ''
           label: Romania
           value: RO
-          default: ''
         -
+          default: ''
           label: 'Russian Federation'
           value: RU
-          default: ''
         -
+          default: ''
           label: Rwanda
           value: RW
-          default: ''
         -
+          default: ''
           label: 'Saint Helena'
           value: SH
-          default: ''
         -
+          default: ''
           label: 'Saint Kitts and Nevis'
           value: KN
-          default: ''
         -
+          default: ''
           label: 'Saint Lucia'
           value: LC
-          default: ''
         -
+          default: ''
           label: 'Saint Pierre and Miquelon'
           value: PM
-          default: ''
         -
+          default: ''
           label: 'Saint Vincent and the Grenadines'
           value: VC
-          default: ''
         -
+          default: ''
           label: Samoa
           value: WS
-          default: ''
         -
+          default: ''
           label: 'San Marino'
           value: SM
-          default: ''
         -
+          default: ''
           label: 'Sao Tome and Principe'
           value: ST
-          default: ''
         -
+          default: ''
           label: 'Saudi Arabia'
           value: SA
-          default: ''
         -
+          default: ''
           label: Senegal
           value: SN
-          default: ''
         -
+          default: ''
           label: 'Serbia and Montenegro'
           value: CS
-          default: ''
         -
+          default: ''
           label: Seychelles
           value: SC
-          default: ''
         -
+          default: ''
           label: 'Sierra Leone'
           value: SL
-          default: ''
         -
+          default: ''
           label: Singapore
           value: SG
-          default: ''
         -
+          default: ''
           label: Slovakia
           value: SK
-          default: ''
         -
+          default: ''
           label: Slovenia
           value: SI
-          default: ''
         -
+          default: ''
           label: 'Solomon Islands'
           value: SB
-          default: ''
         -
+          default: ''
           label: Somalia
           value: SO
-          default: ''
         -
+          default: ''
           label: 'South Africa'
           value: ZA
-          default: ''
         -
+          default: ''
           label: 'South Georgia and the South Sandwich Islands'
           value: GS
-          default: ''
         -
+          default: ''
           label: Spain
           value: ES
-          default: ''
         -
+          default: ''
           label: 'Sri Lanka'
           value: LK
-          default: ''
         -
+          default: ''
           label: Sudan
           value: SD
-          default: ''
         -
+          default: ''
           label: Suriname
           value: SR
-          default: ''
         -
+          default: ''
           label: 'Svalbard and Jan Mayen'
           value: SJ
-          default: ''
         -
+          default: ''
           label: Swaziland
           value: SZ
-          default: ''
         -
+          default: ''
           label: Sweden
           value: SE
-          default: ''
         -
+          default: ''
           label: Switzerland
           value: CH
-          default: ''
         -
+          default: ''
           label: 'Syrian Arab Republic'
           value: SY
-          default: ''
         -
+          default: ''
           label: 'Taiwan, Province of China'
           value: TW
-          default: ''
         -
+          default: ''
           label: Tajikistan
           value: TJ
-          default: ''
         -
+          default: ''
           label: 'Tanzania, United Republic of'
           value: TZ
-          default: ''
         -
+          default: ''
           label: Thailand
           value: TH
-          default: ''
         -
+          default: ''
           label: Timor-Leste
           value: TL
-          default: ''
         -
+          default: ''
           label: Togo
           value: TG
-          default: ''
         -
+          default: ''
           label: Tokelau
           value: TK
-          default: ''
         -
+          default: ''
           label: Tonga
           value: TO
-          default: ''
         -
+          default: ''
           label: 'Trinidad and Tobago'
           value: TT
-          default: ''
         -
+          default: ''
           label: Tunisia
           value: TN
-          default: ''
         -
+          default: ''
           label: Turkey
           value: TR
-          default: ''
         -
+          default: ''
           label: Turkmenistan
           value: TM
-          default: ''
         -
+          default: ''
           label: 'Turks and Caicos Islands'
           value: TC
-          default: ''
         -
+          default: ''
           label: Tuvalu
           value: TV
-          default: ''
         -
+          default: ''
           label: Uganda
           value: UG
-          default: ''
         -
+          default: ''
           label: Ukraine
           value: UA
-          default: ''
         -
+          default: ''
           label: 'United Arab Emirates'
           value: AE
-          default: ''
         -
+          default: ''
           label: 'United Kingdom'
           value: GB
-          default: ''
         -
+          default: ''
           label: 'United States'
           value: US
-          default: ''
         -
+          default: ''
           label: 'United States Minor Outlying Islands'
           value: UM
-          default: ''
         -
+          default: ''
           label: Uruguay
           value: UY
-          default: ''
         -
+          default: ''
           label: Uzbekistan
           value: UZ
-          default: ''
         -
+          default: ''
           label: Vanuatu
           value: VU
-          default: ''
         -
+          default: ''
           label: Venezuela
           value: VE
-          default: ''
         -
+          default: ''
           label: 'Viet Nam'
           value: VN
-          default: ''
         -
+          default: ''
           label: 'Virgin Islands, British'
           value: VG
-          default: ''
         -
+          default: ''
           label: 'Virgin Islands, U.S.'
           value: VI
-          default: ''
         -
+          default: ''
           label: 'Wallis and Futuna'
           value: WF
-          default: ''
         -
+          default: ''
           label: 'Western Sahara'
           value: EH
-          default: ''
         -
+          default: ''
           label: Yemen
           value: YE
-          default: ''
         -
+          default: ''
           label: Zambia
           value: ZM
-          default: ''
         -
+          default: ''
           label: Zimbabwe
           value: ZW
-          default: ''
-    contentColumnType: string
-    fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
   2d362f2a-45c1-4235-bcb4-38535b6f802d:
-    name: Tags
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
     handle: tags
     instructions: ''
+    name: Tags
     searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Tags
     settings:
-      sources: '*'
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
       source: 'taggroup:524e0c85-c0d7-460d-99aa-93e98676e4a6'
+      sources: '*'
       targetSiteId: null
       viewMode: null
-      limit: null
-      selectionLabel: ''
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Tags
   32dec49c-5c4b-490a-a3f2-866cd0d1ebe7:
-    name: Note
+    contentColumnType: text
+    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
     handle: note
     instructions: ''
+    name: Note
     searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\redactor\Field
     settings:
-      redactorConfig: Standard.json
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
       purifierConfig: ''
       purifyHtml: '1'
-      columnType: text
-      availableVolumes: '*'
-      availableTransforms: '*'
-      removeInlineStyles: '1'
+      redactorConfig: Standard.json
       removeEmptyTags: '1'
+      removeInlineStyles: '1'
       removeNbsp: '1'
-    contentColumnType: text
-    fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
   3cea8865-f791-490b-ad28-f0911d539a71:
-    name: 'Subsidiary of …'
+    contentColumnType: string
+    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
     handle: subsidiary
     instructions: ''
+    name: 'Subsidiary of …'
     searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
     settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
       sources:
         - 'section:b73fb847-c20b-4318-ae96-e14162d6f299'
-      source: null
       targetSiteId: null
       viewMode: null
-      limit: '1'
-      selectionLabel: ''
-      localizeRelations: false
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  466e2928-f31d-4ec5-95fd-9e59fabd42c3:
     contentColumnType: string
     fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
-  466e2928-f31d-4ec5-95fd-9e59fabd42c3:
-    name: Owners
     handle: owners
     instructions: ''
+    name: Owners
     searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
     settings:
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
       sources:
         - 'section:b73fb847-c20b-4318-ae96-e14162d6f299'
-      source: null
       targetSiteId: null
       viewMode: null
-      limit: ''
-      selectionLabel: ''
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
   728b2cf1-ba58-48ff-badd-e45f3377b33b:
-    name: Founded
+    contentColumnType: datetime
+    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
     handle: founded
     instructions: ''
+    name: Founded
     searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Date
     settings:
+      minuteIncrement: '30'
       showDate: true
       showTime: false
-      minuteIncrement: '30'
-    contentColumnType: datetime
-    fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
-  9d175f67-4ddf-4e39-b63a-634c077f4f33:
-    name: 'Source Link (Wikipeadia)'
-    handle: sourceUrl
-    instructions: ''
-    searchable: true
-    translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\Url
-    settings:
-      placeholder: ''
-      maxLength: '255'
+    translationMethod: none
+    type: craft\fields\Date
+  9d175f67-4ddf-4e39-b63a-634c077f4f33:
     contentColumnType: string(255)
     fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
-  a149f707-9b00-4fe6-9a0a-51358943c406:
-    name: Category
-    handle: category
+    handle: sourceUrl
     instructions: ''
+    name: 'Source Link (Wikipeadia)'
     searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Categories
     settings:
-      branchLimit: '1'
-      sources: '*'
-      source: 'group:5ff18d47-af9f-406c-a977-ff345fdc0578'
-      targetSiteId: null
-      viewMode: null
-      limit: null
-      selectionLabel: 'Add types'
-      localizeRelations: false
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  a149f707-9b00-4fe6-9a0a-51358943c406:
     contentColumnType: string
     fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
-  a167b64d-ee60-414c-b153-32b0b1be573e:
-    name: 'is private'
-    handle: isPrivate
+    handle: category
     instructions: ''
+    name: Category
     searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Lightswitch
     settings:
-      default: ''
+      branchLimit: '1'
+      limit: null
+      localizeRelations: false
+      selectionLabel: 'Add types'
+      source: 'group:5ff18d47-af9f-406c-a977-ff345fdc0578'
+      sources: '*'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  a167b64d-ee60-414c-b153-32b0b1be573e:
     contentColumnType: boolean
     fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
-  eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
-    name: 'Start Ownership'
-    handle: ownedSince
+    handle: isPrivate
     instructions: ''
+    name: 'is private'
     searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Date
     settings:
-      showDate: true
-      showTime: false
-      minuteIncrement: '30'
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
     contentColumnType: datetime
     fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
-  f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
-    name: City
-    handle: city
+    handle: ownedSince
     instructions: ''
+    name: 'Start Ownership'
     searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
     settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
+  f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
     contentColumnType: text
     fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+    handle: city
+    instructions: ''
+    name: City
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 globalSets:
   8734572b-3540-4e51-ac9d-1110080d78fc:
-    name: Countries
-    handle: countries
     fieldLayouts:
       4a618146-c30f-4d80-91b3-f9f1dc3de3e8:
         tabs:
           -
-            name: Field
-            sortOrder: 1
             fields:
               0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
                 required: false
                 sortOrder: 1
+            name: Field
+            sortOrder: 1
+    handle: countries
+    name: Countries
 plugins:
   assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cookies:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -1239,59 +1243,42 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
-  cookies:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
 sections:
   2cb44c95-045e-4525-b454-6816ea4137b4:
-    name: Pages
-    handle: pages
-    type: structure
     enableVersioning: true
-    siteSettings:
-      a577724c-1321-46dd-a56c-54de0ff63f07:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: '{parent.uri}/{slug}'
-        template: ''
-    structure:
-      uid: 38d84ec6-f7a7-4ae4-8b1e-6d7c43be94fb
-      maxLevels: null
     entryTypes:
       f08d8f10-36b0-4e75-809f-4f6094bf9a41:
-        name: Pages
         handle: pages
         hasTitleField: true
-        titleLabel: Titel
-        titleFormat: null
+        name: Pages
         sortOrder: 1
+        titleFormat: null
+        titleLabel: Titel
+    handle: pages
+    name: Pages
+    previewTargets:
+      -
+        label: 'Primary entry page'
+        urlFormat: '{url}'
     propagationMethod: all
-  949bad15-506a-4954-984f-9e7f54a6a4fb:
-    name: Breweries
-    handle: breweries
-    type: channel
-    enableVersioning: true
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: 'breweries/{slug}'
         template: ''
+        uriFormat: '{parent.uri}/{slug}'
+    structure:
+      maxLevels: null
+      uid: 38d84ec6-f7a7-4ae4-8b1e-6d7c43be94fb
+    type: structure
+  949bad15-506a-4954-984f-9e7f54a6a4fb:
+    enableVersioning: true
     entryTypes:
       7b1d5a94-5858-4fc7-9cce-930ac7e3b039:
-        name: Breweries
-        handle: breweries
-        hasTitleField: true
-        titleLabel: Titel
-        titleFormat: ''
-        sortOrder: 1
         fieldLayouts:
           cb03438f-1aaa-4527-987e-d251341a6900:
             tabs:
               -
-                name: Content
-                sortOrder: 1
                 fields:
                   0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
                     required: false
@@ -1308,9 +1295,9 @@ sections:
                   f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3:
                     required: false
                     sortOrder: 2
+                name: Content
+                sortOrder: 1
               -
-                name: Ownership
-                sortOrder: 2
                 fields:
                   466e2928-f31d-4ec5-95fd-9e59fabd42c3:
                     required: false
@@ -1321,32 +1308,36 @@ sections:
                   eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76:
                     required: false
                     sortOrder: 3
+                name: Ownership
+                sortOrder: 2
+        handle: breweries
+        hasTitleField: true
+        name: Breweries
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Titel
+    handle: breweries
+    name: Breweries
+    previewTargets:
+      -
+        label: 'Primary entry page'
+        urlFormat: '{url}'
     propagationMethod: all
-  b73fb847-c20b-4318-ae96-e14162d6f299:
-    name: Owners
-    handle: owners
-    type: channel
-    enableVersioning: true
     siteSettings:
       a577724c-1321-46dd-a56c-54de0ff63f07:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: 'owners/{slug}'
         template: ''
+        uriFormat: 'breweries/{slug}'
+    type: channel
+  b73fb847-c20b-4318-ae96-e14162d6f299:
+    enableVersioning: true
     entryTypes:
       d4647929-de67-41ff-b720-e95e9029c2f1:
-        name: Owners
-        handle: owners
-        hasTitleField: true
-        titleLabel: Titel
-        titleFormat: ''
-        sortOrder: 1
         fieldLayouts:
           e776fa02-3427-4558-adfc-2a54c87fe954:
             tabs:
               -
-                name: Content
-                sortOrder: 1
                 fields:
                   0762e6ca-df3a-4005-b2a4-5d1ad76a558d:
                     required: false
@@ -1363,33 +1354,54 @@ sections:
                   9d175f67-4ddf-4e39-b63a-634c077f4f33:
                     required: false
                     sortOrder: 4
+                name: Content
+                sortOrder: 1
+        handle: owners
+        hasTitleField: true
+        name: Owners
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Titel
+    handle: owners
+    name: Owners
+    previewTargets:
+      -
+        label: 'Primary entry page'
+        urlFormat: '{url}'
     propagationMethod: all
+    siteSettings:
+      a577724c-1321-46dd-a56c-54de0ff63f07:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'owners/{slug}'
+    type: channel
 siteGroups:
   a86a0999-46ab-4724-95af-d64dda5f60d6:
     name: owned
 sites:
   a577724c-1321-46dd-a56c-54de0ff63f07:
-    siteGroup: a86a0999-46ab-4724-95af-d64dda5f60d6
-    name: owned
-    handle: default
-    language: en
-    hasUrls: true
     baseUrl: $DEFAULT_SITE_URL
-    sortOrder: 1
+    handle: default
+    hasUrls: true
+    language: en
+    name: owned
     primary: true
+    siteGroup: a86a0999-46ab-4724-95af-d64dda5f60d6
+    sortOrder: 1
 system:
   edition: solo
-  name: $SYSTEM_NAME
   live: true
-  schemaVersion: 3.3.3
+  name: $SYSTEM_NAME
+  schemaVersion: 3.4.6
   timeZone: Europe/Berlin
 tagGroups:
   524e0c85-c0d7-460d-99aa-93e98676e4a6:
-    name: Tags
     handle: tags
+    name: Tags
 users:
-  requireEmailVerification: true
   allowPublicRegistration: false
   defaultGroup: null
-  photoVolumeUid: null
   photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
