@@ -32,7 +32,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59
-dateModified: 1582537880
+dateModified: 1584044100
 email:
   fromEmail: martin@elfacht.com
   fromName: owned
@@ -1393,7 +1393,7 @@ system:
   edition: solo
   live: true
   name: $SYSTEM_NAME
-  schemaVersion: 3.4.9
+  schemaVersion: 3.4.10
   timeZone: Europe/Berlin
 tagGroups:
   524e0c85-c0d7-460d-99aa-93e98676e4a6:
