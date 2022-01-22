@@ -1,0 +1,53 @@
+fieldLayouts:
+  cb03438f-1aaa-4527-987e-d251341a6900:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Titel
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 728b2cf1-ba58-48ff-badd-e45f3377b33b
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f14ae8c6-ceff-435f-b7bd-fa6c1fc2d6d3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0762e6ca-df3a-4005-b2a4-5d1ad76a558d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 32dec49c-5c4b-490a-a3f2-866cd0d1ebe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2d362f2a-45c1-4235-bcb4-38535b6f802d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a167b64d-ee60-414c-b153-32b0b1be573e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 466e2928-f31d-4ec5-95fd-9e59fabd42c3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eeb5140b-5a29-46dd-98c8-c6ab9e5d7a76
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Ownership
+        sortOrder: 2
+handle: breweries
+hasTitleField: true
+name: Breweries
+section: 949bad15-506a-4954-984f-9e7f54a6a4fb # Breweries
+sortOrder: 1
+titleFormat: ''

@@ -1,0 +1,10 @@
+handle: countries
+name: Countries
+siteSettings:
+  a577724c-1321-46dd-a56c-54de0ff63f07:
+    hasUrls: true
+    template: ''
+    uriFormat: 'countries/{slug}'
+structure:
+  maxLevels: null
+  uid: 431c3b15-a6fa-4eed-a274-4785f3908f95

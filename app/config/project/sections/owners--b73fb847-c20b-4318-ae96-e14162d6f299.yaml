@@ -1,0 +1,15 @@
+enableVersioning: true
+handle: owners
+name: Owners
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  a577724c-1321-46dd-a56c-54de0ff63f07:
+    enabledByDefault: true
+    hasUrls: true
+    template: ''
+    uriFormat: 'owners/{slug}'
+type: channel

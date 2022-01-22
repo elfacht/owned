@@ -1,0 +1,55 @@
+dateModified: 1642880618
+email:
+  fromEmail: martin@elfacht.com
+  fromName: owned
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+meta:
+  __names__:
+    2cb44c95-045e-4525-b454-6816ea4137b4: Pages # Pages
+    7b1d5a94-5858-4fc7-9cce-930ac7e3b039: Breweries # Breweries
+    949bad15-506a-4954-984f-9e7f54a6a4fb: Breweries # Breweries
+    8734572b-3540-4e51-ac9d-1110080d78fc: Countries # Countries
+    b73fb847-c20b-4318-ae96-e14162d6f299: Owners # Owners
+    d4647929-de67-41ff-b720-e95e9029c2f1: Owners # Owners
+    f08d8f10-36b0-4e75-809f-4f6094bf9a41: Pages # Pages
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: solo
+  live: true
+  name: $SYSTEM_NAME
+  schemaVersion: 3.7.8
+  timeZone: Europe/Berlin
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

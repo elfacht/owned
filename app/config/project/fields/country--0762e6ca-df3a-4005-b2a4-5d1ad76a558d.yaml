@@ -1,0 +1,987 @@
+contentColumnType: string
+fieldGroup: 04887042-9aa1-44e9-b100-dace878e95ea
+handle: country
+instructions: ''
+name: Country
+searchable: true
+settings:
+  options:
+    -
+      default: ''
+      label: 'Select country …'
+      value: 'null'
+    -
+      default: ''
+      label: Afghanistan
+      value: AF
+    -
+      default: ''
+      label: 'Aland Islands'
+      value: AX
+    -
+      default: ''
+      label: Albania
+      value: AL
+    -
+      default: ''
+      label: Algeria
+      value: DZ
+    -
+      default: ''
+      label: 'American Samoa'
+      value: AS
+    -
+      default: ''
+      label: Andorra
+      value: AD
+    -
+      default: ''
+      label: Angola
+      value: AO
+    -
+      default: ''
+      label: Anguilla
+      value: AI
+    -
+      default: ''
+      label: Antarctica
+      value: AQ
+    -
+      default: ''
+      label: 'Antigua and Barbuda'
+      value: AG
+    -
+      default: ''
+      label: Argentina
+      value: AR
+    -
+      default: ''
+      label: Armenia
+      value: AM
+    -
+      default: ''
+      label: Aruba
+      value: AW
+    -
+      default: ''
+      label: Australia
+      value: AU
+    -
+      default: ''
+      label: Austria
+      value: AT
+    -
+      default: ''
+      label: Azerbaijan
+      value: AZ
+    -
+      default: ''
+      label: Bahamas
+      value: BS
+    -
+      default: ''
+      label: Bahrain
+      value: BH
+    -
+      default: ''
+      label: Bangladesh
+      value: BD
+    -
+      default: ''
+      label: Barbados
+      value: BB
+    -
+      default: ''
+      label: Belarus
+      value: BY
+    -
+      default: ''
+      label: Belgium
+      value: BE
+    -
+      default: ''
+      label: Belize
+      value: BZ
+    -
+      default: ''
+      label: Benin
+      value: BJ
+    -
+      default: ''
+      label: Bermuda
+      value: BM
+    -
+      default: ''
+      label: Bhutan
+      value: BT
+    -
+      default: ''
+      label: Bolivia
+      value: BO
+    -
+      default: ''
+      label: 'Bosnia and Herzegovina'
+      value: BA
+    -
+      default: ''
+      label: Botswana
+      value: BW
+    -
+      default: ''
+      label: 'Bouvet Island'
+      value: BV
+    -
+      default: ''
+      label: Brazil
+      value: BR
+    -
+      default: ''
+      label: 'British Indian Ocean Territory'
+      value: IO
+    -
+      default: ''
+      label: 'Brunei Darussalam'
+      value: BN
+    -
+      default: ''
+      label: Bulgaria
+      value: BG
+    -
+      default: ''
+      label: 'Burkina Faso'
+      value: BF
+    -
+      default: ''
+      label: Burundi
+      value: BI
+    -
+      default: ''
+      label: Cambodia
+      value: KH
+    -
+      default: ''
+      label: Cameroon
+      value: CM
+    -
+      default: ''
+      label: Canada
+      value: CA
+    -
+      default: ''
+      label: 'Cape Verde'
+      value: CV
+    -
+      default: ''
+      label: 'Cayman Islands'
+      value: KY
+    -
+      default: ''
+      label: 'Central African Republic'
+      value: CF
+    -
+      default: ''
+      label: Chad
+      value: TD
+    -
+      default: ''
+      label: Chile
+      value: CL
+    -
+      default: ''
+      label: China
+      value: CN
+    -
+      default: ''
+      label: 'Christmas Island'
+      value: CX
+    -
+      default: ''
+      label: 'Cocos (Keeling) Islands'
+      value: CC
+    -
+      default: ''
+      label: Colombia
+      value: CO
+    -
+      default: ''
+      label: Comoros
+      value: KM
+    -
+      default: ''
+      label: Congo
+      value: CG
+    -
+      default: ''
+      label: 'Congo, The Democratic Republic of the'
+      value: CD
+    -
+      default: ''
+      label: 'Cook Islands'
+      value: CK
+    -
+      default: ''
+      label: 'Costa Rica'
+      value: CR
+    -
+      default: ''
+      label: 'Cote D''Ivoire'
+      value: CI
+    -
+      default: ''
+      label: Croatia
+      value: HR
+    -
+      default: ''
+      label: Cuba
+      value: CU
+    -
+      default: ''
+      label: Cyprus
+      value: CY
+    -
+      default: ''
+      label: 'Czech Republic'
+      value: CZ
+    -
+      default: ''
+      label: Denmark
+      value: DK
+    -
+      default: ''
+      label: Djibouti
+      value: DJ
+    -
+      default: ''
+      label: Dominica
+      value: DM
+    -
+      default: ''
+      label: 'Dominican Republic'
+      value: DO
+    -
+      default: ''
+      label: Ecuador
+      value: EC
+    -
+      default: ''
+      label: Egypt
+      value: EG
+    -
+      default: ''
+      label: 'El Salvador'
+      value: SV
+    -
+      default: ''
+      label: 'Equatorial Guinea'
+      value: GQ
+    -
+      default: ''
+      label: Eritrea
+      value: ER
+    -
+      default: ''
+      label: Estonia
+      value: EE
+    -
+      default: ''
+      label: Ethiopia
+      value: ET
+    -
+      default: ''
+      label: 'Falkland Islands (Malvinas)'
+      value: FK
+    -
+      default: ''
+      label: 'Faroe Islands'
+      value: FO
+    -
+      default: ''
+      label: Fiji
+      value: FJ
+    -
+      default: ''
+      label: Finland
+      value: FI
+    -
+      default: ''
+      label: France
+      value: FR
+    -
+      default: ''
+      label: 'French Guiana'
+      value: GF
+    -
+      default: ''
+      label: 'French Polynesia'
+      value: PF
+    -
+      default: ''
+      label: 'French Southern Territories'
+      value: TF
+    -
+      default: ''
+      label: Gabon
+      value: GA
+    -
+      default: ''
+      label: Gambia
+      value: GM
+    -
+      default: ''
+      label: Georgia
+      value: GE
+    -
+      default: ''
+      label: Germany
+      value: DE
+    -
+      default: ''
+      label: Ghana
+      value: GH
+    -
+      default: ''
+      label: Gibraltar
+      value: GI
+    -
+      default: ''
+      label: Greece
+      value: GR
+    -
+      default: ''
+      label: Greenland
+      value: GL
+    -
+      default: ''
+      label: Grenada
+      value: GD
+    -
+      default: ''
+      label: Guadeloupe
+      value: GP
+    -
+      default: ''
+      label: Guam
+      value: GU
+    -
+      default: ''
+      label: Guatemala
+      value: GT
+    -
+      default: ''
+      label: Guernsey
+      value: GG
+    -
+      default: ''
+      label: Guinea
+      value: GN
+    -
+      default: ''
+      label: Guinea-Bissau
+      value: GW
+    -
+      default: ''
+      label: Guyana
+      value: GY
+    -
+      default: ''
+      label: Haiti
+      value: HT
+    -
+      default: ''
+      label: 'Heard Island and Mcdonald Islands'
+      value: HM
+    -
+      default: ''
+      label: 'Holy See (Vatican City State)'
+      value: VA
+    -
+      default: ''
+      label: Honduras
+      value: HN
+    -
+      default: ''
+      label: 'Hong Kong'
+      value: HK
+    -
+      default: ''
+      label: Hungary
+      value: HU
+    -
+      default: ''
+      label: Iceland
+      value: IS
+    -
+      default: ''
+      label: India
+      value: IN
+    -
+      default: ''
+      label: Indonesia
+      value: ID
+    -
+      default: ''
+      label: 'Iran, Islamic Republic Of'
+      value: IR
+    -
+      default: ''
+      label: Iraq
+      value: IQ
+    -
+      default: ''
+      label: Ireland
+      value: IE
+    -
+      default: ''
+      label: 'Isle of Man'
+      value: IM
+    -
+      default: ''
+      label: Israel
+      value: IL
+    -
+      default: ''
+      label: Italy
+      value: IT
+    -
+      default: ''
+      label: Jamaica
+      value: JM
+    -
+      default: ''
+      label: Japan
+      value: JP
+    -
+      default: ''
+      label: Jersey
+      value: JE
+    -
+      default: ''
+      label: Jordan
+      value: JO
+    -
+      default: ''
+      label: Kazakhstan
+      value: KZ
+    -
+      default: ''
+      label: Kenya
+      value: KE
+    -
+      default: ''
+      label: Kiribati
+      value: KI
+    -
+      default: ''
+      label: 'Korea, Democratic People''s Republic of'
+      value: KP
+    -
+      default: ''
+      label: 'Korea, Republic of'
+      value: KR
+    -
+      default: ''
+      label: Kuwait
+      value: KW
+    -
+      default: ''
+      label: Kyrgyzstan
+      value: KG
+    -
+      default: ''
+      label: 'Lao People''s Democratic Republic'
+      value: LA
+    -
+      default: ''
+      label: Latvia
+      value: LV
+    -
+      default: ''
+      label: Lebanon
+      value: LB
+    -
+      default: ''
+      label: Lesotho
+      value: LS
+    -
+      default: ''
+      label: Liberia
+      value: LR
+    -
+      default: ''
+      label: 'Libyan Arab Jamahiriya'
+      value: LY
+    -
+      default: ''
+      label: Liechtenstein
+      value: LI
+    -
+      default: ''
+      label: Lithuania
+      value: LT
+    -
+      default: ''
+      label: Luxembourg
+      value: LU
+    -
+      default: ''
+      label: Macao
+      value: MO
+    -
+      default: ''
+      label: 'Macedonia, The Former Yugoslav Republic of'
+      value: MK
+    -
+      default: ''
+      label: Madagascar
+      value: MG
+    -
+      default: ''
+      label: Malawi
+      value: MW
+    -
+      default: ''
+      label: Malaysia
+      value: MY
+    -
+      default: ''
+      label: Maldives
+      value: MV
+    -
+      default: ''
+      label: Mali
+      value: ML
+    -
+      default: ''
+      label: Malta
+      value: MT
+    -
+      default: ''
+      label: 'Marshall Islands'
+      value: MH
+    -
+      default: ''
+      label: Martinique
+      value: MQ
+    -
+      default: ''
+      label: Mauritania
+      value: MR
+    -
+      default: ''
+      label: Mauritius
+      value: MU
+    -
+      default: ''
+      label: Mayotte
+      value: YT
+    -
+      default: ''
+      label: Mexico
+      value: MX
+    -
+      default: ''
+      label: 'Micronesia, Federated States of'
+      value: FM
+    -
+      default: ''
+      label: 'Moldova, Republic of'
+      value: MD
+    -
+      default: ''
+      label: Monaco
+      value: MC
+    -
+      default: ''
+      label: Mongolia
+      value: MN
+    -
+      default: ''
+      label: Montserrat
+      value: MS
+    -
+      default: ''
+      label: Morocco
+      value: MA
+    -
+      default: ''
+      label: Mozambique
+      value: MZ
+    -
+      default: ''
+      label: Myanmar
+      value: MM
+    -
+      default: ''
+      label: Namibia
+      value: NA
+    -
+      default: ''
+      label: Nauru
+      value: NR
+    -
+      default: ''
+      label: Nepal
+      value: NP
+    -
+      default: ''
+      label: Netherlands
+      value: NL
+    -
+      default: ''
+      label: 'Netherlands Antilles'
+      value: AN
+    -
+      default: ''
+      label: 'New Caledonia'
+      value: NC
+    -
+      default: ''
+      label: 'New Zealand'
+      value: NZ
+    -
+      default: ''
+      label: Nicaragua
+      value: NI
+    -
+      default: ''
+      label: Niger
+      value: NE
+    -
+      default: ''
+      label: Nigeria
+      value: NG
+    -
+      default: ''
+      label: Niue
+      value: NU
+    -
+      default: ''
+      label: 'Norfolk Island'
+      value: NF
+    -
+      default: ''
+      label: 'Northern Mariana Islands'
+      value: MP
+    -
+      default: ''
+      label: Norway
+      value: 'NO'
+    -
+      default: ''
+      label: Oman
+      value: OM
+    -
+      default: ''
+      label: Pakistan
+      value: PK
+    -
+      default: ''
+      label: Palau
+      value: PW
+    -
+      default: ''
+      label: 'Palestinian Territory, Occupied'
+      value: PS
+    -
+      default: ''
+      label: Panama
+      value: PA
+    -
+      default: ''
+      label: 'Papua New Guinea'
+      value: PG
+    -
+      default: ''
+      label: Paraguay
+      value: PY
+    -
+      default: ''
+      label: Peru
+      value: PE
+    -
+      default: ''
+      label: Philippines
+      value: PH
+    -
+      default: ''
+      label: Pitcairn
+      value: PN
+    -
+      default: ''
+      label: Poland
+      value: PL
+    -
+      default: ''
+      label: Portugal
+      value: PT
+    -
+      default: ''
+      label: 'Puerto Rico'
+      value: PR
+    -
+      default: ''
+      label: Qatar
+      value: QA
+    -
+      default: ''
+      label: Reunion
+      value: RE
+    -
+      default: ''
+      label: Romania
+      value: RO
+    -
+      default: ''
+      label: 'Russian Federation'
+      value: RU
+    -
+      default: ''
+      label: Rwanda
+      value: RW
+    -
+      default: ''
+      label: 'Saint Helena'
+      value: SH
+    -
+      default: ''
+      label: 'Saint Kitts and Nevis'
+      value: KN
+    -
+      default: ''
+      label: 'Saint Lucia'
+      value: LC
+    -
+      default: ''
+      label: 'Saint Pierre and Miquelon'
+      value: PM
+    -
+      default: ''
+      label: 'Saint Vincent and the Grenadines'
+      value: VC
+    -
+      default: ''
+      label: Samoa
+      value: WS
+    -
+      default: ''
+      label: 'San Marino'
+      value: SM
+    -
+      default: ''
+      label: 'Sao Tome and Principe'
+      value: ST
+    -
+      default: ''
+      label: 'Saudi Arabia'
+      value: SA
+    -
+      default: ''
+      label: Senegal
+      value: SN
+    -
+      default: ''
+      label: 'Serbia and Montenegro'
+      value: CS
+    -
+      default: ''
+      label: Seychelles
+      value: SC
+    -
+      default: ''
+      label: 'Sierra Leone'
+      value: SL
+    -
+      default: ''
+      label: Singapore
+      value: SG
+    -
+      default: ''
+      label: Slovakia
+      value: SK
+    -
+      default: ''
+      label: Slovenia
+      value: SI
+    -
+      default: ''
+      label: 'Solomon Islands'
+      value: SB
+    -
+      default: ''
+      label: Somalia
+      value: SO
+    -
+      default: ''
+      label: 'South Africa'
+      value: ZA
+    -
+      default: ''
+      label: 'South Georgia and the South Sandwich Islands'
+      value: GS
+    -
+      default: ''
+      label: Spain
+      value: ES
+    -
+      default: ''
+      label: 'Sri Lanka'
+      value: LK
+    -
+      default: ''
+      label: Sudan
+      value: SD
+    -
+      default: ''
+      label: Suriname
+      value: SR
+    -
+      default: ''
+      label: 'Svalbard and Jan Mayen'
+      value: SJ
+    -
+      default: ''
+      label: Swaziland
+      value: SZ
+    -
+      default: ''
+      label: Sweden
+      value: SE
+    -
+      default: ''
+      label: Switzerland
+      value: CH
+    -
+      default: ''
+      label: 'Syrian Arab Republic'
+      value: SY
+    -
+      default: ''
+      label: 'Taiwan, Province of China'
+      value: TW
+    -
+      default: ''
+      label: Tajikistan
+      value: TJ
+    -
+      default: ''
+      label: 'Tanzania, United Republic of'
+      value: TZ
+    -
+      default: ''
+      label: Thailand
+      value: TH
+    -
+      default: ''
+      label: Timor-Leste
+      value: TL
+    -
+      default: ''
+      label: Togo
+      value: TG
+    -
+      default: ''
+      label: Tokelau
+      value: TK
+    -
+      default: ''
+      label: Tonga
+      value: TO
+    -
+      default: ''
+      label: 'Trinidad and Tobago'
+      value: TT
+    -
+      default: ''
+      label: Tunisia
+      value: TN
+    -
+      default: ''
+      label: Turkey
+      value: TR
+    -
+      default: ''
+      label: Turkmenistan
+      value: TM
+    -
+      default: ''
+      label: 'Turks and Caicos Islands'
+      value: TC
+    -
+      default: ''
+      label: Tuvalu
+      value: TV
+    -
+      default: ''
+      label: Uganda
+      value: UG
+    -
+      default: ''
+      label: Ukraine
+      value: UA
+    -
+      default: ''
+      label: 'United Arab Emirates'
+      value: AE
+    -
+      default: ''
+      label: 'United Kingdom'
+      value: GB
+    -
+      default: ''
+      label: 'United States'
+      value: US
+    -
+      default: ''
+      label: 'United States Minor Outlying Islands'
+      value: UM
+    -
+      default: ''
+      label: Uruguay
+      value: UY
+    -
+      default: ''
+      label: Uzbekistan
+      value: UZ
+    -
+      default: ''
+      label: Vanuatu
+      value: VU
+    -
+      default: ''
+      label: Venezuela
+      value: VE
+    -
+      default: ''
+      label: 'Viet Nam'
+      value: VN
+    -
+      default: ''
+      label: 'Virgin Islands, British'
+      value: VG
+    -
+      default: ''
+      label: 'Virgin Islands, U.S.'
+      value: VI
+    -
+      default: ''
+      label: 'Wallis and Futuna'
+      value: WF
+    -
+      default: ''
+      label: 'Western Sahara'
+      value: EH
+    -
+      default: ''
+      label: Yemen
+      value: YE
+    -
+      default: ''
+      label: Zambia
+      value: ZM
+    -
+      default: ''
+      label: Zimbabwe
+      value: ZW
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

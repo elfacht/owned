@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+handle: owners
+instructions: ''
+name: Owners
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  source: null
+  sources:
+    - 'section:b73fb847-c20b-4318-ae96-e14162d6f299' # Owners
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

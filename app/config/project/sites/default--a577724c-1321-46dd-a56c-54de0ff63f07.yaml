@@ -1,0 +1,8 @@
+baseUrl: $DEFAULT_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: owned
+primary: true
+siteGroup: a86a0999-46ab-4724-95af-d64dda5f60d6
+sortOrder: 1

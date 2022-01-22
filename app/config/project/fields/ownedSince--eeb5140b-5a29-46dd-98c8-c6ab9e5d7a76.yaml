@@ -1,0 +1,13 @@
+contentColumnType: datetime
+fieldGroup: 39cb0973-d34a-4d0b-8b82-ad27e6ff2d45
+handle: ownedSince
+instructions: ''
+name: 'Start Ownership'
+searchable: true
+settings:
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

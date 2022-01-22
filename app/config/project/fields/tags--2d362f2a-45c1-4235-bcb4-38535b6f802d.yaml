@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: 6d6c51e7-f905-4ef8-85f3-ed10f51e2859
+handle: tags
+instructions: ''
+name: Tags
+searchable: true
+settings:
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  source: 'taggroup:524e0c85-c0d7-460d-99aa-93e98676e4a6'
+  sources: '*'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Tags

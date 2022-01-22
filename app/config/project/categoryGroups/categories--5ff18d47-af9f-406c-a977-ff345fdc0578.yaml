@@ -1,0 +1,10 @@
+handle: categories
+name: Categories
+siteSettings:
+  a577724c-1321-46dd-a56c-54de0ff63f07:
+    hasUrls: true
+    template: ''
+    uriFormat: 'types/{slug}'
+structure:
+  maxLevels: null
+  uid: c2920aa2-b0dd-4fae-822d-c631ef446fc7

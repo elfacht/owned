@@ -1,0 +1,10 @@
+handle: owners
+name: Owners
+siteSettings:
+  a577724c-1321-46dd-a56c-54de0ff63f07:
+    hasUrls: true
+    template: ''
+    uriFormat: 'owners/{slug}'
+structure:
+  maxLevels: null
+  uid: cfc3ca60-65d8-4ca6-a3b3-e13eff5a1d59

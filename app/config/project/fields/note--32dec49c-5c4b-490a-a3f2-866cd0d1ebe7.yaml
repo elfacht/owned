@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 6b8c4a95-1e43-487d-a5aa-66b779ea2fb0
+handle: note
+instructions: ''
+name: Note
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Standard.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field
